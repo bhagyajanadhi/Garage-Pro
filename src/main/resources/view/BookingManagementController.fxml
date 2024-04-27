@@ -139,7 +139,7 @@
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <ComboBox fx:id="cmbOrderId" layoutX="39.0" layoutY="279.0" prefHeight="26.0" prefWidth="230.0" />
+            <ComboBox fx:id="cmbOrderId" layoutX="34.0" layoutY="266.0" prefHeight="26.0" prefWidth="230.0" />
             <Text layoutX="8.0" layoutY="333.259765625" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Id" wrappingWidth="125.99999999999989">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
@@ -219,5 +219,10 @@
             <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/update-.png" />
          </image>
       </ImageView>
+      <TextField layoutX="618.0" layoutY="43.0" prefHeight="78.0" prefWidth="428.0" text="Booking Management">
+         <font>
+            <Font name="System Bold Italic" size="37.0" />
+         </font>
+      </TextField>
     </children>
 </AnchorPane>

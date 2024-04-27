@@ -14,33 +14,32 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.InventoryManagementController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SupplierController">
    <children>
-      <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="600.0" prefWidth="616.0">
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="616.0">
          <children>
-            <Pane layoutX="36.0" layoutY="73.0" prefHeight="478.0" prefWidth="551.0" style="-fx-background-color: fdedd0; -fx-background-radius: 15;" stylesheets="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/stylesheet/style.css">
+            <Pane layoutX="36.0" layoutY="73.0" prefHeight="478.0" prefWidth="551.0" style="-fx-background-color: fdedd0; -fx-background-radius: 15;">
                <children>
                   <TextField fx:id="txtMachineId" layoutX="276.0" layoutY="13.0" onMouseClicked="#txtMachineIdOnAction" prefHeight="24.0" prefWidth="235.0" stylesheets="@../asserts/stylesheet/style.css" />
-                  <TextField fx:id="txtAvailability" layoutX="276.0" layoutY="123.0" prefHeight="24.0" prefWidth="235.0" stylesheets="@../asserts/stylesheet/style.css" />
-                  <TextField fx:id="txtStartFuel" layoutX="276.0" layoutY="175.0" prefHeight="24.0" prefWidth="235.0" stylesheets="@../asserts/stylesheet/style.css" />
+                  <TextField fx:id="txtAvailability" layoutX="276.0" layoutY="84.0" prefHeight="24.0" prefWidth="235.0" stylesheets="@../asserts/stylesheet/style.css" />
+                  <TextField fx:id="txtStartFuel" layoutX="276.0" layoutY="143.0" prefHeight="24.0" prefWidth="235.0" stylesheets="@../asserts/stylesheet/style.css" />
                   <TextField fx:id="txtEndFuel" layoutX="276.0" layoutY="266.0" prefHeight="24.0" prefWidth="235.0" stylesheets="@../asserts/stylesheet/style.css" />
-                  <Text layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory Id:" wrappingWidth="151.0">
+                  <Text layoutX="24.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Id:" wrappingWidth="151.0">
                      <font>
                         <Font name="Dyuthi Regular" size="26.0" />
                      </font>
                   </Text>
-                  <Text layoutX="14.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Part Name:">
+                  <Text layoutX="24.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
                      <font>
                         <Font name="Dyuthi Regular" size="26.0" />
                      </font>
                   </Text>
-                  <Text layoutX="14.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock Level:" wrappingWidth="235.0">
+                  <Text layoutX="14.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Terms:" wrappingWidth="235.0">
                      <font>
                         <Font name="Dyuthi Regular" size="26.0" />
                      </font>
                   </Text>
-                  <Text layoutX="14.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:" wrappingWidth="264.0">
+                  <Text layoutX="14.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" wrappingWidth="264.0">
                      <font>
                         <Font name="Dyuthi Regular" size="26.0" />
                      </font>
@@ -60,7 +59,7 @@
                         <Point3D x="1.0" y="1.0" z="1.0" />
                      </rotationAxis>
                   </JFXButton>
-                  <JFXButton fx:id="clearpane" buttonType="RAISED" layoutX="287.0" layoutY="371.0" onAction="#btnClearOnAction" prefHeight="43.0" prefWidth="107.0" style="-fx-background-color: #ECF87F;" stylesheets="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/stylesheet/style.css" text="CLEAR">
+                  <JFXButton fx:id="clearpane" buttonType="RAISED" layoutX="287.0" layoutY="371.0" onAction="#btnClearOnAction" prefHeight="43.0" prefWidth="107.0" style="-fx-background-color: #ECF87F;" text="CLEAR">
                      <font>
                         <Font name="System Bold Italic" size="11.0" />
                      </font>
@@ -96,7 +95,7 @@
                         <Point3D x="1.0" y="1.0" z="1.0" />
                      </rotationAxis>
                   </JFXButton>
-                  <JFXButton fx:id="savpane" buttonType="RAISED" layoutX="45.0" layoutY="369.0" onAction="#btnSaveOnAction" prefHeight="43.0" prefWidth="107.0" style="-fx-background-color: #ECF87F;" stylesheets="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/stylesheet/style.css" text="SAVE">
+                  <JFXButton fx:id="savpane" buttonType="RAISED" layoutX="45.0" layoutY="369.0" onAction="#btnSaveOnAction" prefHeight="43.0" prefWidth="107.0" style="-fx-background-color: #ECF87F;" text="SAVE">
                      <font>
                         <Font name="System Bold Italic" size="11.0" />
                      </font>
@@ -115,18 +114,12 @@
                         </DropShadow>
                      </effect>
                   </JFXButton>
-                  <Text layoutX="14.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price:" wrappingWidth="264.0">
+                  <Text layoutX="22.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No:" wrappingWidth="264.0">
                      <font>
                         <Font name="Dyuthi Regular" size="26.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="txtEndFuel1" layoutX="276.0" layoutY="227.0" prefHeight="24.0" prefWidth="235.0" stylesheets="@../asserts/stylesheet/style.css" />
-                  <Text layoutX="14.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Id:" wrappingWidth="151.0">
-                     <font>
-                        <Font name="Dyuthi Regular" size="26.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="txtMachineId1" layoutX="276.0" layoutY="73.0" onMouseClicked="#txtMachineIdOnAction" prefHeight="24.0" prefWidth="235.0" stylesheets="@../asserts/stylesheet/style.css" />
+                  <TextField fx:id="txtEndFuel1" layoutX="276.0" layoutY="214.0" prefHeight="24.0" prefWidth="235.0" stylesheets="@../asserts/stylesheet/style.css" />
                </children>
                <effect>
                   <DropShadow>
@@ -136,7 +129,7 @@
                   </DropShadow>
                </effect>
             </Pane>
-            <Label layoutX="118.0" layoutY="28.0" text="Manage Inventory Details">
+            <Label layoutX="118.0" layoutY="28.0" text="Manage Supplier Details">
                <font>
                   <Font name="Dyuthi Regular" size="28.0" />
                </font>

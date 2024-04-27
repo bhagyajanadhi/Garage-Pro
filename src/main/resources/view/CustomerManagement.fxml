@@ -226,6 +226,11 @@
             </ImageView>
          </children>
       </Group>
+      <TextField layoutX="628.0" layoutY="53.0" prefHeight="78.0" prefWidth="450.0" text="Customer Management">
+         <font>
+            <Font name="System Bold Italic" size="37.0" />
+         </font>
+      </TextField>
     </children>
 
 </AnchorPane>
