@@ -195,12 +195,12 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="clearpane1" buttonType="RAISED" layoutX="24.0" layoutY="434.0" onAction="#btnClearOnAction" prefHeight="43.0" prefWidth="111.0" style="-fx-background-color: #ECF87F;" text="      Add">
+            <JFXButton fx:id="Addpane1" buttonType="RAISED" layoutX="24.0" layoutY="434.0" onAction="#btnAddOnAction" prefHeight="43.0" prefWidth="111.0" style="-fx-background-color: #ECF87F;" text="      Add">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="dltpane1" buttonType="RAISED" layoutX="154.0" layoutY="434.0" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="111.0" style="-fx-background-color: #ECF87F;" text="      Update">
+            <JFXButton fx:id="savpane" buttonType="RAISED" layoutX="154.0" layoutY="434.0" onAction="#btnSaveOnAction" prefHeight="43.0" prefWidth="111.0" style="-fx-background-color: #ECF87F;" text="      Update">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>

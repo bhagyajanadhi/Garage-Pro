@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -139,5 +143,15 @@
             <Image url="@../../../../../../Downloads/icons8-payment-64.png" />
          </image>
       </ImageView>
+      <StackedBarChart layoutX="285.0" layoutY="293.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </StackedBarChart>
+      <JFXTextArea layoutX="291.0" layoutY="108.0" prefHeight="98.0" prefWidth="131.0" />
+      <JFXTextArea layoutX="531.0" layoutY="108.0" prefHeight="98.0" prefWidth="131.0" />
    </children>
 </AnchorPane>
