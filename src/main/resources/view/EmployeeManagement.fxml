@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="lk.ijse.controller.EmployeeManagementController"
+            prefHeight="400.0" prefWidth="600.0">
+    <!-- Table View Rectangle -->
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf5ebe3" height="575.0" layoutX="261.0" layoutY="144.0" stroke="#ccbea6" strokeType="INSIDE" width="999.0" />
+
+    <!-- Table View for Booking Management -->
+    <TableView layoutX="266.0" layoutY="149.0" prefHeight="565.0" prefWidth="989.0">
+        <columns>
+            <TableColumn text="Booking ID" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="bookingId" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Time Slot" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="timeSlot" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Date" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="date" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Vehicle ID" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="vehicleId" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Customer ID" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="customerId" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+</AnchorPane>

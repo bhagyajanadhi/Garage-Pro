@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.BookingManagementController">
+
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="834.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="1281.0" />
+        <Rectangle fill="#faf5ebe3" height="824.0" layoutX="14.0" layoutY="1.0" stroke="#ccbea6" strokeType="INSIDE" width="188.0" />
+        <ImageView fitHeight="116.0" fitWidth="143.0" layoutX="597.0" layoutY="708.0">
+            <image>
+                <Image url="@../../../../../../Downloads/20240421_164310.png" />
+            </image>
+        </ImageView>
+        <JFXButton buttonType="RAISED" layoutX="24.0" layoutY="279.0" prefHeight="38.0" prefWidth="162.0" ripplerFill="#17c71d" style="-fx-background-color: #ECF87F;" text="           Booking" textFill="#199f1e">
+            <font>
+                <Font name="Calibri Bold" size="19.0" />
+            </font>
+        </JFXButton>
+        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="279.0">
+            <image>
+                <Image url="@../../../../../../Downloads/icons8-booking-80.png" />
+            </image>
+        </ImageView>
+        <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="349.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="              Customer" textFill="#199f1e">
+            <font>
+                <Font name="Calibri Bold" size="19.0" />
+            </font>
+        </JFXButton>
+        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="349.0">
+            <image>
+                <Image url="@../../../../../../Downloads/icons8-customer-64.png" />
+            </image>
+        </ImageView>
+        <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="412.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="           Vehicle" textFill="#199f1e">
+            <font>
+                <Font name="Calibri Bold" size="19.0" />
+            </font>
+        </JFXButton>
+        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="413.0">
+            <image>
+                <Image url="@../../../../../../Downloads/icons8-vehicle-50.png" />
+            </image>
+        </ImageView>
+        <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="474.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="       Job" textFill="#199f1e">
+            <font>
+                <Font name="Calibri Bold" size="19.0" />
+            </font>
+        </JFXButton>
+        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="474.0">
+            <image>
+                <Image url="@../../../../../../Downloads/icons8-job-64.png" />
+            </image>
+        </ImageView>
+        <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="528.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="             Employee" textFill="#199f1e">
+            <font>
+                <Font name="Calibri Bold" size="19.0" />
+            </font>
+        </JFXButton>
+        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="528.0">
+            <image>
+                <Image url="@../../../../../../Downloads/icons8-employee-50.png" />
+            </image>
+        </ImageView>
+        <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="583.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="               Supplier" textFill="#199f1e">
+            <font>
+                <Font name="Calibri Bold" size="19.0" />
+            </font>
+        </JFXButton>
+        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="583.0">
+            <image>
+                <Image url="@../../../../../../Downloads/icons8-supplier-64.png" />
+            </image>
+        </ImageView>
+        <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="638.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="        Loan" textFill="#199f1e">
+            <font>
+                <Font name="Calibri Bold" size="19.0" />
+            </font>
+        </JFXButton>
+        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="638.0">
+            <image>
+                <Image url="@../../../../../../Downloads/icons8-loan-96.png" />
+            </image>
+        </ImageView>
+        <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="567.0" layoutX="555.0" layoutY="141.0" stroke="#ccbea6" strokeType="INSIDE" width="665.0" />
+        <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="558.0" layoutX="234.0" layoutY="147.0" stroke="#ccbea6" strokeType="INSIDE" width="283.0" />
+        <ImageView fitHeight="54.0" fitWidth="46.0" layoutX="77.0" layoutY="157.0">
+            <image>
+                <Image url="@../../../../../../Downloads/icons8-homepage-80.png" />
+            </image>
+        </ImageView>
+        <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="206.0" prefHeight="38.0" prefWidth="143.0" ripplerFill="#17c71d" style="-fx-background-color: #ECF87F;" text="Overview" textFill="#199f1e">
+            <font>
+                <Font name="Calibri Bold" size="19.0" />
+            </font>
+        </JFXButton>
+        <Text layoutX="33.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="methan welcome user enne" />
+        <Text layoutX="1144.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welawa tyenne methna" />
+      <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="695.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="           Payment" textFill="#199f1e">
+         <font>
+            <Font name="Calibri Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="695.0">
+         <image>
+            <Image url="@../../../../../../Downloads/icons8-payment-64.png" />
+         </image>
+      </ImageView>
+      <TableView layoutX="562.0" layoutY="164.0" prefHeight="523.0" prefWidth="650.0">
+         <columns>
+            <TableColumn prefWidth="119.2000732421875" text="Booking ID">
+               <cellValueFactory>
+                  <PropertyValueFactory property="bookingId" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="109.5999755859375" text="Time Slot">
+               <cellValueFactory>
+                  <PropertyValueFactory property="timeSlot" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="130.4000244140625" text="Date">
+               <cellValueFactory>
+                  <PropertyValueFactory property="date" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="137.60009765625" text="Vehicle ID">
+               <cellValueFactory>
+                  <PropertyValueFactory property="vehicleId" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="149.5999755859375" text="Customer ID">
+               <cellValueFactory>
+                  <PropertyValueFactory property="customerId" />
+               </cellValueFactory>
+            </TableColumn>
+         </columns>
+      </TableView>
+      <Pane layoutX="131.0" layoutY="56.0" prefHeight="242.0" prefWidth="988.0" style="-fx-background-color: fdedd0; -fx-background-radius: 15;">
+         <children>
+            <Text layoutX="18.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Id :" wrappingWidth="137.7294921875">
+               <font>
+                  <Font name="Dyuthi Regular" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="576.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email  :" wrappingWidth="125.99999999999989">
+               <font>
+                  <Font name="Dyuthi Regular" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="578.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Method :" wrappingWidth="118.7294921875">
+               <font>
+                  <Font name="Dyuthi Regular" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="20.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount :" wrappingWidth="118.7294921875">
+               <font>
+                  <Font name="Dyuthi Regular" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="578.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="125.99999999999989">
+               <font>
+                  <Font name="Dyuthi Regular" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="20.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status : " wrappingWidth="137.7294921875">
+               <font>
+                  <Font name="Dyuthi Regular" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="577.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order ID :" wrappingWidth="125.99999999999989">
+               <font>
+                  <Font name="Dyuthi Regular" size="22.0" />
+               </font>
+            </Text>
+            <Text layoutX="17.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier email :" wrappingWidth="186.9999999999999">
+               <font>
+                  <Font name="Dyuthi Regular" size="22.0" />
+               </font>
+            </Text>
+            <DatePicker fx:id="dpDate" layoutX="729.0" layoutY="81.0" prefHeight="37.0" prefWidth="230.0" />
+            <ComboBox fx:id="cmbAdminEmail" layoutX="728.0" layoutY="10.0" prefHeight="26.0" prefWidth="230.0" />
+            <TextField fx:id="txtPayId" layoutX="182.0" layoutY="15.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
+            <TextField fx:id="txtStatus" layoutX="181.0" layoutY="129.0" prefHeight="35.0" prefWidth="230.0" />
+            <ComboBox fx:id="cmbOrderId" layoutX="730.0" layoutY="124.0" prefHeight="26.0" prefWidth="230.0" />
+            <ComboBox fx:id="cmbSupEmail" layoutX="182.0" layoutY="60.0" prefHeight="24.0" prefWidth="230.0" />
+            <JFXButton fx:id="dltpane" buttonType="RAISED" layoutX="315.0" layoutY="179.0" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="111.0" text="DELETE">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="20.0">
+                     <image>
+                        <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/delete-30.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="clearpane" buttonType="RAISED" layoutX="449.0" layoutY="179.0" onAction="#btnClearOnAction" prefHeight="43.0" prefWidth="111.0" text="CLEAR">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/clear-30.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="updatepane" buttonType="RAISED" layoutX="582.0" layoutY="179.0" onAction="#btnOnUpdateAction" prefHeight="43.0" prefWidth="111.0" stylesheets="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/stylesheet/style.css" text="UPDATE">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+               <effect>
+                  <Reflection />
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="28.0">
+                     <image>
+                        <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/update-.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="savpane" buttonType="RAISED" layoutX="179.0" layoutY="179.0" onAction="#btnSaveOnAction" prefHeight="43.0" prefWidth="111.0" text="PAY">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/icons8-dollar-30.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Button fx:id="rppane" layoutX="713.0" layoutY="179.0" mnemonicParsing="false" onAction="#btnReportOnAction" prefHeight="43.0" prefWidth="138.0" stylesheets="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/stylesheet/style.css" text="View Report">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <graphic>
+                  <ImageView>
+                     <image>
+                        <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/repo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <TextField fx:id="txtMethod" layoutX="728.0" layoutY="45.0" prefHeight="35.0" prefWidth="230.0" />
+            <TextField fx:id="txtAmount" layoutX="178.0" layoutY="91.0" prefHeight="35.0" prefWidth="230.0" />
+            <ImageView fitHeight="133.0" fitWidth="187.0" layoutX="411.0" layoutY="38.0" opacity="0.36">
+               <image>
+                  <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/pay2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>
