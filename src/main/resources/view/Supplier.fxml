@@ -51,7 +51,7 @@
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="20.0">
                            <image>
-                              <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/delete-30.png" />
+                              <Image url="@../asserts/icons/delete-30.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -66,7 +66,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0">
                            <image>
-                              <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/clear-30.png" />
+                              <Image url="@../asserts/icons/clear-30.png" />
                            </image>
                            <rotationAxis>
                               <Point3D />
@@ -87,7 +87,7 @@
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="28.0">
                            <image>
-                              <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/update-.png" />
+                              <Image url="@../asserts/icons/update-.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -102,7 +102,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0">
                            <image>
-                              <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/save-64.png" />
+                              <Image url="@../asserts/icons/save-64.png" />
                            </image>
                         </ImageView>
                      </graphic>

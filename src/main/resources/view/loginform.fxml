@@ -14,36 +14,15 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginController">
    <children>
-      <ImageView fitHeight="603.0" fitWidth="900.0" layoutY="-2.0">
+      <ImageView fitHeight="607.0" fitWidth="900.0" layoutY="-2.0">
          <image>
-            <Image url="@../../../../../../Downloads/original-6703c4529d81ff9b21eac9f74fdfcb5e.jpg" />
+            <Image url="@../asserts/icons/original-6703c4529d81ff9b21eac9f74fdfcb5e.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="12.0" arcWidth="10.0" height="567.0" layoutX="419.0" layoutY="15.0" strokeLineCap="BUTT" width="467.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="517.0" layoutX="430.0" layoutY="46.0" strokeType="INSIDE" width="439.0">
          <fill>
             <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.5479922294616699" green="0.5894736647605896" blue="0.550757646560669" opacity="0.27000001072883606" />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.006729475100942127">
-                     <color>
-                        <Color red="0.5479922294616699" green="0.5894736647605896" blue="0.550757646560669" opacity="0.27000001072883606" />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.47375504710632566">
-                     <color>
-                        <Color red="0.5" green="0.4099999964237213" blue="0.4099999964237213" opacity="0.6408206224441528" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.5098039507865906" green="0.41960784792900085" blue="0.41960784792900085" />
-                     </color>
-                  </Stop>
-               </stops>
+
             </LinearGradient>
          </fill>
          <stroke>
@@ -51,75 +30,86 @@
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.5479922294616699" green="0.5894736647605896" blue="0.550757646560669" opacity="0.27000001072883606" />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.006729475100942127">
-                     <color>
-                        <Color red="0.5479922294616699" green="0.5894736647605896" blue="0.550757646560669" opacity="0.27000001072883606" />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.9825033647375505">
-                     <color>
-                        <Color red="0.7473683953285217" green="0.25465887784957886" blue="0.25465887784957886" />
+                        <Color opacity="0.0" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.5099999904632568" green="0.41819998621940613" blue="0.41819998621940613" />
+                        <Color red="0.42105263471603394" green="0.17309941351413727" blue="0.17309941351413727" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
+         </stroke></Rectangle>
+      <Rectangle arcHeight="12.0" arcWidth="10.0" height="567.0" layoutX="418.0" layoutY="16.0" strokeLineCap="BUTT" width="467.0">
+         <fill>
+            <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color opacity="0.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.23157894611358643" green="0.06432748585939407" blue="0.06432748585939407" />
+                     </color>
+                  </Stop>
+               </stops></LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color opacity="0.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.557894766330719" green="0.506237804889679" blue="0.506237804889679" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops></LinearGradient>
          </stroke>
       </Rectangle>
-      <Text fill="#1f1f1f" layoutX="670.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN">
+      <Text fill="#1f1f1f" layoutX="679.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN">
          <font>
             <Font name="Unispace-Bold" size="56.0" />
          </font>
       </Text>
-      <Text fill="#0d0d0d" layoutX="461.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
+      <Text fill="WHITE" layoutX="450.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffbf" height="52.0" layoutX="462.0" layoutY="328.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="345.0" />
-      <Text fill="#0d0d0d" layoutX="473.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#484747bf" height="52.0" layoutX="470.0" layoutY="216.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="345.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#594d4dbf" height="52.0" layoutX="472.0" layoutY="330.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="345.0" />
+      <Text fill="WHITE" layoutX="461.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
       </Text>
-      <TextField fx:id="textUsreId" layoutX="461.0" layoutY="328.0" prefHeight="52.0" prefWidth="346.0" />
-      <TextField layoutX="460.0" layoutY="215.0" prefHeight="52.0" prefWidth="346.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffbf" height="52.0" layoutX="461.0" layoutY="215.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="345.0" />
-      <Text fill="#534646" layoutX="483.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your email address" />
-      <Text fill="#534646" layoutX="473.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your password" />
-      <Text fill="WHITE" layoutX="702.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget password?" />
-      <JFXButton buttonType="RAISED" layoutX="608.0" layoutY="502.0" ripplerFill="#2aa159" text="Sign in" textFill="#100606" textOverrun="WORD_ELLIPSIS">
-         <font>
-            <Font name="Unispace-Bold" size="26.0" />
-         </font>
-      </JFXButton>
+      <TextField fx:id="txtUserName1" layoutX="469.0" layoutY="216.0" prefHeight="52.0" prefWidth="346.0" promptText="Enter your email address" style="-fx-border-color: black;" />
+      <TextField fx:id="txtUserName" layoutX="469.0" layoutY="330.0" prefHeight="52.0" prefWidth="346.0" promptText="Enter your password" style="-fx-border-color: black;" />
+      <Text fx:id="txtForgetPassword" fill="WHITE" layoutX="702.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget password?" />
       <Text layoutX="583.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?" />
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="14.0" layoutY="5.0">
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="168.0">
          <image>
-            <Image url="@../../../../../../Downloads/20240421_164310.png" />
+            <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
       </ImageView>
-      <JFXButton buttonType="RAISED" layoutX="608.0" layoutY="407.0" ripplerFill="#2aa159" text="Log in" textFill="#100606" textOverrun="WORD_ELLIPSIS">
-         <font>
-            <Font name="Unispace-Bold" size="26.0" />
-         </font>
-      </JFXButton>
-      <ImageView fitHeight="52.0" fitWidth="42.0" layoutX="756.0" layoutY="215.0">
+      <ImageView fitHeight="52.0" fitWidth="42.0" layoutX="765.0" layoutY="216.0">
          <image>
-            <Image url="@../../../../../../Downloads/download%20(1).png" />
+            <Image url="@../asserts/icons/download (1).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="756.0" layoutY="335.0">
+      <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="765.0" layoutY="336.0">
          <image>
-            <Image url="@../../../../../../Downloads/download%20(2).png" />
+            <Image url="@../asserts/icons/download (2).png" />
          </image>
       </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="600.0" layoutY="407.0" style="-fx-background-color: #66914e;" text="Log in" />
+      <JFXButton layoutX="601.0" layoutY="510.0" style="-fx-background-color: #66914e;" text="Sign In" />
    </children>
 </AnchorPane>

@@ -224,7 +224,7 @@
                <graphic>
                   <ImageView>
                      <image>
-                        <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/repo.png" />
+                        <Image url="@../asserts/icons/repo.png" />
                      </image>
                   </ImageView>
                </graphic>

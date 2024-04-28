@@ -21,7 +21,7 @@
         <Rectangle fill="#faf5ebe3" height="824.0" layoutX="14.0" layoutY="1.0" stroke="#ccbea6" strokeType="INSIDE" width="188.0" />
         <ImageView fitHeight="116.0" fitWidth="143.0" layoutX="597.0" layoutY="708.0">
             <image>
-                <Image url="@../../../../../../Downloads/20240421_164310.png" />
+                <Image url="@../asserts/icons/20240421_164310 (1).png" />
             </image>
         </ImageView>
         <JFXButton buttonType="RAISED" layoutX="24.0" layoutY="279.0" prefHeight="38.0" prefWidth="162.0" ripplerFill="#17c71d" style="-fx-background-color: #ECF87F;" text="           Booking" textFill="#199f1e">
@@ -31,7 +31,7 @@
         </JFXButton>
         <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="279.0">
             <image>
-                <Image url="@../../../../../../Downloads/icons8-booking-80.png" />
+                <Image url="@../asserts/icons/icons8-booking-80.png" />
             </image>
         </ImageView>
         <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="349.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="              Customer" textFill="#199f1e">
@@ -41,7 +41,7 @@
         </JFXButton>
         <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="349.0">
             <image>
-                <Image url="@../../../../../../Downloads/icons8-customer-64.png" />
+                <Image url="@../asserts/icons/icons8-customer-64.png" />
             </image>
         </ImageView>
         <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="412.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="           Vehicle" textFill="#199f1e">
@@ -51,7 +51,7 @@
         </JFXButton>
         <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="413.0">
             <image>
-                <Image url="@../../../../../../Downloads/icons8-vehicle-50.png" />
+                <Image url="@../asserts/icons/icons8-vehicle-50.png" />
             </image>
         </ImageView>
         <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="474.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="       Job" textFill="#199f1e">
@@ -61,7 +61,7 @@
         </JFXButton>
         <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="474.0">
             <image>
-                <Image url="@../../../../../../Downloads/icons8-job-64.png" />
+                <Image url="@../asserts/icons/icons8-job-64.png" />
             </image>
         </ImageView>
         <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="528.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="             Employee" textFill="#199f1e">
@@ -71,7 +71,7 @@
         </JFXButton>
         <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="528.0">
             <image>
-                <Image url="@../../../../../../Downloads/icons8-employee-50.png" />
+                <Image url="@../asserts/icons/icons8-employee-50.png" />
             </image>
         </ImageView>
         <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="583.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="               Supplier" textFill="#199f1e">
@@ -81,7 +81,7 @@
         </JFXButton>
         <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="583.0">
             <image>
-                <Image url="@../../../../../../Downloads/icons8-supplier-64.png" />
+                <Image url="@../asserts/icons/icons8-supplier-64.png" />
             </image>
         </ImageView>
         <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="638.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="        Loan" textFill="#199f1e">
@@ -91,13 +91,13 @@
         </JFXButton>
         <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="638.0">
             <image>
-                <Image url="@../../../../../../Downloads/icons8-loan-96.png" />
+                <Image url="@../asserts/icons/icons8-loan-96.png" />
             </image>
         </ImageView>
         <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="567.0" layoutX="555.0" layoutY="141.0" stroke="#ccbea6" strokeType="INSIDE" width="665.0" />
         <ImageView fitHeight="54.0" fitWidth="46.0" layoutX="77.0" layoutY="157.0">
             <image>
-                <Image url="@../../../../../../Downloads/icons8-homepage-80.png" />
+                <Image url="@../asserts/icons/icons8-homepage-80.png" />
             </image>
         </ImageView>
         <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="206.0" prefHeight="38.0" prefWidth="143.0" ripplerFill="#17c71d" style="-fx-background-color: #ECF87F;" text="Overview" textFill="#199f1e">
@@ -114,7 +114,7 @@
         </JFXButton>
         <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="695.0">
             <image>
-                <Image url="@../../../../../../Downloads/icons8-payment-64.png" />
+                <Image url="@../asserts/icons/icons8-payment-64.png" />
             </image>
         </ImageView>
       <Group layoutX="245.0" layoutY="157.0">
@@ -144,7 +144,7 @@
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="20.0">
                      <image>
-                        <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/delete-30.png" />
+                        <Image url="@../asserts/icons/delete-30.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -156,7 +156,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0">
                      <image>
-                        <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/clear-30.png" />
+                        <Image url="@../asserts/icons/clear-30.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -186,12 +186,12 @@
             <TextField fx:id="txtPayId111" layoutX="35.0" layoutY="355.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
             <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="35.0" layoutY="443.0">
                <image>
-                  <Image url="@../../../../../../Downloads/download%20(4).png" />
+                  <Image url="@../asserts/icons/download (4).png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="161.0" layoutY="444.0">
                <image>
-                  <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/update-.png" />
+                  <Image url="@../asserts/icons/update-.png" />
                </image>
             </ImageView>
          </children>
