@@ -152,7 +152,7 @@
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="20.0">
                      <image>
-                        <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/delete-30.png" />
+                        <Image url="@../../../../../../Downloads/delete-30.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -216,7 +216,7 @@
       </ImageView>
       <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="397.0" layoutY="591.0">
          <image>
-            <Image url="@../../../../../projectFuelBee_MVC/src/main/resources/asserts/icons/update-.png" />
+            <Image url="@../../../../../../Downloads/update-.png" />
          </image>
       </ImageView>
       <TextField layoutX="618.0" layoutY="43.0" prefHeight="78.0" prefWidth="428.0" text="Booking Management">
