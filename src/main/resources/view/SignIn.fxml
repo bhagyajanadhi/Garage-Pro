@@ -12,68 +12,30 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SignInController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="900.0" layoutX="1.0">
          <image>
-            <Image url="@../../../../../../Downloads/WhatsApp%20Image%202024-04-21%20at%2018.00.18.jpeg" />
+            <Image url="@../asserts/icons/WhatsApp Image 2024-04-21 at 18.00.18.jpeg" />
          </image>
       </ImageView>
       <Rectangle arcHeight="12.0" arcWidth="10.0" height="567.0" layoutX="8.0" layoutY="8.0" strokeLineCap="BUTT" width="467.0">
          <fill>
-            <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+            <LinearGradient endX="1.0" endY="1.0">
                <stops>
                   <Stop>
                      <color>
-                        <Color red="0.5479922294616699" green="0.5894736647605896" blue="0.550757646560669" opacity="0.27000001072883606" />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.006729475100942127">
-                     <color>
-                        <Color red="0.5479922294616699" green="0.5894736647605896" blue="0.550757646560669" opacity="0.27000001072883606" />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.47375504710632566">
-                     <color>
-                        <Color red="0.5" green="0.4099999964237213" blue="0.4099999964237213" opacity="0.6408206224441528" />
+                        <Color red="0.43157893419265747" green="0.29411306977272034" blue="0.29411306977272034" opacity="0.5400000214576721" />
                      </color>
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.5098039507865906" green="0.41960784792900085" blue="0.41960784792900085" />
+                        <Color red="1.0" green="1.0" blue="1.0" />
                      </color>
                   </Stop>
                </stops>
             </LinearGradient>
-         </fill>
-         <stroke>
-            <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.5479922294616699" green="0.5894736647605896" blue="0.550757646560669" opacity="0.27000001072883606" />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.006729475100942127">
-                     <color>
-                        <Color red="0.5479922294616699" green="0.5894736647605896" blue="0.550757646560669" opacity="0.27000001072883606" />
-                     </color>
-                  </Stop>
-                  <Stop offset="0.9825033647375505">
-                     <color>
-                        <Color red="0.7473683953285217" green="0.25465887784957886" blue="0.25465887784957886" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.5099999904632568" green="0.41819998621940613" blue="0.41819998621940613" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </stroke>
-      </Rectangle>
+         </fill></Rectangle>
       <Text fill="#1f1f1f" layoutX="17.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign In">
          <font>
             <Font name="Unispace-Bold" size="56.0" />
@@ -126,17 +88,17 @@
       </ImageView>
       <ImageView fitHeight="32.0" fitWidth="42.0" layoutX="322.0" layoutY="387.0">
          <image>
-            <Image url="/download%20(3).png" />
+            <Image url="@../asserts/icons/download (3).png" />
          </image>
       </ImageView>
       <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="322.0" layoutY="206.0">
          <image>
-            <Image url="@../../../../../../Downloads/download%20(1).png" />
+            <Image url="@../asserts/icons/download (1).png" />
          </image>
       </ImageView>
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="700.0" layoutY="-36.0">
          <image>
-            <Image url="@../../../../../../Downloads/20240421_164310.png" />
+            <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
       </ImageView>
    </children>

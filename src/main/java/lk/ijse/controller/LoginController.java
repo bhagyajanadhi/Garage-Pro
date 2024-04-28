@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.dto.AdminDto;
 import lk.ijse.model.Admin;
 
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class LoginController {
         String password = txtpassword.getText();
 
         if (!userName.isEmpty() && !password.isEmpty()) {
-            Admin admin = Admin.getAdmin(userName);
+            AdminDto admin = AdminDto.getAdmin(userName);
 
             if (admin != null) {
                 if (password.equals(admin.getPassword())) {

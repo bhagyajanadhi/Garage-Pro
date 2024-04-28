@@ -1,43 +1,34 @@
 package lk.ijse.model;
 
+import lk.ijse.db.Dbconnection;
+import lk.ijse.dto.AdminDto;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Admin {
-    private String username;
-    private String password;
+        public static AdminDto getAdmin(String email) throws SQLException {
+            Connection connection = Dbconnection.getInstance().getConnection();
+            String sql = "SELECT email, " +
+                    "CONVERT(AES_DECRYPT(password, 'Ijse@123') USING utf8) AS decrypted_password, " +
+                    "user_name, type " +
+                    "FROM Admin " +
+                    "WHERE email=?";
 
-    // Constructor
-    public Admin(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
+            PreparedStatement pstm = connection.prepareStatement(sql);
+            pstm.setString(1, email);
 
-    // Getter for username
-    public String getUsername() {
-        return username;
-    }
-
-    // Getter for password
-    public String getPassword() {
-        return password;
-    }
-
-    // Static method to retrieve an admin by username (for example)
-    public static Admin getAdmin(String username) {
-        // Here you would implement your logic to retrieve the admin from your data source
-        // For demonstration purposes, let's assume a hardcoded list of admins
-        Admin[] admins = {
-                new Admin("admin1", "password1"),
-                new Admin("admin2", "password2"),
-                // Add more admins as needed
-        };
-
-        // Iterate through the list to find the matching admin
-        for (Admin admin : admins) {
-            if (admin.getUsername().equals(username)) {
-                return admin;
+            ResultSet rst = pstm.executeQuery();
+            AdminDto adminDto = new AdminDto();
+            if (rst.next()) {
+                adminDto.setEmail(rst.getString(1));
+                adminDto.setPassword(rst.getString(2));
+                adminDto.setUsername(rst.getString(3));
+                return adminDto;
+            } else {
+                return null;
             }
         }
-
-        // Return null if admin with the given username is not found
-        return null;
-    }
 }
