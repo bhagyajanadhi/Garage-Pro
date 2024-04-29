@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
@@ -14,6 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SignInController">
    <children>
+      <Pane fx:id="mainpain" layoutX="-7.0" layoutY="-9.0" prefHeight="609.0" prefWidth="914.0" />
       <ImageView fitHeight="600.0" fitWidth="900.0" layoutX="1.0">
          <image>
             <Image url="@../asserts/icons/WhatsApp Image 2024-04-21 at 18.00.18.jpeg" />
@@ -51,17 +54,16 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="textUsreId" layoutX="24.0" layoutY="302.0" prefHeight="39.0" prefWidth="346.0" />
+      <TextField fx:id="txtpwd" layoutX="24.0" layoutY="302.0" prefHeight="39.0" prefWidth="346.0" promptText="Enter your password" />
       <Text fill="#534646" layoutX="72.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your email address" />
-      <Text fill="#534646" layoutX="40.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your password" />
-      <JFXButton buttonType="RAISED" layoutX="159.0" layoutY="444.0" ripplerFill="#2aa159" style="-fx-background-color: #462b2b;" text="Sign in" textFill="#100606" textOverrun="WORD_ELLIPSIS">
+      <JFXButton fx:id="btnsign" buttonType="RAISED" layoutX="159.0" layoutY="444.0" onAction="#btnOnSignUpOnAction" ripplerFill="#2aa159" style="-fx-background-color: #462b2b;" text="Sign in" textFill="#100606" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="Unispace-Bold" size="26.0" />
          </font>
       </JFXButton>
       <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="328.0" layoutY="302.0">
          <image>
-            <Image url="@../../../../../../Downloads/download%20(2).png" />
+            <Image url="@../asserts/icons/download (2).png" />
          </image>
       </ImageView>
       <Text fill="#0d0d0d" layoutX="25.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name">
@@ -70,20 +72,17 @@
          </font>
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffbf" height="39.0" layoutX="19.0" layoutY="125.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="345.0" />
-      <TextField fx:id="textUsreId1" layoutX="18.0" layoutY="125.0" prefHeight="39.0" prefWidth="346.0" />
-      <TextField fx:id="textUsreId11" layoutX="18.0" layoutY="208.0" prefHeight="39.0" prefWidth="346.0" />
+      <TextField fx:id="txtUserName" layoutX="18.0" layoutY="125.0" prefHeight="39.0" prefWidth="346.0" promptText="Enter YOur User Name" />
+      <TextField fx:id="txtemail" layoutX="18.0" layoutY="208.0" prefHeight="39.0" prefWidth="346.0" promptText="Entrer Your email address" />
       <Text fill="#0d0d0d" layoutX="22.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-enter Password">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="textUsreId2" layoutX="18.0" layoutY="383.0" prefHeight="39.0" prefWidth="346.0" />
-      <Text fill="#534646" layoutX="32.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-enter your password" />
-      <Text fill="#534646" layoutX="40.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your email address" />
-      <Text fill="#534646" layoutX="40.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your User name" />
+      <TextField fx:id="txtCpwd" layoutX="18.0" layoutY="383.0" prefHeight="39.0" prefWidth="346.0" promptText="Re-enter your password" />
       <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="322.0" layoutY="125.0">
          <image>
-            <Image url="@../../../../../../Downloads/icons8-user-48.png" />
+            <Image url="@../asserts/icons/icons8-user-48.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="32.0" fitWidth="42.0" layoutX="322.0" layoutY="387.0">
@@ -101,5 +100,15 @@
             <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
       </ImageView>
+      <Label layoutX="138.0" layoutY="519.0" text="already have an account?" textFill="#0d0d0d">
+         <font>
+            <Font name="Dyuthi Regular" size="17.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="inpane" layoutX="323.0" layoutY="538.0" onMouseClicked="#txtLogInOnAction" text="Log in" textFill="#1b1be1">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

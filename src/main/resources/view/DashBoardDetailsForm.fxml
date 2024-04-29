@@ -21,7 +21,7 @@
             <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
       </ImageView>
-      <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="279.0" prefHeight="38.0" prefWidth="162.0" ripplerFill="#17c71d" style="-fx-background-color: #ECF87F;" text="           Booking" textFill="#199f1e">
+      <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="279.0" prefHeight="38.0" prefWidth="162.0" ripplerFill="#17c71d" style="-fx-background-color: #ECF87F;" text="Booking" textFill="#199f1e">
          <font>
             <Font name="Calibri Bold" size="19.0" />
          </font>

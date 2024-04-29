@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -41,7 +41,7 @@
                </stops>
             </LinearGradient>
          </stroke></Rectangle>
-      <Rectangle arcHeight="12.0" arcWidth="10.0" height="567.0" layoutX="418.0" layoutY="16.0" strokeLineCap="BUTT" width="467.0">
+      <Rectangle arcHeight="12.0" arcWidth="10.0" height="567.0" layoutX="418.0" layoutY="16.0" onDragDetected="#btnSingInOnAction" strokeLineCap="BUTT" width="467.0">
          <fill>
             <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
                <stops>
@@ -78,7 +78,7 @@
             <Font name="Unispace-Bold" size="56.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="450.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
+      <Text fill="WHITE" layoutX="450.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
@@ -90,11 +90,11 @@
             <Font name="System Bold" size="29.0" />
          </font>
       </Text>
-      <TextField fx:id="txtUserName1" layoutX="469.0" layoutY="216.0" prefHeight="52.0" prefWidth="346.0" promptText="Enter your email address" style="-fx-border-color: black;" />
-      <TextField fx:id="txtUserName" layoutX="469.0" layoutY="330.0" prefHeight="52.0" prefWidth="346.0" promptText="Enter your password" style="-fx-border-color: black;" />
+      <TextField fx:id="txtUserName" layoutX="469.0" layoutY="216.0" prefHeight="52.0" prefWidth="346.0" promptText="Enter your User name" style="-fx-border-color: black;" />
+      <TextField fx:id="txtPassword" layoutX="469.0" layoutY="330.0" prefHeight="52.0" prefWidth="346.0" promptText="Enter your password" style="-fx-border-color: black;" />
       <Text fx:id="txtForgetPassword" fill="WHITE" layoutX="702.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget password?" />
       <Text layoutX="583.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?" />
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="168.0">
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="-2.0">
          <image>
             <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
@@ -109,7 +109,7 @@
             <Image url="@../asserts/icons/download (2).png" />
          </image>
       </ImageView>
-      <JFXButton buttonType="RAISED" layoutX="600.0" layoutY="407.0" style="-fx-background-color: #66914e;" text="Log in" />
-      <JFXButton layoutX="601.0" layoutY="510.0" style="-fx-background-color: #66914e;" text="Sign In" />
+      <Button layoutX="601.0" layoutY="413.0" mnemonicParsing="false" onAction="#btnLogInOnAction" text="Log In" />
+      <Button layoutX="617.0" layoutY="506.0" mnemonicParsing="false" onAction="#SingInOnAction" text="Sign In" />
    </children>
 </AnchorPane>
