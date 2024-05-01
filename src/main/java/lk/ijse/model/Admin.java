@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 public class Admin {
 
+
     public boolean adminCheck(String username, String password) {
         try {
             Connection connection = Dbconnection.getInstance().getConnection();
@@ -56,4 +57,6 @@ public class Admin {
             throw new RuntimeException(e);
         }
     }
+
+
 }

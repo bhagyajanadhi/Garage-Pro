@@ -1,148 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashBoardDetailsFormController">
    <children>
-      <Pane layoutX="227.0" layoutY="7.0" prefHeight="844.0" prefWidth="1054.0" />
+      <TextField fx:id="txtField" layoutX="37.0" layoutY="160.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="800.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
-      <Rectangle fill="#faf5ebe3" height="800.0" layoutX="12.0" stroke="#ccbea6" strokeType="INSIDE" width="198.0" />
+      <Rectangle fill="#faf5ebe3" height="800.0" layoutX="12.0" layoutY="-1.0" stroke="#6b5430" strokeType="INSIDE" style="-fx-fill: #DBA979;" width="198.0" />
       <ImageView fitHeight="116.0" fitWidth="143.0" layoutX="606.0" layoutY="696.0">
          <image>
             <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="136.0" layoutX="276.0" layoutY="89.0" stroke="#ccbea6" strokeType="INSIDE" width="162.0" />
-      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="136.0" layoutX="516.0" layoutY="89.0" stroke="#ccbea6" strokeType="INSIDE" width="162.0" />
-      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="136.0" layoutX="750.0" layoutY="89.0" stroke="#ccbea6" strokeType="INSIDE" width="509.0" />
-      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="463.0" layoutX="261.0" layoutY="247.0" stroke="#ccbea6" strokeType="INSIDE" width="531.0" />
-      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="531.0" layoutX="847.0" layoutY="242.0" stroke="#ccbea6" strokeType="INSIDE" width="380.0" />
-      <ImageView fitHeight="54.0" fitWidth="46.0" layoutX="77.0" layoutY="157.0">
-         <image>
-            <Image url="@../asserts/icons/icons8-homepage-80.png" />
-         </image>
-      </ImageView>
-      <Text fill="#199f1e" layoutX="296.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Text>
-      <Text fill="#199f1e" layoutX="527.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto maintenance" textAlignment="CENTER" wrappingWidth="126.6000366210937">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Text>
-      <Text fill="#199f1e" layoutX="792.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Loan due dates" textAlignment="CENTER" wrappingWidth="234.6000366210937">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Text>
-      <Text layoutX="310.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Available stock">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Text fill="#199f1e" layoutX="920.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valuation" textAlignment="CENTER" wrappingWidth="234.6000366210937">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Text>
-      <Text layoutX="33.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="methan welcome user enne" />
-      <Text layoutX="1144.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welawa tyenne methna" />
-      <Button fx:id="paymentpane" layoutX="30.0" layoutY="688.0" mnemonicParsing="false" onAction="#managePaymentOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="         Payment" textFill="#4b912b">
+      <Button fx:id="paymentPane" layoutX="30.0" layoutY="688.0" mnemonicParsing="false" onAction="#btnmanagePaymentOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="         Payment">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="41.0" layoutY="691.0">
-         <image>
-            <Image url="@../asserts/icons/icons8-payment-64.png" />
-         </image>
-      </ImageView>
-      <StackedBarChart layoutX="285.0" layoutY="293.0">
-        <xAxis>
-          <CategoryAxis side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" />
-        </yAxis>
-      </StackedBarChart>
-      <TextArea layoutX="276.0" layoutY="102.0" prefHeight="110.0" prefWidth="162.0" />
-      <TextArea layoutX="515.0" layoutY="102.0" prefHeight="110.0" prefWidth="162.0" />
-      <Button fx:id="dashpane1" layoutX="24.0" layoutY="223.0" mnemonicParsing="false" onAction="#manageDashBoarOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="Overview" textFill="#4b912b">
+      <Button fx:id="dashPane1" layoutX="34.0" layoutY="223.0" mnemonicParsing="false" onAction="#btnManageDashBoarOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Overview">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="customerpane" layoutX="34.0" layoutY="344.0" mnemonicParsing="false" onAction="#manageCustomerOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="       Customer" textFill="#4b912b">
+      <Button fx:id="customerPane" layoutX="34.0" layoutY="344.0" mnemonicParsing="false" onAction="#btnManageCustomerOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Customer">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="vehiclepane" layoutX="34.0" layoutY="407.0" mnemonicParsing="false" onAction="#manageVehicleOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="        Vehicle" textFill="#4b912b">
+      <Button fx:id="vehiclePane" layoutX="34.0" layoutY="407.0" mnemonicParsing="false" onAction="#dtnmanageVehicleOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="        Vehicle">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="jobpane" layoutX="34.0" layoutY="471.0" mnemonicParsing="false" onAction="#manageJobOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="     Job" textFill="#4b912b">
+      <Button fx:id="jobPane" layoutX="34.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnmanageJobOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="     Job">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="employeepane" layoutX="34.0" layoutY="525.0" mnemonicParsing="false" onAction="#manageEmployeeOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="    Employee" textFill="#4b912b">
+      <Button fx:id="employeePane" layoutX="34.0" layoutY="525.0" mnemonicParsing="false" onAction="#btnmanageEmployeeOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="    Employee">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="supplierpane" layoutX="32.0" layoutY="581.0" mnemonicParsing="false" onAction="#manageSupplierOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="     Supplier" textFill="#4b912b">
+      <Button fx:id="supplierPane" layoutX="32.0" layoutY="581.0" mnemonicParsing="false" onAction="#btnmanageSupplierOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="     Supplier">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="loanpane" layoutX="32.0" layoutY="635.0" mnemonicParsing="false" onAction="#manageLoanOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="       Loan" textFill="#4b912b">
+      <Button fx:id="loanPane" layoutX="32.0" layoutY="635.0" mnemonicParsing="false" onAction="#btnmanageLoanOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Loan">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="39.0" layoutY="635.0">
-         <image>
-            <Image url="@../asserts/icons/icons8-loan-96.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="32.0" layoutY="581.0">
-         <image>
-            <Image url="@../asserts/icons/icons8-employee-50.png" />
-         </image>
-      </ImageView>
-      <ImageView layoutX="40.0" layoutY="404.0">
-         <image>
-            <Image url="@../asserts/icons/icons8-vehicle-50.png" />
-         </image>
-      </ImageView>
+      <Pane fx:id="mainPain" layoutX="237.0" layoutY="14.0" prefHeight="844.0" prefWidth="1054.0">
+         <children>
+            <ImageView fitHeight="716.0" fitWidth="1072.0" layoutX="-29.0" layoutY="-16.0">
+               <image>
+                  <Image url="@../../../../../../Downloads/garage%202.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
       <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="32.0" layoutY="344.0">
          <image>
-            <Image url="@../asserts/icons/icons8-customer-64.png" />
+            <Image url="@../../../../../../Downloads/customer.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="40.0" layoutY="472.0">
+      <Button fx:id="customerPane1" layoutX="32.0" layoutY="293.0" mnemonicParsing="false" onAction="#btnManageCustomerOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Booking">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <ImageView layoutX="39.0" layoutY="401.0">
          <image>
-            <Image url="@../asserts/icons/icons8-job-64.png" />
+            <Image url="@../../../../../../Downloads/vehicle.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="32.0" layoutY="525.0">
+      <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="35.0" layoutY="471.0">
          <image>
-            <Image url="@../asserts/icons/icons8-supplier-64.png" />
+            <Image url="@../../../../../../Downloads/icons8-job-80.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="40.0" layoutY="298.0">
+         <image>
+            <Image url="@../../../../../../Downloads/booking.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="37.0" layoutY="528.0">
+         <image>
+            <Image url="@../../../../../../Downloads/supplier.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="34.0" layoutY="584.0">
+         <image>
+            <Image url="@../../../../../../Downloads/employee.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="32.0" layoutY="635.0">
+         <image>
+            <Image url="@../../../../../../Downloads/loan.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="35.0" layoutY="685.0">
+         <image>
+            <Image url="@../../../../../../Downloads/icons8-payment-80.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="37.0" layoutY="226.0">
+         <image>
+            <Image url="@../../../../../../Downloads/icons8-home-80.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="153.0" fitWidth="174.0" layoutX="24.0" layoutY="7.0">
+         <image>
+            <Image url="@../asserts/images/admin1.png" />
          </image>
       </ImageView>
    </children>

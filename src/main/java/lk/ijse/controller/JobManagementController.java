@@ -19,4 +19,8 @@ public class JobManagementController {
     public void btnSaveOnAction(ActionEvent actionEvent) {
 
     }
+
+    public void btnOnSaveAction(ActionEvent actionEvent) {
+
+    }
 }

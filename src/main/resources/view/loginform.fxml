@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginController">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.LoginController">
    <children>
       <ImageView fitHeight="607.0" fitWidth="900.0" layoutY="-2.0">
          <image>
@@ -41,7 +42,7 @@
                </stops>
             </LinearGradient>
          </stroke></Rectangle>
-      <Rectangle arcHeight="12.0" arcWidth="10.0" height="567.0" layoutX="418.0" layoutY="16.0" onDragDetected="#btnSingInOnAction" strokeLineCap="BUTT" width="467.0">
+      <Rectangle arcHeight="12.0" arcWidth="10.0" height="567.0" layoutX="418.0" layoutY="16.0" strokeLineCap="BUTT" width="467.0">
          <fill>
             <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
                <stops>
@@ -52,7 +53,7 @@
                   </Stop>
                   <Stop offset="1.0">
                      <color>
-                        <Color red="0.23157894611358643" green="0.06432748585939407" blue="0.06432748585939407" />
+                        <Color red="0.23137255012989044" green="0.062745101749897" blue="0.062745101749897" />
                      </color>
                   </Stop>
                </stops></LinearGradient>
@@ -83,15 +84,15 @@
             <Font name="System Bold" size="29.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#484747bf" height="52.0" layoutX="470.0" layoutY="216.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="345.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#594d4dbf" height="52.0" layoutX="472.0" layoutY="330.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="345.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#484747bf" height="39.0" layoutX="470.0" layoutY="229.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="345.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#594d4dbf" height="39.0" layoutX="472.0" layoutY="343.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="345.0" />
       <Text fill="WHITE" layoutX="461.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
       </Text>
-      <TextField fx:id="txtUserName" layoutX="469.0" layoutY="216.0" prefHeight="52.0" prefWidth="346.0" promptText="Enter your User name" style="-fx-border-color: black;" />
-      <TextField fx:id="txtPassword" layoutX="469.0" layoutY="330.0" prefHeight="52.0" prefWidth="346.0" promptText="Enter your password" style="-fx-border-color: black;" />
+      <TextField fx:id="txtUserName" layoutX="469.0" layoutY="229.0" prefHeight="39.0" prefWidth="346.0" promptText="Enter your User name" style="-fx-border-color: black;" />
+      <PasswordField fx:id="passwordField" layoutX="476.0" layoutY="341.0" prefHeight="39.0" prefWidth="346.0" promptText="Enter password" />
       <Text fx:id="txtForgetPassword" fill="WHITE" layoutX="702.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget password?" />
       <Text layoutX="583.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?" />
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="-2.0">
@@ -99,17 +100,17 @@
             <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="52.0" fitWidth="42.0" layoutX="765.0" layoutY="216.0">
+      <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="765.0" layoutY="229.0">
          <image>
             <Image url="@../asserts/icons/download (1).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="765.0" layoutY="336.0">
+      <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="772.0" layoutY="348.0">
          <image>
             <Image url="@../asserts/icons/download (2).png" />
          </image>
       </ImageView>
-      <Button layoutX="601.0" layoutY="413.0" mnemonicParsing="false" onAction="#btnLogInOnAction" text="Log In" />
-      <Button layoutX="617.0" layoutY="506.0" mnemonicParsing="false" onAction="#SingInOnAction" text="Sign In" />
+      <Button layoutX="618.0" layoutY="415.0" mnemonicParsing="false" onAction="#btnLogInOnAction" style="-fx-background-color: #41aef2;" text="Log In" textFill="WHITE" />
+      <Button layoutX="617.0" layoutY="506.0" mnemonicParsing="false" onAction="#btnSignInOnAction" style="-fx-background-color: #41aef2;" text="Sign In" textFill="WHITE" />
    </children>
 </AnchorPane>

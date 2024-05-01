@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -16,107 +15,9 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SupplierManagementController">
 
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="842.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="1382.0" />
-        <Rectangle fill="#faf5ebe3" height="824.0" layoutX="14.0" layoutY="1.0" stroke="#ccbea6" strokeType="INSIDE" width="188.0" />
-        <ImageView fitHeight="116.0" fitWidth="143.0" layoutX="592.0" layoutY="750.0">
-            <image>
-                <Image url="@../../../../../../Downloads/20240421_164310.png" />
-            </image>
-        </ImageView>
-        <JFXButton buttonType="RAISED" layoutX="24.0" layoutY="279.0" prefHeight="38.0" prefWidth="162.0" ripplerFill="#17c71d" style="-fx-background-color: #ECF87F;" text="           Booking" textFill="#199f1e">
-            <font>
-                <Font name="Calibri Bold" size="19.0" />
-            </font>
-        </JFXButton>
-        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="279.0">
-            <image>
-                <Image url="@../../../../../../Downloads/icons8-booking-80.png" />
-            </image>
-        </ImageView>
-        <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="349.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="              Customer" textFill="#199f1e">
-            <font>
-                <Font name="Calibri Bold" size="19.0" />
-            </font>
-        </JFXButton>
-        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="349.0">
-            <image>
-                <Image url="@../asserts/icons/icons8-customer-64.png" />
-            </image>
-        </ImageView>
-        <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="412.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="           Vehicle" textFill="#199f1e">
-            <font>
-                <Font name="Calibri Bold" size="19.0" />
-            </font>
-        </JFXButton>
-        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="413.0">
-            <image>
-                <Image url="@../asserts/icons/icons8-vehicle-50.png" />
-            </image>
-        </ImageView>
-        <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="474.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="       Job" textFill="#199f1e">
-            <font>
-                <Font name="Calibri Bold" size="19.0" />
-            </font>
-        </JFXButton>
-        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="474.0">
-            <image>
-                <Image url="@../asserts/icons/icons8-job-64.png" />
-            </image>
-        </ImageView>
-        <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="528.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="             Employee" textFill="#199f1e">
-            <font>
-                <Font name="Calibri Bold" size="19.0" />
-            </font>
-        </JFXButton>
-        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="528.0">
-            <image>
-                <Image url="@../asserts/icons/icons8-employee-50.png" />
-            </image>
-        </ImageView>
-        <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="583.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="               Supplier" textFill="#199f1e">
-            <font>
-                <Font name="Calibri Bold" size="19.0" />
-            </font>
-        </JFXButton>
-        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="583.0">
-            <image>
-                <Image url="@../asserts/icons/icons8-supplier-64.png" />
-            </image>
-        </ImageView>
-        <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="638.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="        Loan" textFill="#199f1e">
-            <font>
-                <Font name="Calibri Bold" size="19.0" />
-            </font>
-        </JFXButton>
-        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="638.0">
-            <image>
-                <Image url="@../asserts/icons/icons8-loan-96.png" />
-            </image>
-        </ImageView>
-        <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="742.0" layoutX="224.0" layoutY="40.0" stroke="#ccbea6" strokeType="INSIDE" width="996.0" />
-        <ImageView fitHeight="54.0" fitWidth="46.0" layoutX="77.0" layoutY="157.0">
-            <image>
-                <Image url="@../asserts/icons/icons8-homepage-80.png" />
-            </image>
-        </ImageView>
-        <JFXButton buttonType="RAISED" layoutX="34.0" layoutY="206.0" prefHeight="38.0" prefWidth="143.0" ripplerFill="#17c71d" style="-fx-background-color: #ECF87F;" text="Overview" textFill="#199f1e">
-            <font>
-                <Font name="Calibri Bold" size="19.0" />
-            </font>
-        </JFXButton>
-        <Text layoutX="33.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="methan welcome user enne" />
+        <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="844.0" layoutX="14.0" layoutY="33.0" stroke="#ccbea6" strokeType="INSIDE" width="1054.0" />
         <Text layoutX="1144.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welawa tyenne methna" />
-        <JFXButton buttonType="RAISED" layoutX="25.0" layoutY="695.0" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #ECF87F;" text="           Payment" textFill="#199f1e">
-            <font>
-                <Font name="Calibri Bold" size="19.0" />
-            </font>
-        </JFXButton>
-        <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="36.0" layoutY="695.0">
-            <image>
-                <Image url="@../asserts/icons/icons8-payment-64.png" />
-            </image>
-        </ImageView>
-      <TableView layoutX="234.0" layoutY="97.0" prefHeight="316.0" prefWidth="928.0">
+      <TableView layoutX="24.0" layoutY="90.0" prefHeight="316.0" prefWidth="928.0">
          <columns>
             <TableColumn prefWidth="164.79998779296875" text="Supplier ID">
                <cellValueFactory>
@@ -145,17 +46,17 @@
             </TableColumn>
          </columns>
       </TableView>
-      <TextField layoutX="371.0" layoutY="47.0" text="Supplier Management">
+      <TextField layoutX="161.0" layoutY="40.0" text="Supplier Management">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </TextField>
-      <TextField layoutX="378.0" layoutY="424.0" text="Inventory Management">
+      <TextField layoutX="168.0" layoutY="417.0" text="Inventory Management">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </TextField>
-      <TableView layoutX="234.0" layoutY="482.0" prefHeight="277.0" prefWidth="928.0">
+      <TableView layoutX="24.0" layoutY="475.0" prefHeight="277.0" prefWidth="928.0">
          <columns>
             <TableColumn prefWidth="164.79998779296875" text="Supplier ID">
                <cellValueFactory>
@@ -184,19 +85,24 @@
             </TableColumn>
          </columns>
       </TableView>
-      <Button fx:id="btnAddFuel" layoutX="750.0" layoutY="52.0" mnemonicParsing="false" onAction="#btnAddFuelOnAction" prefHeight="41.0" prefWidth="76.0" style="-fx-background-color: #ECF87F;" text="ADD">
+      <Button fx:id="btnAddSupplier" layoutX="540.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnAddSupplierOnAction" prefHeight="41.0" prefWidth="76.0" style="-fx-background-color: #ECF87F;" text="ADD">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="btnAddFuel1" layoutX="750.0" layoutY="429.0" mnemonicParsing="false" onAction="#btnAddFuelOnAction" prefHeight="41.0" prefWidth="76.0" style="-fx-background-color: #ECF87F;" text="ADD">
+      <Button fx:id="btnAddInventory" layoutX="540.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnAddInventoryOnAction" prefHeight="41.0" prefWidth="76.0" style="-fx-background-color: #ECF87F;" text="ADD">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <ImageView fitHeight="51.0" fitWidth="55.0" layoutX="303.0" layoutY="47.0">
+      <ImageView fitHeight="51.0" fitWidth="55.0" layoutX="93.0" layoutY="40.0">
          <image>
             <Image url="@../asserts/icons/icons8-supplier-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="138.0" fitWidth="148.0" layoutX="423.0" layoutY="739.0">
+         <image>
+            <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
       </ImageView>
     </children>
