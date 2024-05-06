@@ -19,11 +19,6 @@
             <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
       </ImageView>
-      <Button fx:id="bookingPane" layoutX="32.0" layoutY="293.0" mnemonicParsing="false" onAction="#btnManageBookingOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Booking">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
       <Button fx:id="paymentPane" layoutX="30.0" layoutY="688.0" mnemonicParsing="false" onAction="#btnManagePaymentOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="         Payment">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -78,11 +73,6 @@
       <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="35.0" layoutY="471.0">
          <image>
             <Image url="@../asserts/icons/icons8-job-80.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="40.0" layoutY="298.0">
-         <image>
-            <Image url="@../asserts/icons/booking.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="37.0" layoutY="528.0">

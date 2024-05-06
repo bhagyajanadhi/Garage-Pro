@@ -1,10 +1,17 @@
 package lk.ijse.controller;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.dto.EmployeeDto;
+import lk.ijse.model.Customer;
 import lk.ijse.model.Employee;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeManagementController {
 
@@ -42,7 +49,7 @@ public class EmployeeManagementController {
     private Button savpane;
 
     @FXML
-    private TableView<?> tblEmployee;
+    private TableView<EmployeeDto> tblEmployee;
 
     @FXML
     private TextField txtEmployeeAddress;
@@ -65,13 +72,49 @@ public class EmployeeManagementController {
     @FXML
     private Button updatepane;
 
+    private List<EmployeeDto> employeeList = new ArrayList<>();
+    public void initialize() throws SQLException, ClassNotFoundException {
+        colId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
+        colJobId.setCellValueFactory(new PropertyValueFactory<>("jobId"));
+        colSalaryId.setCellValueFactory(new PropertyValueFactory<>("salary"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colSkills.setCellValueFactory(new PropertyValueFactory<>("skills"));
+       colContactInformation.setCellValueFactory(new PropertyValueFactory<>("contactinformation"));
+        getAllEmployee();
+
+    }
+
+    private void getAllEmployee() throws SQLException, ClassNotFoundException {
+        employeeList =Employee.getAll();
+       tblEmployee.setItems(FXCollections.observableList(this.employeeList));
+
+    }
+
     @FXML
     void btnClearOnAction(ActionEvent event) {
+        txtEmployeeId.setText("");
+        cmbJobId.setValue(null);
+        txtEmployeeSalary.setText("");
+        txtEmployeeName.setText("");
+        txtEmployeeSkills.setText("");
+        txtEmployeeContactInfromation.setText("");
 
     }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+        String employeeId = txtEmployeeId.getText();
+        try {
+            boolean isDeleted = Customer.delete(employeeId);
+            if (isDeleted) {
+                new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 
@@ -79,22 +122,48 @@ public class EmployeeManagementController {
     void btnSaveOnAction(ActionEvent event) {
 
         String employeeId = txtEmployeeId.getText();
+        String jobId = (String) cmbJobId.getValue();
         double salary = Double.parseDouble(txtEmployeeSalary.getText());
         String name = txtEmployeeName.getText();
-        String skill = txtEmployeeSkills.getText();
+        String skills = txtEmployeeSkills.getText();
         String contactInfromation = txtEmployeeContactInfromation.getText();
 
-        Employee employee = new Employee();
-        int i = employee.saveEmpolyee(new EmployeeDto(employeeId,salary,name,skill,contactInfromation));
-        if (i > 0) {
-            new Alert(Alert.AlertType.CONFIRMATION, "save Customer..!").show();
+        EmployeeDto employeedto = new EmployeeDto(employeeId,jobId,salary,name,skills,contactInfromation);
 
-        } else {
-            new Alert(Alert.AlertType.ERROR, "Something Wrong..!").show();
+        boolean isSaved = false;
+        try {
+            isSaved = Employee.save(employeedto);
+            if (isSaved){
+                new Alert(Alert.AlertType. CONFIRMATION,"Succsessful").show();
+                getAllEmployee();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"Error").show();
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
         }
 
-        }
+    public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
+
+        String employeeId = txtEmployeeId.getText();
+        String jobId = (String) cmbJobId.getValue();
+        double salary = Double.parseDouble(txtEmployeeSalary.getText());
+        String name = txtEmployeeName.getText();
+        String skills = txtEmployeeSkills.getText();
+        String contactInformation= txtEmployeeContactInfromation.getText();
+
+          EmployeeDto employeedto = new EmployeeDto(employeeId,jobId,salary,name,skills,contactInformation);
+        boolean isUpdated = Employee.update(employeedto);
+        if (isUpdated) {
+            new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
+        }
     }
+
+}
 
 
