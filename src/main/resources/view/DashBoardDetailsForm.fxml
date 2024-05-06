@@ -13,13 +13,18 @@
    <children>
       <TextField fx:id="txtField" layoutX="37.0" layoutY="160.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="800.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
-      <Rectangle fill="#faf5ebe3" height="800.0" layoutX="12.0" layoutY="-1.0" stroke="#6b5430" strokeType="INSIDE" style="-fx-fill: #DBA979;" width="198.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="800.0" stroke="WHITE" strokeType="INSIDE" width="200.0" />
       <ImageView fitHeight="116.0" fitWidth="143.0" layoutX="606.0" layoutY="696.0">
          <image>
             <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
       </ImageView>
-      <Button fx:id="paymentPane" layoutX="30.0" layoutY="688.0" mnemonicParsing="false" onAction="#btnmanagePaymentOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="         Payment">
+      <Button fx:id="bookingPane" layoutX="32.0" layoutY="293.0" mnemonicParsing="false" onAction="#btnManageBookingOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Booking">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="paymentPane" layoutX="30.0" layoutY="688.0" mnemonicParsing="false" onAction="#btnManagePaymentOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="         Payment">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -34,87 +39,75 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="vehiclePane" layoutX="34.0" layoutY="407.0" mnemonicParsing="false" onAction="#dtnmanageVehicleOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="        Vehicle">
+      <Button fx:id="vehiclePane" layoutX="34.0" layoutY="407.0" mnemonicParsing="false" onAction="#dtnManageVehicleOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="        Vehicle">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="jobPane" layoutX="34.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnmanageJobOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="     Job">
+      <Button fx:id="jobPane" layoutX="34.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnManageJobOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="     Job">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="employeePane" layoutX="34.0" layoutY="525.0" mnemonicParsing="false" onAction="#btnmanageEmployeeOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="    Employee">
+      <Button fx:id="employeePane" layoutX="34.0" layoutY="525.0" mnemonicParsing="false" onAction="#btnManageEmployeeOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="    Employee">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="supplierPane" layoutX="32.0" layoutY="581.0" mnemonicParsing="false" onAction="#btnmanageSupplierOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="     Supplier">
+      <Button fx:id="supplierPane" layoutX="32.0" layoutY="581.0" mnemonicParsing="false" onAction="#btnManageSupplierOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="     Supplier">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="loanPane" layoutX="32.0" layoutY="635.0" mnemonicParsing="false" onAction="#btnmanageLoanOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Loan">
+      <Button fx:id="loanPane" layoutX="32.0" layoutY="635.0" mnemonicParsing="false" onAction="#btnManageLoanOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Loan">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Pane fx:id="mainPain" layoutX="237.0" layoutY="14.0" prefHeight="844.0" prefWidth="1054.0">
-         <children>
-            <ImageView fitHeight="716.0" fitWidth="1072.0" layoutX="-29.0" layoutY="-16.0">
-               <image>
-                  <Image url="@../../../../../../Downloads/garage%202.png" />
-               </image>
-            </ImageView>
-         </children></Pane>
+      <Pane fx:id="mainPain" layoutX="237.0" layoutY="-3.0" prefHeight="844.0" prefWidth="1054.0" />
       <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="32.0" layoutY="344.0">
          <image>
-            <Image url="@../../../../../../Downloads/customer.png" />
+            <Image url="@../asserts/icons/customer.png" />
          </image>
       </ImageView>
-      <Button fx:id="customerPane1" layoutX="32.0" layoutY="293.0" mnemonicParsing="false" onAction="#btnManageCustomerOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Booking">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Button>
       <ImageView layoutX="39.0" layoutY="401.0">
          <image>
-            <Image url="@../../../../../../Downloads/vehicle.png" />
+            <Image url="@../asserts/icons/vehicle.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="35.0" layoutY="471.0">
          <image>
-            <Image url="@../../../../../../Downloads/icons8-job-80.png" />
+            <Image url="@../asserts/icons/icons8-job-80.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="40.0" layoutY="298.0">
          <image>
-            <Image url="@../../../../../../Downloads/booking.png" />
+            <Image url="@../asserts/icons/booking.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="37.0" layoutY="528.0">
          <image>
-            <Image url="@../../../../../../Downloads/supplier.png" />
+            <Image url="@../asserts/icons/supplier.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="38.0" fitWidth="46.0" layoutX="34.0" layoutY="584.0">
          <image>
-            <Image url="@../../../../../../Downloads/employee.png" />
+            <Image url="@../asserts/icons/employee.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="32.0" layoutY="635.0">
          <image>
-            <Image url="@../../../../../../Downloads/loan.png" />
+            <Image url="@../asserts/icons/loan.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="35.0" layoutY="685.0">
          <image>
-            <Image url="@../../../../../../Downloads/icons8-payment-80.png" />
+            <Image url="@../asserts/icons/icons8-payment-80.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="37.0" layoutY="226.0">
          <image>
-            <Image url="@../../../../../../Downloads/icons8-home-80.png" />
+            <Image url="@../asserts/icons/icons8-home-80.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="153.0" fitWidth="174.0" layoutX="24.0" layoutY="7.0">

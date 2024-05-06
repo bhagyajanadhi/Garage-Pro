@@ -60,7 +60,7 @@
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="162.0" layoutY="491.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" style="-fx-background-color: #ECF87F;" text="Clear">
+            <Button layoutX="162.0" layoutY="491.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="36.0" prefWidth="96.0" style="-fx-background-color: #ECF87F;" text="Clear">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
@@ -80,32 +80,37 @@
                   <Image url="@../asserts/icons/delete-30.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="162.0" layoutY="494.0">
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="159.0" layoutY="494.0">
                <image>
                   <Image url="@../asserts/icons/clear-30.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="160.0" layoutY="444.0">
+               <image>
+                  <Image url="@../asserts/icons/update-.png" />
                </image>
             </ImageView>
          </children>
       </Group>
         <Text layoutX="1144.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welawa tyenne methna" />
-      <TableView layoutX="402.0" layoutY="158.0" prefHeight="498.0" prefWidth="540.0">
+      <TableView fx:id="bookingTable" layoutX="402.0" layoutY="158.0" prefHeight="498.0" prefWidth="540.0">
          <columns>
-            <TableColumn prefWidth="119.2000732421875" text="Booking ID">
+            <TableColumn fx:id="colBookingId" prefWidth="119.2000732421875" text="Booking ID">
                <cellValueFactory>
                   <PropertyValueFactory property="bookingId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="130.4000244140625" text="Date">
+            <TableColumn fx:id="colCustomer" prefWidth="130.4000244140625" text="CustomerId">
                <cellValueFactory>
                   <PropertyValueFactory property="date" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="137.60009765625" text="Vehicle ID">
+            <TableColumn fx:id="colVehicleId" prefWidth="137.60009765625" text="Vehicle ID">
                <cellValueFactory>
                   <PropertyValueFactory property="vehicleId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="149.5999755859375" text="Customer ID">
+            <TableColumn fx:id="colDate" prefWidth="149.5999755859375" text="Date">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>
@@ -114,11 +119,6 @@
       </TableView>
       <DatePicker fx:id="dpDate" layoutX="66.0" layoutY="292.0" prefHeight="37.0" prefWidth="230.0" />
       <ComboBox fx:id="cmbVehicleId" layoutX="58.0" layoutY="496.0" prefHeight="26.0" prefWidth="230.0" />
-      <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="181.0" layoutY="572.0">
-         <image>
-            <Image url="@../asserts/icons/update-.png" />
-         </image>
-      </ImageView>
       <TextField layoutX="402.0" layoutY="24.0" prefHeight="78.0" prefWidth="428.0" text="Booking Management">
          <font>
             <Font name="System Bold Italic" size="37.0" />

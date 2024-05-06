@@ -79,38 +79,41 @@
             <Font name="Unispace-Bold" size="56.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="450.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name">
+      <Text fill="WHITE" layoutX="472.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" wrappingWidth="151.3294677734375">
          <font>
-            <Font name="System Bold" size="29.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#484747bf" height="39.0" layoutX="470.0" layoutY="229.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="345.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#594d4dbf" height="39.0" layoutX="472.0" layoutY="343.0" stroke="BLACK" strokeLineJoin="ROUND" strokeType="INSIDE" width="345.0" />
-      <Text fill="WHITE" layoutX="461.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+      <Text fill="WHITE" layoutX="472.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
          <font>
-            <Font name="System Bold" size="29.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Text>
       <TextField fx:id="txtUserName" layoutX="469.0" layoutY="229.0" prefHeight="39.0" prefWidth="346.0" promptText="Enter your User name" style="-fx-border-color: black;" />
       <PasswordField fx:id="passwordField" layoutX="476.0" layoutY="341.0" prefHeight="39.0" prefWidth="346.0" promptText="Enter password" />
       <Text fx:id="txtForgetPassword" fill="WHITE" layoutX="702.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget password?" />
-      <Text layoutX="583.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?" />
+      <Text fill="WHITE" layoutX="583.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account?" />
       <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="-2.0">
          <image>
             <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="39.0" fitWidth="42.0" layoutX="765.0" layoutY="229.0">
+      <ImageView fitHeight="24.0" fitWidth="25.0" layoutX="777.0" layoutY="237.0">
          <image>
             <Image url="@../asserts/icons/download (1).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="772.0" layoutY="348.0">
+      <ImageView fitHeight="24.0" fitWidth="25.0" layoutX="777.0" layoutY="351.0">
          <image>
             <Image url="@../asserts/icons/download (2).png" />
          </image>
       </ImageView>
-      <Button layoutX="618.0" layoutY="415.0" mnemonicParsing="false" onAction="#btnLogInOnAction" style="-fx-background-color: #41aef2;" text="Log In" textFill="WHITE" />
+      <Button layoutX="618.0" layoutY="415.0" mnemonicParsing="false" onAction="#btnLogInOnAction" style="-fx-background-color: #41aef2; -fx-background-radius: 15;" text="Log In" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
       <Button layoutX="617.0" layoutY="506.0" mnemonicParsing="false" onAction="#btnSignInOnAction" style="-fx-background-color: #41aef2;" text="Sign In" textFill="WHITE" />
    </children>
 </AnchorPane>

@@ -18,10 +18,10 @@
          <children>
             <Pane layoutX="36.0" layoutY="73.0" prefHeight="478.0" prefWidth="551.0">
                <children>
-                  <TextField fx:id="txtMachineId" layoutX="276.0" layoutY="13.0" onMouseClicked="#txtMachineIdOnAction" prefHeight="24.0" prefWidth="235.0"/>
-                  <TextField fx:id="txtAvailability" layoutX="276.0" layoutY="123.0" prefHeight="24.0" prefWidth="235.0"/>
-                  <TextField fx:id="txtStartFuel" layoutX="276.0" layoutY="175.0" prefHeight="24.0" prefWidth="235.0"/>
-                  <TextField fx:id="txtEndFuel" layoutX="276.0" layoutY="266.0" prefHeight="24.0" prefWidth="235.0"/>
+                  <TextField fx:id="txtInventoryId" layoutX="276.0" layoutY="13.0" onMouseClicked="#txtMachineIdOnAction" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtPartName" layoutX="276.0" layoutY="123.0" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtStockLevel" layoutX="276.0" layoutY="175.0" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtDescription" layoutX="276.0" layoutY="266.0" prefHeight="24.0" prefWidth="235.0" />
                   <Text layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory Id:" wrappingWidth="151.0">
                      <font>
                         <Font name="Dyuthi Regular" size="26.0" />
@@ -50,13 +50,13 @@
                         <Font name="Dyuthi Regular" size="26.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="txtEndFuel1" layoutX="276.0" layoutY="227.0" prefHeight="24.0" prefWidth="235.0"/>
+                  <TextField fx:id="txtUnitePrice" layoutX="276.0" layoutY="227.0" prefHeight="24.0" prefWidth="235.0" />
                   <Text layoutX="14.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Id:" wrappingWidth="151.0">
                      <font>
                         <Font name="Dyuthi Regular" size="26.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="txtMachineId1" layoutX="276.0" layoutY="73.0" onMouseClicked="#txtMachineIdOnAction" prefHeight="24.0" prefWidth="235.0"/>
+                  <TextField fx:id="txtSupplierId" layoutX="276.0" layoutY="73.0" onMouseClicked="#txtMachineIdOnAction" prefHeight="24.0" prefWidth="235.0" />
                   <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="445.0" layoutY="422.0">
                      <image>
                         <Image url="@../asserts/icons/update-.png" />

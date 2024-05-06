@@ -13,10 +13,10 @@ public class PaymentManagementController {
     public void btnClearOnAction(ActionEvent actionEvent) {
     }
 
-    public void btnOnAction(ActionEvent actionEvent) {
-    }
-
     public void btnSaveOnAction(ActionEvent actionEvent) {
 
+    }
+
+    public void btnUpdateOnAction(MouseEvent mouseEvent) {
     }
 }

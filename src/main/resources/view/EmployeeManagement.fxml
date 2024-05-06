@@ -7,7 +7,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -74,9 +73,9 @@
                </font>
             </Button>
             <TextField fx:id="txtEmployeeAddress" layoutX="589.0" layoutY="54.0" prefHeight="35.0" prefWidth="285.0" />
-            <TextField fx:id="txtEmployeeRole" layoutX="101.0" layoutY="54.0" prefHeight="35.0" prefWidth="285.0" />
+            <TextField fx:id="txtEmployeeName" layoutX="101.0" layoutY="54.0" prefHeight="35.0" prefWidth="285.0" />
             <TextField fx:id="txtEmployeeSalary" layoutX="589.0" layoutY="101.0" prefHeight="35.0" prefWidth="285.0" />
-            <TextField fx:id="txtEmployeeAge" layoutX="235.0" layoutY="134.0" prefHeight="35.0" prefWidth="285.0" />
+            <TextField fx:id="txtEmployeeContactInfromation" layoutX="235.0" layoutY="134.0" prefHeight="35.0" prefWidth="285.0" />
             <Button fx:id="dtlpane" layoutX="195.0" layoutY="195.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="116.0" style="-fx-background-color: #ECF87F;" text="Delete">
                <font>
                   <Font size="19.0" />
@@ -92,24 +91,9 @@
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button fx:id="rppane1" layoutX="619.0" layoutY="195.0" mnemonicParsing="false" onAction="#btnReportOnAction" prefHeight="43.0" prefWidth="123.0" style="-fx-background-color: #ECF87F;" text="View Report">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView>
-                     <image>
-                        <Image url="@../asserts/icons/repo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </Button>
-            <TextField fx:id="txtEmployeeRole1" layoutX="161.0" layoutY="16.0" prefHeight="35.0" prefWidth="285.0" />
-            <TextField fx:id="txtEmployeeAddress1" layoutX="538.0" layoutY="10.0" prefHeight="35.0" prefWidth="285.0" />
-            <ComboBox fx:id="cmbOrderId" layoutX="111.0" layoutY="101.0" prefHeight="26.0" prefWidth="230.0" />
+            <TextField fx:id="txtEmployeeId" layoutX="161.0" layoutY="16.0" prefHeight="35.0" prefWidth="285.0" />
+            <TextField fx:id="txtEmployeeSkills" layoutX="538.0" layoutY="10.0" prefHeight="35.0" prefWidth="285.0" />
+            <ComboBox fx:id="cmbJobId" layoutX="111.0" layoutY="101.0" prefHeight="26.0" prefWidth="230.0" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="104.0" layoutY="235.0">
                <image>
                   <Image url="@../asserts/icons/save-64.png" />
@@ -132,39 +116,39 @@
             </ImageView>
          </children>
       </Pane>
-      <TableView layoutX="29.0" layoutY="437.0" prefHeight="277.0" prefWidth="964.0">
+      <TableView fx:id="tblEmployee" layoutX="29.0" layoutY="437.0" prefHeight="277.0" prefWidth="964.0">
          <columns>
-            <TableColumn prefWidth="104.00003051757812" text="Employee ID">
+            <TableColumn fx:id="colId" prefWidth="104.00003051757812" text="Employee ID">
                <cellValueFactory>
                   <PropertyValueFactory property="bookingId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="122.4000244140625" text="Name">
+            <TableColumn fx:id="colJobId" prefWidth="122.4000244140625" text="JobId">
                <cellValueFactory>
                   <PropertyValueFactory property="date" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="111.19998168945312" text="Job ID">
+            <TableColumn fx:id="colSalaryId" prefWidth="111.19998168945312" text="Salary">
                <cellValueFactory>
                   <PropertyValueFactory property="vehicleId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="156.800048828125" text="Contact Infromation">
+            <TableColumn fx:id="colName" prefWidth="156.800048828125" text="Name">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="148.79998779296875" text="Skills">
+            <TableColumn fx:id="colSkills" prefWidth="148.79998779296875" text="Skills">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="159.99993896484375" text="Address">
+            <TableColumn fx:id="colContactInformation" prefWidth="159.99993896484375" text="ContactInfromation">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="189.60009765625" text="Salary">
+            <TableColumn fx:id="colEmail" prefWidth="189.60009765625" text="Email">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>

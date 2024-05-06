@@ -19,4 +19,8 @@ public class LoanManagementController {
     public void btnDeleteOnAction(ActionEvent actionEvent) {
 
     }
+
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+
+    }
 }
