@@ -53,12 +53,7 @@
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="colVehicleId" prefWidth="195.19989013671875" text="VehicleId">
-               <cellValueFactory>
-                  <PropertyValueFactory property="customerId" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="198.4000244140625" text="Vehicle ID">
+            <TableColumn fx:id="colVehicleId" minWidth="0.0" prefWidth="193.60001220703123" text="VehicleId">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>

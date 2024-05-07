@@ -58,21 +58,14 @@ public class Employee {
 
     }
 
-    public int saveEmpolyee(EmployeeDto employeeDto) {
-        try {
-            Connection connection = Dbconnection.getInstance().getConnection();
-            PreparedStatement pstm =connection.prepareStatement("insert into customer values(?,?,?,?,?,?)");
-            pstm.setObject(1,employeeDto.getEmployeeId());
-            pstm.setObject(2,employeeDto.getJobId());
-            pstm.setObject(3,employeeDto.getSalary());
-            pstm.setObject(4,employeeDto.getName());
-            pstm.setObject(5,employeeDto.getSkills());
-            pstm.setObject(6,employeeDto.getContactInfromation());
 
+    public static boolean delete(String employeeId) throws SQLException, ClassNotFoundException {
+        String sql = "DELETE FROM employee WHERE employeeId = ?";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection()
+                .prepareStatement(sql);
 
-            return pstm.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        pstm.setObject(1,employeeId);
+
+        return pstm.executeUpdate() > 0;
     }
 }

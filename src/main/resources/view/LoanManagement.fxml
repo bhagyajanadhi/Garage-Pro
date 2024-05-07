@@ -35,7 +35,7 @@
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtPayId" layoutX="39.0" layoutY="60.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
+            <TextField fx:id="txtLoanId" layoutX="39.0" layoutY="60.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
             <Text layoutX="8.0" layoutY="117.259765625" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="125.99999999999989">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
@@ -46,7 +46,7 @@
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <ComboBox fx:id="cmbOrderId" layoutX="34.0" layoutY="211.0" prefHeight="26.0" prefWidth="230.0" />
+            <ComboBox fx:id="cmbSupplierId" layoutX="34.0" layoutY="211.0" prefHeight="26.0" prefWidth="230.0" />
             <Text layoutX="8.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount:" wrappingWidth="125.99999999999989">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
@@ -71,13 +71,13 @@
                   <Image url="@../asserts/icons/download (4).png" />
                </image>
             </ImageView>
-            <TextField fx:id="txtPayId1" layoutX="34.0" layoutY="294.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
+            <TextField fx:id="txtAmount" layoutX="34.0" layoutY="294.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
             <Text layoutX="8.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Status:" wrappingWidth="189.20001220703114">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtPayId11" layoutX="34.0" layoutY="376.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
+            <TextField fx:id="txtPaymentStatus" layoutX="34.0" layoutY="376.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="205.0" layoutY="526.0">
                <image>
                   <Image url="@../asserts/icons/clear-30.png" />
@@ -90,29 +90,29 @@
             </ImageView>
          </children>
       </Group>
-      <TableView layoutX="334.0" layoutY="189.0" prefHeight="498.0" prefWidth="649.0">
+      <TableView fx:id="tblLoan" layoutX="334.0" layoutY="189.0" prefHeight="498.0" prefWidth="649.0">
          <columns>
-            <TableColumn prefWidth="119.2000732421875" text="Loan ID">
+            <TableColumn fx:id="colLoanId" prefWidth="119.2000732421875" text="Loan ID">
                <cellValueFactory>
                   <PropertyValueFactory property="bookingId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="111.20001220703125" text="Date">
+            <TableColumn fx:id="colAmount" prefWidth="111.20001220703125" text="Amount">
                <cellValueFactory>
                   <PropertyValueFactory property="date" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="116.0" text="Supplier ID">
+            <TableColumn fx:id="colSupplierId" prefWidth="116.0" text="Supplier ID">
                <cellValueFactory>
                   <PropertyValueFactory property="vehicleId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="138.40008544921875" text="Amount">
+            <TableColumn fx:id="colDueDates" prefWidth="138.40008544921875" text="Due Dates">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="204.0" text="Payment Status">
+            <TableColumn fx:id="colPaymentStatus" prefWidth="204.0" text="Payment Status">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>

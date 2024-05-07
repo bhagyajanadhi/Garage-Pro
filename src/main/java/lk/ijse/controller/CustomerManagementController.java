@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.dto.CustomerDto;
-import lk.ijse.dto.dtoTm.CustomerDtoTm;
 import lk.ijse.model.Customer;
 
 import java.sql.SQLException;
@@ -61,7 +60,7 @@ public class CustomerManagementController {
 
     @FXML
     private TextField txtcustomer;
-    private List<CustomerDto> customerList = new ArrayList<CustomerDto>();
+    private List<CustomerDto> customerList = new ArrayList<>();
 
     public void initialize() throws SQLException, ClassNotFoundException {
         colId.setCellValueFactory(new PropertyValueFactory<>("customerId"));

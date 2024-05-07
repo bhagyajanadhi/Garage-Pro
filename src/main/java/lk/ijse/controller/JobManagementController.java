@@ -6,14 +6,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import lk.ijse.dto.EmployeeDto;
 import lk.ijse.dto.JobDto;
-import lk.ijse.model.Customer;
-import lk.ijse.model.Employee;
 import lk.ijse.model.Job;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class JobManagementController {
@@ -51,15 +50,15 @@ public class JobManagementController {
     private Button dtlpane;
 
     @FXML
-    private TableView<?> tblJob;
+    private TableView<JobDto> tblJob;
 
     @FXML
     private TextField txtDescriotion;
 
     @FXML
     private TextField txtJobId;
+    private List<JobDto> jobList = new ArrayList<JobDto>();
 
-    private List<JobDto> jobList = new ArrayList<>();
 
     public void initialize() throws SQLException, ClassNotFoundException {
         colJobId.setCellValueFactory(new PropertyValueFactory<>("jobId"));
@@ -70,34 +69,63 @@ public class JobManagementController {
         getAllJob();
     }
 
+    private void getAllJob() throws SQLException, ClassNotFoundException {
+        jobList = Job.getAll();
+        tblJob.setItems(FXCollections.observableList(this.jobList));
+    }
+
     public void btnClearOnAction(ActionEvent actionEvent) {
         txtJobId.setText("");
         cmbEmployeeId.setDisable(true);
         txtDescriotion.setText("");
-        dpDate.setDisable(true);
+        dpDate.setValue(null);
         cmbVehicleId.setDisable(true);
 
     }
 
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
+    public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
-        String jobId = txtJobId.getId();
-        boolean isDeleted = Job.delete(jobId);
-        if (isDeleted) {
-            new Alert(Alert.AlertType.CONFIRMATION, " deleted!").show();
+        String jobId = txtJobId.getText();
+        try {
+            boolean isDeleted =Job.delete(jobId);
+            if (isDeleted) {
+                new Alert(Alert.AlertType.CONFIRMATION, "deleted!").show();
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
-
     }
-
     public void btnOnUpdateAction(ActionEvent actionEvent) {
-    }
+        String jobId = txtJobId.getText();
+        String employeeId = (String) cmbEmployeeId.getValue();
+        String description = txtDescriotion.getText();
+        LocalDate date = dpDate.getValue();
+        String vehicleId = (String) cmbVehicleId.getValue();
+        JobDto jobDto = new JobDto(jobId, employeeId, description, date, vehicleId);
+        boolean isUpdated = false;
+        try {
+            isUpdated = Job.update(jobDto);
+            if (isUpdated) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Succsessful").show();
+                getAllJob();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Error").show();
+            }
 
-    public void btnOnSaveAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+        public void btnOnSaveAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
         String jobId = txtJobId.getText();
         String employeeId = (String) cmbEmployeeId.getValue();
         String description = txtDescriotion.getText();
-        String date = String.valueOf(dpDate.getValue());
+        LocalDate date = LocalDate.parse(String.valueOf(dpDate.getValue()));
         String vehicleId = (String) cmbVehicleId.getValue();
         JobDto jobDto = new JobDto(jobId, employeeId, description, date, vehicleId);
         boolean isSaved = false;
@@ -110,10 +138,6 @@ public class JobManagementController {
         }
     }
 
-    private void getAllJob() {
-        jobList = Job.getAll();
-        tblJob.setItems(FXCollections.observableList(this.jobList));
-    }
 
 
     public void txtPayIdOnAction(MouseEvent mouseEvent) {

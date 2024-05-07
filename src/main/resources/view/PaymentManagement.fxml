@@ -30,34 +30,34 @@
       <Group layoutX="26.0" layoutY="157.0">
          <children>
             <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="581.0" layoutX="-6.0" layoutY="-11.0" stroke="#ccbea6" strokeType="INSIDE" width="283.0" />
-            <Text layoutX="11.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Id :" wrappingWidth="137.7294921875">
+            <Text layoutX="11.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Job Id :" wrappingWidth="137.7294921875">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtPayId" layoutX="39.0" layoutY="60.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
-            <Text layoutX="8.0" layoutY="117.259765625" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="125.99999999999989">
+            <Text layoutX="8.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="125.99999999999989">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <Text layoutX="8.0" layoutY="233.259765625" strokeType="OUTSIDE" strokeWidth="0.0" text="Job Id:" wrappingWidth="125.99999999999989">
+            <Text layoutX="-1.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount:" wrappingWidth="125.99999999999989">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <ComboBox fx:id="cmbOrderId" layoutX="34.0" layoutY="266.0" prefHeight="26.0" prefWidth="230.0" />
-            <Text layoutX="8.0" layoutY="333.259765625" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount:" wrappingWidth="125.99999999999989">
-               <font>
-                  <Font name="Dyuthi Regular" size="22.0" />
-               </font>
-            </Text>
-            <TextField fx:id="txtPayId1" layoutX="39.0" layoutY="350.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
-            <DatePicker fx:id="dpDate" layoutX="39.0" layoutY="145.0" prefHeight="37.0" prefWidth="230.0" />
+            <TextField fx:id="txtamount" layoutX="34.0" layoutY="262.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
+            <DatePicker fx:id="dpDate" layoutX="34.0" layoutY="372.0" prefHeight="37.0" prefWidth="230.0" />
             <Button fx:id="savePane" layoutX="62.0" layoutY="446.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Confirm" />
             <Button fx:id="updatePane" layoutX="178.0" layoutY="446.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Update" />
             <Button fx:id="clearPane" layoutX="62.0" layoutY="503.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear" />
             <Button fx:id="dtlPane" layoutX="178.0" layoutY="503.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Delete" />
+            <TextField fx:id="txtPaymentId" layoutX="39.0" layoutY="156.0" prefHeight="35.0" prefWidth="230.0" />
+            <Text layoutX="11.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Id :" wrappingWidth="137.7294921875">
+               <font>
+                  <Font name="Dyuthi Regular" size="22.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="cmdJobId" layoutX="34.0" layoutY="50.0" prefWidth="150.0" />
          </children>
       </Group>
       <TextField layoutX="370.0" layoutY="25.0" prefHeight="78.0" prefWidth="428.0" text="Payment Management">
@@ -65,24 +65,24 @@
             <Font name="System Bold Italic" size="37.0" />
          </font>
       </TextField>
-      <TableView layoutX="409.0" layoutY="187.0" prefHeight="498.0" prefWidth="540.0">
+      <TableView fx:id="tblPayment" layoutX="351.0" layoutY="173.0" prefHeight="498.0" prefWidth="642.0">
          <columns>
-            <TableColumn prefWidth="119.2000732421875" text="Payment ID">
+            <TableColumn fx:id="colJobId" prefWidth="185.60000610351562" text="JobId">
                <cellValueFactory>
                   <PropertyValueFactory property="bookingId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="130.4000244140625" text="Date">
+            <TableColumn fx:id="colPaymentId" prefWidth="148.0" text="PaymentId">
                <cellValueFactory>
                   <PropertyValueFactory property="date" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="137.60009765625" text="JOb ID">
+            <TableColumn fx:id="colAmount" minWidth="0.0" prefWidth="111.20001220703125" text="Amount">
                <cellValueFactory>
-                  <PropertyValueFactory property="vehicleId" />
+                  <PropertyValueFactory property="customerId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="149.5999755859375" text="Amount">
+            <TableColumn fx:id="colDate" prefWidth="300.00006103515625" text="Date">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>

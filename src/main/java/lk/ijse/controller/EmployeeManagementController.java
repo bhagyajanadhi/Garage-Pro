@@ -105,7 +105,7 @@ public class EmployeeManagementController {
     void btnDeleteOnAction(ActionEvent event) {
         String employeeId = txtEmployeeId.getText();
         try {
-            boolean isDeleted = Customer.delete(employeeId);
+            boolean isDeleted = Employee.delete(employeeId);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
             }

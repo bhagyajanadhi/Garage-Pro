@@ -3,6 +3,7 @@ package lk.ijse.model;
 
 import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.CustomerDto;
+import lk.ijse.dto.JobDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -90,6 +91,8 @@ public class Customer {
         pstm.setObject(5,dto.getCustomerEmail());
         return pstm.executeUpdate() > 0;
     }
+
+
 }
 
 

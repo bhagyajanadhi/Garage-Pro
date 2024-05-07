@@ -23,24 +23,40 @@ public class DashBoardDetailsFormController implements Initializable {
     public Pane mainPain;
 
     public void btnManageDashBoarOnAction(ActionEvent actionEvent) {
-    setUi("DashBoardPaneForm");
+        setUi("DashBoardPaneForm");
+    }
+
+    public void btnManageBookingOnAction(ActionEvent actionEvent) {
+        setUi("BookingManagementController");
     }
 
     public void btnManageCustomerOnAction(ActionEvent actionEvent) {
-   setUi("CustomerManagement");
+        setUi("CustomerManagement");
     }
 
-    public void btnManagePaymentOnAction(ActionEvent actionEvent) {setUi("PaymentManagement");}
+    public void btnManagePaymentOnAction(ActionEvent actionEvent) {
+        setUi("PaymentManagement");
+    }
 
-    public void dtnManageVehicleOnAction(ActionEvent actionEvent) {setUi("VehicleManagement");}
+    public void dtnManageVehicleOnAction(ActionEvent actionEvent) {
+        setUi("VehicleManagement");
+    }
 
-    public void btnManageJobOnAction(ActionEvent actionEvent) {setUi("JobManagementView");}
+    public void btnManageJobOnAction(ActionEvent actionEvent) {
+        setUi("JobManagementView");
+    }
 
-    public void btnManageEmployeeOnAction(ActionEvent actionEvent) { setUi("EmployeeManagement");}
+    public void btnManageEmployeeOnAction(ActionEvent actionEvent) {
+        setUi("EmployeeManagement");
+    }
 
-    public void btnManageSupplierOnAction(ActionEvent actionEvent) {setUi("SupplierManagement");}
+    public void btnManageSupplierOnAction(ActionEvent actionEvent) {
+        setUi("SupplierManagement");
+    }
 
-    public void btnManageLoanOnAction(ActionEvent actionEvent) {setUi("LoanManagement");}
+    public void btnManageLoanOnAction(ActionEvent actionEvent) {
+        setUi("LoanManagement");
+    }
 
     void setUi(String url){
         try {
@@ -49,7 +65,7 @@ public class DashBoardDetailsFormController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
+}
 
 
 }

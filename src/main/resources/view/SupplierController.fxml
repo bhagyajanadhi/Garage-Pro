@@ -18,10 +18,10 @@
          <children>
             <Pane layoutX="36.0" layoutY="73.0" prefHeight="478.0" prefWidth="551.0" style="-fx-background-color: fdedd0; -fx-background-radius: 15;">
                <children>
-                  <TextField fx:id="txtMachineId" layoutX="276.0" layoutY="13.0" onMouseClicked="#txtMachineIdOnAction" prefHeight="24.0" prefWidth="235.0" />
-                  <TextField fx:id="txtAvailability" layoutX="276.0" layoutY="84.0" prefHeight="24.0" prefWidth="235.0" />
-                  <TextField fx:id="txtStartFuel" layoutX="276.0" layoutY="143.0" prefHeight="24.0" prefWidth="235.0" />
-                  <TextField fx:id="txtEndFuel" layoutX="276.0" layoutY="266.0" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtSupplierId" layoutX="276.0" layoutY="13.0" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtName" layoutX="276.0" layoutY="84.0" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtPaymentTerms" layoutX="276.0" layoutY="143.0" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtAddress" layoutX="276.0" layoutY="266.0" prefHeight="24.0" prefWidth="235.0" />
                   <Text layoutX="24.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Id:" wrappingWidth="151.0">
                      <font>
                         <Font name="Dyuthi Regular" size="26.0" />
@@ -42,7 +42,7 @@
                         <Font name="Dyuthi Regular" size="26.0" />
                      </font>
                   </Text>
-                  <Button fx:id="savpane" layoutX="14.0" layoutY="363.0" mnemonicParsing="false" onAction="#btnOnAction" prefHeight="51.0" prefWidth="100.0" style="-fx-background-color: #ECF87F;" text="Save">
+                  <Button fx:id="savpane" layoutX="14.0" layoutY="363.0" mnemonicParsing="false" onAction="#btnSaverOnAction" prefHeight="51.0" prefWidth="100.0" style="-fx-background-color: #ECF87F;" text="Save">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -52,12 +52,12 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="updatepane" layoutX="420.0" layoutY="363.0" mnemonicParsing="false" onAction="#btnOnAction" style="-fx-background-color: #ECF87F;" text="Update">
+                  <Button fx:id="updatepane" layoutX="420.0" layoutY="363.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-color: #ECF87F;" text="Update">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="clearpane" layoutX="302.0" layoutY="361.0" mnemonicParsing="false" onAction="#btnOnAction" style="-fx-background-color: #ECF87F;" text="Clear">
+                  <Button fx:id="clearpane" layoutX="302.0" layoutY="361.0" mnemonicParsing="false" onAction="#btnClearOnAction" style="-fx-background-color: #ECF87F;" text="Clear">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -67,7 +67,7 @@
                         <Font name="Dyuthi Regular" size="26.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="txtEndFuel1" layoutX="276.0" layoutY="214.0" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtContact" layoutX="276.0" layoutY="214.0" prefHeight="24.0" prefWidth="235.0" />
                   <ImageView fitHeight="24.0" fitWidth="44.0" layoutX="461.0" layoutY="418.0">
                      <image>
                         <Image url="@../asserts/icons/update-.png" />

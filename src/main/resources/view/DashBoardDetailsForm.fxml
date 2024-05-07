@@ -24,7 +24,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="dashPane1" layoutX="34.0" layoutY="223.0" mnemonicParsing="false" onAction="#btnManageDashBoarOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Overview">
+      <Button fx:id="dashPane1" layoutX="32.0" layoutY="193.0" mnemonicParsing="false" onAction="#btnManageDashBoarOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Overview">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -95,7 +95,7 @@
             <Image url="@../asserts/icons/icons8-payment-80.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="37.0" layoutY="226.0">
+      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="40.0" layoutY="198.0">
          <image>
             <Image url="@../asserts/icons/icons8-home-80.png" />
          </image>
@@ -105,5 +105,10 @@
             <Image url="@../asserts/images/admin1.png" />
          </image>
       </ImageView>
+      <Button fx:id="bookingPane" layoutX="34.0" layoutY="282.0" mnemonicParsing="false" onAction="#btnManageBookingOnAction" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #87A922;" text="       Booking">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

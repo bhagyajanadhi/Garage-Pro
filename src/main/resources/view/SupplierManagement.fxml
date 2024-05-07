@@ -17,29 +17,24 @@
     <children>
         <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="844.0" layoutX="14.0" layoutY="33.0" stroke="#ccbea6" strokeType="INSIDE" width="1054.0" />
         <Text layoutX="1144.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welawa tyenne methna" />
-      <TableView layoutX="24.0" layoutY="90.0" prefHeight="316.0" prefWidth="928.0">
+      <TableView fx:id="tblSupplier" layoutX="128.0" layoutY="91.0" prefHeight="316.0" prefWidth="737.0">
          <columns>
-            <TableColumn prefWidth="164.79998779296875" text="Supplier ID">
+            <TableColumn fx:id="colSupplier" prefWidth="164.79998779296875" text="Supplier ID">
                <cellValueFactory>
                   <PropertyValueFactory property="bookingId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="162.4000244140625" text="Supplier Name">
+            <TableColumn fx:id="colName" prefWidth="162.4000244140625" text="Supplier Name">
                <cellValueFactory>
                   <PropertyValueFactory property="date" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="192.0" text="Peyment Terms">
+            <TableColumn fx:id="colPaymentTerms" prefWidth="192.0" text="Peyment Terms">
                <cellValueFactory>
                   <PropertyValueFactory property="vehicleId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="190.4000244140625" text="Address">
-               <cellValueFactory>
-                  <PropertyValueFactory property="customerId" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="217.60003662109375" text="Contact No">
+            <TableColumn fx:id="colContact" prefWidth="217.60003662109375" text="Contact No">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>
@@ -56,29 +51,34 @@
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </TextField>
-      <TableView layoutX="24.0" layoutY="475.0" prefHeight="277.0" prefWidth="928.0">
+      <TableView fx:id="tblInventory" layoutX="24.0" layoutY="475.0" prefHeight="277.0" prefWidth="928.0">
          <columns>
-            <TableColumn prefWidth="164.79998779296875" text="Supplier ID">
+            <TableColumn prefWidth="164.79998779296875" text="InventoryId">
                <cellValueFactory>
                   <PropertyValueFactory property="bookingId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="162.4000244140625" text="Supplier Name">
+            <TableColumn prefWidth="162.4000244140625" text="Description">
                <cellValueFactory>
                   <PropertyValueFactory property="date" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="192.0" text="Peyment Terms">
+            <TableColumn prefWidth="192.0" text="SupplierId">
                <cellValueFactory>
                   <PropertyValueFactory property="vehicleId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="190.4000244140625" text="Address">
+            <TableColumn minWidth="0.0" prefWidth="114.4000244140625" text="PartName">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn prefWidth="217.60003662109375" text="Contact No">
+            <TableColumn prefWidth="84.0" text="Stock Level">
+               <cellValueFactory>
+                  <PropertyValueFactory property="customerId" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="208.0" text="Unite Price">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>
