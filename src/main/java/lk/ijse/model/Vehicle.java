@@ -81,4 +81,32 @@ public class Vehicle {
         }
         return vehicleList;
     }
+
+    public static VehicleDto searchById(String vehicleLicensePlate) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM vehicle WHERE vehicleLicensePlate =?";
+
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        pstm.setObject(1,vehicleLicensePlate);
+        ResultSet resultSet = pstm.executeQuery();
+
+        VehicleDto vehicleDto = null;
+
+
+
+
+        if (resultSet.next()) {
+            String vehicleId = resultSet.getString(1);
+            String vehicleModel = resultSet.getString(2);
+            String plate = resultSet.getString(3);
+            String cus_Id = resultSet.getString(4);
+            String customerEmail = resultSet.getString(5);
+
+
+            vehicleDto  = new VehicleDto( vehicleId,vehicleModel,plate,cus_Id);
+        }
+        return vehicleDto;
+    }
+
 }

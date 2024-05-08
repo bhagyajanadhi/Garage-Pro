@@ -109,7 +109,7 @@ public class InventoryManagementController {
     void btnSaveOnAction(ActionEvent event) {
         String inventoryId = txtInventoryId.getText();
         String description = txtDescription.getText();
-        String supplierId = (String) cmbSupplierId.getValue();
+        String supplierId = cmbSupplierId.getValue();
         String partName = txtPartName.getText();
         int stockLevel = Integer.parseInt(txtStockLevel.getText());
         double unitePrice = Double.parseDouble(txtUnitePrice.getText());
@@ -139,7 +139,7 @@ public class InventoryManagementController {
     void btnUpdateOnAction(ActionEvent event) {
         String inventoryId = txtInventoryId.getText();
         String description = txtDescription.getText();
-        String supplierId = cmbSupplierId.getValue().toString();
+        String supplierId = cmbSupplierId.getValue();
         String partName = txtPartName.getText();
         int stockLevel = Integer.parseInt(txtStockLevel.getText());
         double unitePrice = Double.parseDouble(txtUnitePrice.getText());
@@ -164,5 +164,25 @@ public class InventoryManagementController {
     }
 
     public void txtSearchOnAction(ActionEvent actionEvent) {
+        String partName = txtPartName.getText();
+
+
+        try {
+            InventoryDto inventoryDto = Inventory.searchById(partName);
+
+            if (inventoryDto != null) {
+                txtInventoryId.setText(inventoryDto.getInventoryId());
+                txtDescription.setText(inventoryDto.getDescription());
+                cmbSupplierId.setValue(inventoryDto.getSupplierId());
+                txtPartName.setText(inventoryDto.getPartName());
+                txtStockLevel.setText(String.valueOf(inventoryDto.getStockLevel()));
+                txtUnitePrice.setText(String.valueOf(inventoryDto.getUnitePrice()));
+            }
+        }catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

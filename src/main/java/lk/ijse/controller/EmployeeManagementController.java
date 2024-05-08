@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.EmployeeDto;
 import lk.ijse.model.Customer;
 import lk.ijse.model.Employee;
@@ -71,6 +72,7 @@ public class EmployeeManagementController {
 
     @FXML
     private Button updatepane;
+
 
     private List<EmployeeDto> employeeList = new ArrayList<>();
     public void initialize() throws SQLException, ClassNotFoundException {
@@ -160,6 +162,28 @@ public class EmployeeManagementController {
         }
     }
 
+    public void txtSearchOnAction(ActionEvent actionEvent) {
+        String  contactInformation = txtEmployeeContactInfromation.getText();
+
+        try {
+            EmployeeDto employeeDto = Employee.searchById(contactInformation);
+
+            if (employeeDto != null) {
+                txtEmployeeId.setText(employeeDto.getEmployeeId());
+                txtEmployeeSalary.setText(employeeDto.getEmployeeId());
+                txtEmployeeName.setText(employeeDto.getName());
+                txtEmployeeSkills.setText(employeeDto.getSkills());
+                txtEmployeeContactInfromation.setText(employeeDto.getContactInfromation());
+
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
 }
 
 

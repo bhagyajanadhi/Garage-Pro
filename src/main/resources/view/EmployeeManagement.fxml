@@ -69,7 +69,7 @@
             <TextField fx:id="txtEmployeeAddress" layoutX="589.0" layoutY="54.0" prefHeight="35.0" prefWidth="285.0" />
             <TextField fx:id="txtEmployeeName" layoutX="101.0" layoutY="54.0" prefHeight="35.0" prefWidth="285.0" />
             <TextField fx:id="txtEmployeeSalary" layoutX="589.0" layoutY="101.0" prefHeight="35.0" prefWidth="285.0" />
-            <TextField fx:id="txtEmployeeContactInfromation" layoutX="235.0" layoutY="134.0" prefHeight="35.0" prefWidth="285.0" />
+            <TextField fx:id="txtEmployeeContactInfromation" layoutX="235.0" layoutY="134.0" onAction="#txtSearchOnAction" prefHeight="35.0" prefWidth="285.0" />
             <Button fx:id="dtlpane" layoutX="195.0" layoutY="195.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="116.0" style="-fx-background-color: #ECF87F;" text="Delete">
                <font>
                   <Font size="19.0" />

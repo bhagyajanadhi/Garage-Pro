@@ -1,6 +1,7 @@
 package lk.ijse.model;
 
 import lk.ijse.db.Dbconnection;
+import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.EmployeeDto;
 
 import java.sql.Connection;
@@ -78,5 +79,33 @@ public class Employee {
             idList.add(resultSet.getString(1));
         }
         return idList;
+    }
+
+    public static EmployeeDto searchById(String contactInformation) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM employee WHERE  contactInfromation=?";
+
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        pstm.setObject(1,contactInformation);
+        ResultSet resultSet = pstm.executeQuery();
+
+        EmployeeDto employeeDto = null;
+
+
+
+
+        if (resultSet.next()) {
+            String inventoryId = resultSet.getString(1);
+            double salary = Double.parseDouble(resultSet.getString(2));
+            String name = resultSet.getString(3);
+            String skills = resultSet.getString(4);
+            String contact = resultSet.getString(5);
+
+
+            employeeDto  = new EmployeeDto( inventoryId, salary,name,skills,contact);
+        }
+        return employeeDto;
+
     }
 }

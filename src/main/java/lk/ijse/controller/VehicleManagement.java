@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.VehicleDto;
 import lk.ijse.model.Customer;
 import lk.ijse.model.Vehicle;
@@ -170,4 +171,23 @@ public class VehicleManagement {
 
     }
 
+    public void txtSearchOnAction(ActionEvent actionEvent) {
+        String  vehicleLicensePlate = txtPlate.getText();
+
+        try {
+            VehicleDto vehicleDto = Vehicle.searchById(vehicleLicensePlate);
+
+            if (vehicleDto != null) {
+                txtVehicleId.setText(vehicleDto.getVehicleId());
+                txtModel.setText(vehicleDto.getVehicleModel());
+                txtPlate.setText(vehicleDto.getVehicleLicensePlate());
+                cmbCustomerId.setValue(vehicleDto.getCus_id());
+
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
