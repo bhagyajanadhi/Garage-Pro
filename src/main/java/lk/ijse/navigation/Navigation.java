@@ -19,6 +19,7 @@ public class Navigation {
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

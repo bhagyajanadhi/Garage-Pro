@@ -1,22 +1,24 @@
 package lk.ijse.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.InventoryDto;
-import lk.ijse.model.Customer;
 import lk.ijse.model.Inventory;
+import lk.ijse.model.Supplier;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class InventoryManagementController {
 
     @FXML
-    private ComboBox<?> cmbSupplierId;
+    private ComboBox<String> cmbSupplierId;
     @FXML
     private Button clearpane;
 
@@ -46,6 +48,33 @@ public class InventoryManagementController {
 
     @FXML
     private Button updatepane;
+
+    public void initialize() throws SQLException {
+        getAllInventory();
+        getAllSupplier();
+    }
+
+    private void getAllSupplier() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> idList = Supplier.getIds();
+
+            for (String supplierId : idList) {
+                obList.add(supplierId);
+            }
+            cmbSupplierId.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    private void getAllInventory() {
+
+    }
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
@@ -108,18 +137,19 @@ public class InventoryManagementController {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-        String customerId = txtcustomer.getText();
-        String customerName = txtName.getText();
-        String customerContactInformation = txtContact.getText();
-        String customerAddress = txtaddress.getText();
-        String customerEmail = txtEmail.getText();
-        CustomerDto customerdto = new CustomerDto(customerId, customerName, customerContactInformation, customerAddress, customerEmail);
+        String inventoryId = txtInventoryId.getText();
+        String description = txtDescription.getText();
+        String supplierId = cmbSupplierId.getValue().toString();
+        String partName = txtPartName.getText();
+        int stockLevel = Integer.parseInt(txtStockLevel.getText());
+        double unitePrice = Double.parseDouble(txtUnitePrice.getText());
+        InventoryDto inventoryDto = new InventoryDto(inventoryId, description, supplierId, partName, stockLevel,unitePrice);
         boolean isUpdated = false;
         try {
-            isUpdated = Customer.update(customerdto);
+            isUpdated = Inventory.update(inventoryDto);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Succsessful").show();
-                getAllCustomer();
+                getAllInventory();
             } else {
                 new Alert(Alert.AlertType.ERROR, "Error").show();
             }
