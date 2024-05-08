@@ -1,14 +1,15 @@
-create database Garage_pro;
+drop database garage_pro;
 
-use Garage_pro;
+create database garage_pro;
+
+use garage_pro;
 
 CREATE TABLE customer (
-                          customerId VARCHAR(50) PRIMARY KEY,
-                          customerName VARCHAR(80),
-                          customerContactInformation VARCHAR(15),
-                          customerAddress VARCHAR(80),
-                          customerEmail VARCHAR(80),
-                          vehicle_id VARCHAR(50)
+                          customerId VARCHAR(10) PRIMARY KEY,
+                          customerName VARCHAR(100),
+                          customerContactInfromation VARCHAR(15) UNIQUE KEY,
+                          customerAddress VARCHAR(255),
+                          customerEmail VARCHAR(100)
 );
 
 CREATE TABLE vehicle (
@@ -21,39 +22,13 @@ CREATE TABLE vehicle (
 
 
 
-ALTER TABLE customer
-    ADD CONSTRAINT fk_vehicle_id
-        FOREIGN KEY (vehicle_id) REFERENCES vehicle(vehicleId) ON UPDATE CASCADE ON DELETE CASCADE;
-
 CREATE TABLE booking (
                          bookingId VARCHAR(50) PRIMARY KEY,
                          customerId VARCHAR(50),
                          vehicleId VARCHAR(50),
                          date DATE,
-                         timeslot TIME,
                          FOREIGN KEY (customerId) REFERENCES customer(customerId) ON UPDATE CASCADE ON DELETE CASCADE,
                          FOREIGN KEY (vehicleId) REFERENCES vehicle(vehicleId) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
-CREATE TABLE payment (
-                         paymentId VARCHAR(50) PRIMARY KEY,
-                         amount DECIMAL(10, 2),
-                         date DATE
-);
-
-
-CREATE TABLE booking_service (
-                                 customerId VARCHAR(50),
-                                 bookingId VARCHAR(50),
-                                 FOREIGN KEY (customerId) REFERENCES customer(customerId) ON UPDATE CASCADE ON DELETE CASCADE,
-                                 FOREIGN KEY (bookingId) REFERENCES booking(bookingId) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
-CREATE TABLE service (
-                         jobId VARCHAR(50),
-                         serviceId VARCHAR(50) PRIMARY KEY,
-                         description VARCHAR(255),
-                         price DECIMAL(10, 2)
 );
 
 CREATE TABLE job (
@@ -65,44 +40,31 @@ CREATE TABLE job (
                      FOREIGN KEY (vehicleId) REFERENCES vehicle(vehicleId) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-ALTER TABLE service
-    ADD CONSTRAINT fk_jobId
-        FOREIGN KEY (jobId) REFERENCES job(jobId) ON UPDATE CASCADE ON DELETE CASCADE;
+CREATE TABLE payment (
+                         jobId VARCHAR(50),
+                         paymentId VARCHAR(50) PRIMARY KEY,
+                         amount DECIMAL(10, 2),
+                         date DATE,
+                         FOREIGN KEY (jobId) REFERENCES job(jobId) ON UPDATE CASCADE ON DELETE CASCADE
+
+
+);
+
 
 CREATE TABLE employee (
                           employeeId VARCHAR(50) PRIMARY KEY,
-                          serviceId VARCHAR(50),
-                          salaryId VARCHAR(50),
+                          salary DECIMAL(10, 2),
                           name VARCHAR(255),
                           skill VARCHAR(255),
                           contactInformation VARCHAR(15),
-                          Email VARCHAR(255),
-                          FOREIGN KEY (serviceId) REFERENCES service(serviceId) ON UPDATE CASCADE ON DELETE CASCADE
+                          Email VARCHAR(255)
 );
 
-
-
-
-CREATE TABLE salary (
-                        salaryId VARCHAR(50) PRIMARY KEY,
-                        description VARCHAR(255),
-                        employeeId VARCHAR(50),
-                        date DATE,
-                        FOREIGN KEY (employeeId) REFERENCES employee(employeeId) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
-ALTER TABLE employee
-    ADD CONSTRAINT fk_salaryId
-        FOREIGN KEY (salaryId) REFERENCES salary(salaryId) ON UPDATE CASCADE ON DELETE CASCADE;
 
 CREATE TABLE admin (
-                       email VARCHAR(255) PRIMARY KEY,
-                       employeeId VARCHAR(50),
-                       role VARCHAR(255),
-                       password VARCHAR(255),
-                       adminId VARCHAR(50),
-                       username VARCHAR(255),
-                       FOREIGN KEY (employeeId) REFERENCES employee(employeeId) ON UPDATE CASCADE ON DELETE CASCADE
+                       userName VARCHAR(255) PRIMARY KEY,
+                       password VARCHAR(255) NOT NULL,
+                       email VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE inventory (
@@ -156,19 +118,3 @@ CREATE TABLE loan (
                       paymentstatus VARCHAR(255),
                       FOREIGN KEY (supplierId) REFERENCES supplier(supplierId) ON UPDATE CASCADE ON DELETE CASCADE
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

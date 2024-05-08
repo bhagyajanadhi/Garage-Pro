@@ -1,11 +1,11 @@
 package lk.ijse.controller;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.VehicleDto;
 import lk.ijse.model.Customer;
 import lk.ijse.model.Vehicle;
@@ -21,7 +21,7 @@ public class VehicleManagement {
 
 
     @FXML
-    private ComboBox<?> cmbCustomerId;
+    private ComboBox<String> cmbCustomerId;
 
     @FXML
     private TableColumn<?, ?> colCustomerId;
@@ -64,7 +64,28 @@ public class VehicleManagement {
         colLicencePlate.setCellValueFactory(new PropertyValueFactory<>("vehicleLicensePlate"));
         colCustomerId.setCellValueFactory(new PropertyValueFactory<>("cus_id"));
         getAllVehicle();
+        getCustomerIds();
     }
+
+    private void getCustomerIds() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> idList = Customer.getIds();
+
+            for (String customerId : idList) {
+                obList.add(customerId);
+            }
+            cmbCustomerId.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
     @FXML
     void btnClearOnAction(ActionEvent event) {
         txtVehicleId.setText("");
@@ -127,9 +148,9 @@ public class VehicleManagement {
     void btnUpdateOnAction(ActionEvent event) {
         String vehicleId = txtVehicleId.getText();
         String vehicleModel = txtModel.getText();
-        String vehicleLicense = txtPlate.getText();
+        String vehicleLicensePlate = txtPlate.getText();
         String cus_id = (String) cmbCustomerId.getValue();
-        VehicleDto vehicleDto = new VehicleDto(vehicleId,vehicleModel,vehicleLicense,cus_id);
+        VehicleDto vehicleDto = new VehicleDto(vehicleId,vehicleModel,vehicleLicensePlate,cus_id);
 
         boolean isUpdated = false;
         try {

@@ -75,15 +75,14 @@ public class EmployeeManagementController {
     private List<EmployeeDto> employeeList = new ArrayList<>();
     public void initialize() throws SQLException, ClassNotFoundException {
         colId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
-        colJobId.setCellValueFactory(new PropertyValueFactory<>("jobId"));
         colSalaryId.setCellValueFactory(new PropertyValueFactory<>("salary"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colSkills.setCellValueFactory(new PropertyValueFactory<>("skills"));
        colContactInformation.setCellValueFactory(new PropertyValueFactory<>("contactinformation"));
         getAllEmployee();
 
-    }
 
+    }
     private void getAllEmployee() throws SQLException, ClassNotFoundException {
         employeeList =Employee.getAll();
        tblEmployee.setItems(FXCollections.observableList(this.employeeList));
@@ -93,7 +92,6 @@ public class EmployeeManagementController {
     @FXML
     void btnClearOnAction(ActionEvent event) {
         txtEmployeeId.setText("");
-        cmbJobId.setValue(null);
         txtEmployeeSalary.setText("");
         txtEmployeeName.setText("");
         txtEmployeeSkills.setText("");
@@ -122,13 +120,12 @@ public class EmployeeManagementController {
     void btnSaveOnAction(ActionEvent event) {
 
         String employeeId = txtEmployeeId.getText();
-        String jobId = (String) cmbJobId.getValue();
         double salary = Double.parseDouble(txtEmployeeSalary.getText());
         String name = txtEmployeeName.getText();
         String skills = txtEmployeeSkills.getText();
         String contactInfromation = txtEmployeeContactInfromation.getText();
 
-        EmployeeDto employeedto = new EmployeeDto(employeeId,jobId,salary,name,skills,contactInfromation);
+        EmployeeDto employeedto = new EmployeeDto(employeeId,salary,name,skills,contactInfromation);
 
         boolean isSaved = false;
         try {
@@ -151,13 +148,12 @@ public class EmployeeManagementController {
 
 
         String employeeId = txtEmployeeId.getText();
-        String jobId = (String) cmbJobId.getValue();
         double salary = Double.parseDouble(txtEmployeeSalary.getText());
         String name = txtEmployeeName.getText();
         String skills = txtEmployeeSkills.getText();
         String contactInformation= txtEmployeeContactInfromation.getText();
 
-          EmployeeDto employeedto = new EmployeeDto(employeeId,jobId,salary,name,skills,contactInformation);
+          EmployeeDto employeedto = new EmployeeDto(employeeId,salary,name,skills,contactInformation);
         boolean isUpdated = Employee.update(employeedto);
         if (isUpdated) {
             new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();

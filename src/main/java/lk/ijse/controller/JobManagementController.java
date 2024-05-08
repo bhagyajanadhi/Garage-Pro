@@ -1,18 +1,20 @@
 package lk.ijse.controller;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.dto.JobDto;
+import lk.ijse.model.Employee;
 import lk.ijse.model.Job;
+import lk.ijse.model.Vehicle;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class JobManagementController {
@@ -23,10 +25,10 @@ public class JobManagementController {
     @FXML
     private Button clearpane;
     @FXML
-    private ComboBox<?> cmbEmployeeId;
+    private ComboBox<String> cmbEmployeeId;
 
     @FXML
-    private ComboBox<?> cmbVehicleId;
+    private ComboBox<String> cmbVehicleId;
 
     @FXML
     private TableColumn<?, ?> colDate;
@@ -67,6 +69,42 @@ public class JobManagementController {
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         colVehicleId.setCellValueFactory(new PropertyValueFactory<>("vehicleId"));
         getAllJob();
+        getEmployeeIds();
+        getVehicleIds();
+    }
+
+    private void getVehicleIds() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> idList = Vehicle.getIds();
+
+            for (String vehicleId : idList) {
+                obList.add(vehicleId);
+            }
+            cmbVehicleId.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void getEmployeeIds() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> idList = Employee.getIds();
+
+            for (String employeeId : idList) {
+                obList.add(employeeId);
+            }
+            cmbEmployeeId.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void getAllJob() throws SQLException, ClassNotFoundException {

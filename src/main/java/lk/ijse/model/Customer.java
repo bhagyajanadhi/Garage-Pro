@@ -17,6 +17,7 @@ public class Customer {
 
 
 
+
     public static boolean save(CustomerDto dto) throws SQLException, ClassNotFoundException {
 
         String sql = "insert into customer values(?,?,?,?,?)";
@@ -26,7 +27,7 @@ public class Customer {
 
             pstm.setObject(1,dto.getCustomerId());
             pstm.setObject(2,dto.getCustomerName());
-            pstm.setObject(3,dto.getCustomerContactInfromation());
+            pstm.setObject(3,dto.getCustomerContactInformation());
             pstm.setObject(4,dto.getCustomerAddress());
             pstm.setObject(5,dto.getCustomerEmail());
 
@@ -35,7 +36,7 @@ public class Customer {
 
 
     public static List<String> getIds() throws SQLException, ClassNotFoundException {
-        String sql = "SELECT customerId FROM Customer";
+        String sql = "SELECT customerId FROM customer";
 
         Connection connection = Dbconnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -86,12 +87,40 @@ public class Customer {
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(1,dto.getCustomerId());
         pstm.setObject(2,dto.getCustomerName());
-        pstm.setObject(3,dto.getCustomerContactInfromation());
+        pstm.setObject(3,dto.getCustomerContactInformation());
         pstm.setObject(4,dto.getCustomerAddress());
         pstm.setObject(5,dto.getCustomerEmail());
         return pstm.executeUpdate() > 0;
     }
 
+
+    public static CustomerDto searchById(String customerContactInformation) throws SQLException, ClassNotFoundException {
+
+            String sql = "SELECT * FROM customer WHERE  customerContactInfromation=?";
+
+            PreparedStatement pstm = Dbconnection.getInstance().getConnection()
+                    .prepareStatement(sql);
+
+            pstm.setObject(1,customerContactInformation);
+            ResultSet resultSet = pstm.executeQuery();
+
+            CustomerDto customerDto = null;
+
+
+
+
+            if (resultSet.next()) {
+                String customerId = resultSet.getString(1);
+                String customerName = resultSet.getString(2);
+                String contact = resultSet.getString(3);
+                String customerAddress = resultSet.getString(4);
+                String customerEmail = resultSet.getString(5);
+
+
+                customerDto  = new CustomerDto( customerId, customerName,contact, customerAddress,customerEmail);
+            }
+            return customerDto;
+        }
 
 }
 

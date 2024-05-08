@@ -6,11 +6,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.model.Customer;
 
-import java.sql.SQLException;
-import java.sql.SQLOutput;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,6 +61,7 @@ public class CustomerManagementController {
 
     @FXML
     private TextField txtcustomer;
+
     private List<CustomerDto> customerList = new ArrayList<>();
 
     public void initialize() throws SQLException, ClassNotFoundException {
@@ -109,24 +111,24 @@ public class CustomerManagementController {
         String customerId = txtcustomer.getText();
         String name = txtName.getText();
         String email = txtEmail.getText();
-        String contactInformation =txtContact.getText();
+        String contactInformation = txtContact.getText();
         String address = txtaddress.getText();
 
-        CustomerDto customerdto = new CustomerDto(customerId, name,contactInformation, address, email);
+        CustomerDto customerdto = new CustomerDto(customerId, name, contactInformation, address, email);
 
 
         boolean isSaved = false;
         try {
             isSaved = Customer.save(customerdto);
-            if (isSaved){
-                new Alert(Alert.AlertType. CONFIRMATION,"Succsessful").show();
+            if (isSaved) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Succsessful").show();
                 getAllCustomer();
-            }else {
-               new Alert(Alert.AlertType.ERROR,"Error").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Error").show();
             }
 
         } catch (SQLException e) {
-                throw new RuntimeException(e);
+            throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -135,24 +137,48 @@ public class CustomerManagementController {
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
         String customerId = txtcustomer.getText();
-        String customerName =txtName.getText();
+        String customerName = txtName.getText();
         String customerContactInformation = txtContact.getText();
         String customerAddress = txtaddress.getText();
         String customerEmail = txtEmail.getText();
-        CustomerDto customerdto =new CustomerDto(customerId,customerName,customerContactInformation,customerAddress,customerEmail);
+        CustomerDto customerdto = new CustomerDto(customerId, customerName, customerContactInformation, customerAddress, customerEmail);
         boolean isUpdated = false;
         try {
             isUpdated = Customer.update(customerdto);
-            if (isUpdated){
-                new Alert(Alert.AlertType. CONFIRMATION,"Succsessful").show();
+            if (isUpdated) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Succsessful").show();
                 getAllCustomer();
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Error").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Error").show();
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+
+    @FXML
+    void txtSearchOnAction(ActionEvent event) {
+        String  customerContactInformation = txtContact.getText();
+
+        try {
+            CustomerDto customerDto = Customer.searchById(customerContactInformation);
+
+            if (customerDto != null) {
+                txtcustomer.setText(customerDto.getCustomerId());
+                txtName.setText(customerDto.getCustomerName());
+                txtContact.setText(customerDto.getCustomerContactInformation());
+                txtaddress.setText(customerDto.getCustomerAddress());
+                txtEmail.setText(customerDto.getCustomerEmail());
+
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+} catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
 

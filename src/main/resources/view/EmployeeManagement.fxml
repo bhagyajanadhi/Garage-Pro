@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -35,11 +34,6 @@
                </font>
             </Label>
             <Label layoutX="20.0" layoutY="55.0" text="Name:">
-               <font>
-                  <Font name="Dyuthi Regular" size="22.0" />
-               </font>
-            </Label>
-            <Label layoutX="20.0" layoutY="96.0" text="Job Id:">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
@@ -93,7 +87,6 @@
             </Button>
             <TextField fx:id="txtEmployeeId" layoutX="161.0" layoutY="16.0" prefHeight="35.0" prefWidth="285.0" />
             <TextField fx:id="txtEmployeeSkills" layoutX="538.0" layoutY="10.0" prefHeight="35.0" prefWidth="285.0" />
-            <ComboBox fx:id="cmbJobId" layoutX="111.0" layoutY="101.0" prefHeight="26.0" prefWidth="230.0" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="104.0" layoutY="235.0">
                <image>
                   <Image url="@../asserts/icons/save-64.png" />
@@ -121,11 +114,6 @@
             <TableColumn fx:id="colId" prefWidth="104.00003051757812" text="Employee ID">
                <cellValueFactory>
                   <PropertyValueFactory property="bookingId" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn fx:id="colJobId" prefWidth="122.4000244140625" text="JobId">
-               <cellValueFactory>
-                  <PropertyValueFactory property="date" />
                </cellValueFactory>
             </TableColumn>
             <TableColumn fx:id="colSalaryId" prefWidth="111.19998168945312" text="Salary">

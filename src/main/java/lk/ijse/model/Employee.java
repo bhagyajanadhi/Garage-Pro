@@ -20,40 +20,37 @@ public class Employee {
         List<EmployeeDto> employeeList = new ArrayList<>();
         while (resultSet.next()) {
             String employeeId = resultSet.getString(1);
-            String jobId = resultSet.getString(2);
-            double salary = resultSet.getDouble(3);
-            String name = resultSet.getString(4);
-            String skills = resultSet.getString(5);
-            String contactInformations = resultSet.getString(6);
+            double salary = resultSet.getDouble(2);
+            String name = resultSet.getString(3);
+            String skills = resultSet.getString(4);
+            String contactInformations = resultSet.getString(5);
 
-            EmployeeDto employee = new EmployeeDto(employeeId, jobId, salary, name, skills, contactInformations);
+            EmployeeDto employee = new EmployeeDto(employeeId, salary, name, skills, contactInformations);
             employeeList.add(employee);
         }
     return employeeList;
     }
 
     public static boolean save(EmployeeDto employeedto) throws SQLException, ClassNotFoundException {
-        String sql = "insert into employee values(?,?,?,?,?,?)";
+        String sql = "insert into employee values(?,?,?,?,?)";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
        pstm.setString(1, employeedto.getEmployeeId());
-       pstm.setString(2, employeedto.getJobId());
-       pstm.setDouble(3, employeedto.getSalary());
-       pstm.setString(4, employeedto.getName());
-       pstm.setString(5, employeedto.getSkills());
-       pstm.setObject(6, employeedto.getContactInfromation());
+       pstm.setDouble(2, employeedto.getSalary());
+       pstm.setString(3, employeedto.getName());
+       pstm.setString(4, employeedto.getSkills());
+       pstm.setObject(5, employeedto.getContactInfromation());
         return pstm.executeUpdate() > 0;
 
     }
 
     public static boolean update(EmployeeDto employeedto) throws SQLException, ClassNotFoundException {
-        String sql = "update employee set jobId = ?,salary = ?,name = ?,skills = ? ,contactInformation =? where employeeId =?";
+        String sql = "update employee set salary = ?,name = ?,skills = ? ,contactInformation =? where employeeId =?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(1,employeedto.getEmployeeId());
-        pstm.setObject(2,employeedto.getJobId());
-        pstm.setObject(3,employeedto.getSalary());
-        pstm.setObject(4,employeedto.getName());
-        pstm.setObject(5,employeedto.getSkills());
-        pstm.setObject(6,employeedto.getContactInfromation());
+        pstm.setObject(2,employeedto.getSalary());
+        pstm.setObject(3,employeedto.getName());
+        pstm.setObject(4,employeedto.getSkills());
+        pstm.setObject(5,employeedto.getContactInfromation());
         return pstm.executeUpdate() > 0;
 
     }
@@ -67,5 +64,19 @@ public class Employee {
         pstm.setObject(1,employeeId);
 
         return pstm.executeUpdate() > 0;
+    }
+
+    public static List<String> getIds() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT employeeId FROM employee";
+
+        Connection connection = Dbconnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> idList = new ArrayList<>();
+
+        while (resultSet.next()) {
+            idList.add(resultSet.getString(1));
+        }
+        return idList;
     }
 }
