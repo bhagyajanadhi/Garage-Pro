@@ -51,10 +51,10 @@ public class InventoryManagementController {
 
     public void initialize() throws SQLException {
         getAllInventory();
-        getAllSupplier();
+        getAllSupplierIds();
     }
 
-    private void getAllSupplier() {
+    private void getAllSupplierIds() {
         ObservableList<String> obList = FXCollections.observableArrayList();
         try {
             List<String> idList = Supplier.getIds();

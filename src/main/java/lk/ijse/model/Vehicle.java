@@ -101,7 +101,6 @@ public class Vehicle {
             String vehicleModel = resultSet.getString(2);
             String plate = resultSet.getString(3);
             String cus_Id = resultSet.getString(4);
-            String customerEmail = resultSet.getString(5);
 
 
             vehicleDto  = new VehicleDto( vehicleId,vehicleModel,plate,cus_Id);

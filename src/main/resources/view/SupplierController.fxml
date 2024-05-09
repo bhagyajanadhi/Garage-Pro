@@ -19,7 +19,7 @@
             <Pane layoutX="36.0" layoutY="73.0" prefHeight="478.0" prefWidth="551.0" style="-fx-background-color: fdedd0; -fx-background-radius: 15;">
                <children>
                   <TextField fx:id="txtSupplierId" layoutX="276.0" layoutY="13.0" prefHeight="24.0" prefWidth="235.0" />
-                  <TextField fx:id="txtName" layoutX="276.0" layoutY="84.0" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtName" layoutX="276.0" layoutY="84.0" onAction="#txtSearchOnAction" prefHeight="24.0" prefWidth="235.0" />
                   <TextField fx:id="txtPaymentTerms" layoutX="276.0" layoutY="143.0" prefHeight="24.0" prefWidth="235.0" />
                   <TextField fx:id="txtAddress" layoutX="276.0" layoutY="266.0" prefHeight="24.0" prefWidth="235.0" />
                   <Text layoutX="24.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Id:" wrappingWidth="151.0">
