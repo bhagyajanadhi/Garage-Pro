@@ -61,8 +61,8 @@ public class Booking {
         String sql = "update booking set vehicleId = ?,customerId = ?,date = ? where bookingId =?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(4,bookingDto.getBookingId());
-        pstm.setObject(1,bookingDto.getCustomerId());
-        pstm.setObject(2,bookingDto.getDate());
+        pstm.setObject(2,bookingDto.getCustomerId());
+        pstm.setObject(1,bookingDto.getVehicleId());
         pstm.setObject(3,bookingDto.getDate());
 
         return pstm.executeUpdate() > 0;

@@ -4,19 +4,37 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import lk.ijse.dto.BookingDto;
 import lk.ijse.dto.InventoryDto;
+import lk.ijse.model.Booking;
 import lk.ijse.model.Inventory;
 import lk.ijse.model.Supplier;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class InventoryManagementController {
 
+    @FXML
+    private TableColumn<?, ?> colDescription;
+
+    @FXML
+    private TableColumn<?, ?> colInventory;
+
+    @FXML
+    private TableColumn<?, ?> colPartName;
+
+    @FXML
+    private TableColumn<?, ?> colStockLevel;
+
+    @FXML
+    private TableColumn<?, ?> colSupplierId;
+
+    @FXML
+    private TableColumn<?, ?> colUnitePrice;
     @FXML
     private ComboBox<String> cmbSupplierId;
     @FXML
@@ -27,6 +45,8 @@ public class InventoryManagementController {
 
     @FXML
     private Button savpane;
+    @FXML
+    private TableView<InventoryDto> tblInventory;
 
     @FXML
     private TextField txtDescription;
@@ -48,8 +68,15 @@ public class InventoryManagementController {
 
     @FXML
     private Button updatepane;
+    private List<InventoryDto> inventoryList = new ArrayList<>();
 
-    public void initialize() throws SQLException {
+
+    public void initialize() throws SQLException, ClassNotFoundException {
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colInventory.setCellValueFactory(new PropertyValueFactory<>("inventoryId"));
+        colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
+        colPartName.setCellValueFactory(new PropertyValueFactory<>("partName"));
+        colUnitePrice.setCellValueFactory(new PropertyValueFactory<>("unitePrice"));
         getAllInventory();
         getAllSupplierIds();
     }
@@ -72,7 +99,10 @@ public class InventoryManagementController {
 
     }
 
-    private void getAllInventory() {
+    private void getAllInventory() throws SQLException, ClassNotFoundException {
+        inventoryList = Inventory.getAll();
+        tblInventory.setItems(FXCollections.observableList(this.inventoryList));
+
 
     }
 

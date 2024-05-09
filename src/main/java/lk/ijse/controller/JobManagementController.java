@@ -142,9 +142,9 @@ public class JobManagementController {
         LocalDate date = dpDate.getValue();
         String vehicleId = (String) cmbVehicleId.getValue();
         JobDto jobDto = new JobDto(jobId, employeeId, description, date, vehicleId);
-        boolean isUpdated = false;
+
         try {
-            isUpdated = Job.update(jobDto);
+           boolean isUpdated = Job.update(jobDto);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Succsessful").show();
                 getAllJob();

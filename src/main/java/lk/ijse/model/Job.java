@@ -51,10 +51,10 @@ public class Job {
         String sql = "update job set description = ?, date = ?, vehicleId = ?,employeeId =? where jobId = ?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(5,jobDto.getJobId());
-        pstm.setString(1,jobDto.getEmployeeId());
-        pstm.setString(2,jobDto.getDescription());
-        pstm.setString(3,String.valueOf(jobDto.getDate()));
-        pstm.setString(4,jobDto.getVehicleId());
+        pstm.setString(4,jobDto.getEmployeeId());
+        pstm.setString(1,jobDto.getDescription());
+        pstm.setString(2,String.valueOf(jobDto.getDate()));
+        pstm.setString(3,jobDto.getVehicleId());
         return pstm.executeUpdate() > 0;
     }
 
