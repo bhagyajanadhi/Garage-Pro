@@ -14,7 +14,9 @@ import lk.ijse.util.ValidateUtil;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class LoanManagementController {
 
@@ -62,6 +64,8 @@ public class LoanManagementController {
 
     @FXML
     private Button updatepane;
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
+
 
     private List<LoanDto> loanList = new ArrayList<>();
 
@@ -72,6 +76,9 @@ public class LoanManagementController {
         colDueDates.setCellValueFactory(new PropertyValueFactory<>("duedate"));
         colPaymentStatus.setCellValueFactory(new PropertyValueFactory<>("paymentstatus"));
         getAllLoan();
+        Pattern patternId = Pattern.compile("^(C0)[0-9]{1,5}$");
+
+        map.put(txtLoanId, patternId);
 
     }
 
