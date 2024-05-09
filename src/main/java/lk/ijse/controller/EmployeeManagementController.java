@@ -56,7 +56,7 @@ public class EmployeeManagementController {
     private TextField txtEmployeeAddress;
 
     @FXML
-    private TextField txtEmployeeContactInfromation;
+    private TextField txtEmployeeContactInformation;
 
     @FXML
     private TextField txtEmployeeId;
@@ -79,8 +79,8 @@ public class EmployeeManagementController {
         colId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
         colSalaryId.setCellValueFactory(new PropertyValueFactory<>("salary"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colSkills.setCellValueFactory(new PropertyValueFactory<>("skills"));
-       colContactInformation.setCellValueFactory(new PropertyValueFactory<>("contactinformation"));
+        colSkills.setCellValueFactory(new PropertyValueFactory<>("skill"));
+       colContactInformation.setCellValueFactory(new PropertyValueFactory<>("contactInformation"));
         getAllEmployee();
 
 
@@ -97,7 +97,7 @@ public class EmployeeManagementController {
         txtEmployeeSalary.setText("");
         txtEmployeeName.setText("");
         txtEmployeeSkills.setText("");
-        txtEmployeeContactInfromation.setText("");
+        txtEmployeeContactInformation.setText("");
 
     }
 
@@ -107,7 +107,7 @@ public class EmployeeManagementController {
         try {
             boolean isDeleted = Employee.delete(employeeId);
             if (isDeleted) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
+                new Alert(Alert.AlertType.CONFIRMATION, " deleted!").show();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -125,9 +125,9 @@ public class EmployeeManagementController {
         double salary = Double.parseDouble(txtEmployeeSalary.getText());
         String name = txtEmployeeName.getText();
         String skills = txtEmployeeSkills.getText();
-        String contactInfromation = txtEmployeeContactInfromation.getText();
+        String contactInformation = txtEmployeeContactInformation.getText();
 
-        EmployeeDto employeedto = new EmployeeDto(employeeId,salary,name,skills,contactInfromation);
+        EmployeeDto employeedto = new EmployeeDto(employeeId,salary,name,skills,contactInformation);
 
         boolean isSaved = false;
         try {
@@ -153,7 +153,7 @@ public class EmployeeManagementController {
         double salary = Double.parseDouble(txtEmployeeSalary.getText());
         String name = txtEmployeeName.getText();
         String skills = txtEmployeeSkills.getText();
-        String contactInformation= txtEmployeeContactInfromation.getText();
+        String contactInformation= txtEmployeeContactInformation.getText();
 
           EmployeeDto employeedto = new EmployeeDto(employeeId,salary,name,skills,contactInformation);
         boolean isUpdated = Employee.update(employeedto);
@@ -163,7 +163,7 @@ public class EmployeeManagementController {
     }
 
     public void txtSearchOnAction(ActionEvent actionEvent) {
-        String  contactInformation = txtEmployeeContactInfromation.getText();
+        String  contactInformation = txtEmployeeContactInformation.getText();
 
         try {
             EmployeeDto employeeDto = Employee.searchById(contactInformation);
@@ -172,8 +172,8 @@ public class EmployeeManagementController {
                 txtEmployeeId.setText(employeeDto.getEmployeeId());
                 txtEmployeeSalary.setText(employeeDto.getEmployeeId());
                 txtEmployeeName.setText(employeeDto.getName());
-                txtEmployeeSkills.setText(employeeDto.getSkills());
-                txtEmployeeContactInfromation.setText(employeeDto.getContactInfromation());
+                txtEmployeeSkills.setText(employeeDto.getSkill());
+                txtEmployeeContactInformation.setText(employeeDto.getContactInformation());
 
             }
         } catch (SQLException e) {

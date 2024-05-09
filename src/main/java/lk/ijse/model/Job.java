@@ -3,6 +3,7 @@ package lk.ijse.model;
 import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.JobDto;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -49,11 +50,11 @@ public class Job {
     public static boolean update(JobDto jobDto) throws SQLException, ClassNotFoundException {
         String sql = "update job set description = ?, date = ?, vehicleId = ?,employeeId =? where jobId = ?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
-        pstm.setObject(1,jobDto.getJobId());
-        pstm.setString(2,jobDto.getEmployeeId());
-        pstm.setString(3,jobDto.getDescription());
-        pstm.setString(4,String.valueOf(jobDto.getDate()));
-        pstm.setString(5,jobDto.getVehicleId());
+        pstm.setObject(5,jobDto.getJobId());
+        pstm.setString(1,jobDto.getEmployeeId());
+        pstm.setString(2,jobDto.getDescription());
+        pstm.setString(3,String.valueOf(jobDto.getDate()));
+        pstm.setString(4,jobDto.getVehicleId());
         return pstm.executeUpdate() > 0;
     }
 
@@ -66,5 +67,19 @@ public class Job {
 
         return pstm.executeUpdate() > 0;
 
+    }
+
+    public static List<String> getIds() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT jobId FROM job";
+
+        Connection connection = Dbconnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<String> idList = new ArrayList<>();
+
+        while (resultSet.next()) {
+            idList.add(resultSet.getString(1));
+        }
+        return idList;
     }
 }

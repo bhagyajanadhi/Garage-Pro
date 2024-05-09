@@ -13,8 +13,9 @@ public class EmployeeDto {
     private String employeeId;
     private double salary;
     private String name;
-    private String skills;
-    private String contactInfromation;
+    private String skill;
+    private String contactInformation;
+
   
 
 }

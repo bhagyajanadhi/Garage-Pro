@@ -39,12 +39,12 @@ public class Inventory {
     public static boolean update(InventoryDto inventoryDto) throws SQLException, ClassNotFoundException {
         String sql = "update inventory set description = ?,supplierId = ?,partName = ?,stockLevel = ?,unitePrice=? where inventoryId =?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
-        pstm.setObject(1,inventoryDto.getInventoryId());
-        pstm.setObject(2,inventoryDto.getDescription());
-        pstm.setObject(3,inventoryDto.getSupplierId());
-        pstm.setObject(4,inventoryDto.getPartName());
-        pstm.setObject(5,inventoryDto.getStockLevel());
-        pstm.setObject(6,inventoryDto.getUnitePrice());
+        pstm.setObject(5,inventoryDto.getInventoryId());
+        pstm.setObject(1,inventoryDto.getDescription());
+        pstm.setObject(2,inventoryDto.getSupplierId());
+        pstm.setObject(3,inventoryDto.getPartName());
+        pstm.setObject(4,inventoryDto.getStockLevel());
+        pstm.setObject(5,inventoryDto.getUnitePrice());
         return pstm.executeUpdate() > 0;
     }
 

@@ -44,9 +44,9 @@ public class Payment {
         String sql = "update payment set jobId = ?,amount = ?,date = ? where paymentId =?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setString(1, paymentDto.getJobId());
-        pstm.setString(2, paymentDto.getPaymentId());
-        pstm.setString(3, paymentDto.getAmount());
-        pstm.setString(4, String.valueOf(paymentDto.getDate()));
+        pstm.setString(4, paymentDto.getPaymentId());
+        pstm.setString(2, paymentDto.getAmount());
+        pstm.setString(3, String.valueOf(paymentDto.getDate()));
         return pstm.executeUpdate() > 0 ;
 
 

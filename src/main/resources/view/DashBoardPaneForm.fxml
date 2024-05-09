@@ -3,7 +3,7 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.StackedBarChart?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -20,11 +20,11 @@
             <Image url="@../asserts/icons/garage 2.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#87a922e3" height="136.0" layoutX="47.0" layoutY="100.0" stroke="#ccbea6" strokeType="INSIDE" width="162.0" />
-      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#87a922e3" height="136.0" layoutX="287.0" layoutY="100.0" stroke="#ccbea6" strokeType="INSIDE" width="162.0" />
-      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#87a922e3" height="136.0" layoutX="521.0" layoutY="100.0" stroke="#ccbea6" strokeType="INSIDE" width="509.0" />
-      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#87a922e3" height="463.0" layoutX="32.0" layoutY="258.0" stroke="#ccbea6" strokeType="INSIDE" width="531.0" />
-      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#87a922e3" height="531.0" layoutX="618.0" layoutY="253.0" stroke="#ccbea6" strokeType="INSIDE" width="380.0" />
+      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#997943e3" height="136.0" layoutX="47.0" layoutY="100.0" stroke="#ccbea6" strokeType="INSIDE" width="162.0" />
+      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#997943e3" height="136.0" layoutX="287.0" layoutY="100.0" stroke="#ccbea6" strokeType="INSIDE" width="162.0" />
+      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#997943e3" height="136.0" layoutX="521.0" layoutY="100.0" stroke="#ccbea6" strokeType="INSIDE" width="509.0" />
+      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#997943e3" height="463.0" layoutX="32.0" layoutY="258.0" stroke="#ccbea6" strokeType="INSIDE" width="531.0" />
+      <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#997943e3" height="531.0" layoutX="618.0" layoutY="253.0" stroke="#ccbea6" strokeType="INSIDE" width="380.0" />
       <Text layoutX="67.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees">
          <font>
             <Font size="22.0" />
@@ -59,10 +59,7 @@
             <NumberAxis side="LEFT" />
          </yAxis>
       </StackedBarChart>
-      <TextArea fx:id="txtEmployee" layoutX="47.0" layoutY="113.0" prefHeight="110.0" prefWidth="162.0">
-         <font>
-            <Font size="20.0" />
-         </font></TextArea>
-      <TextArea fx:id="txtMaintenance" layoutX="286.0" layoutY="113.0" prefHeight="110.0" prefWidth="162.0" />
+      <Label fx:id="lblEmployee" layoutX="46.0" layoutY="118.0" prefHeight="100.0" prefWidth="162.0" style="-fx-background-color: #ffffff;" text="Label" />
+      <Label fx:id="lblAuto" layoutX="287.0" layoutY="113.0" prefHeight="100.0" prefWidth="162.0" style="-fx-background-color: #ffffff;" text="Label" />
    </children>
 </AnchorPane>

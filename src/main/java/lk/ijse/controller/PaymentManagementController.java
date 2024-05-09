@@ -1,16 +1,14 @@
 package lk.ijse.controller;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import lk.ijse.dto.EmployeeDto;
 import lk.ijse.dto.PaymentDto;
-import lk.ijse.model.Customer;
-import lk.ijse.model.Employee;
-import lk.ijse.model.Payment;
+import lk.ijse.model.*;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -23,7 +21,7 @@ public class PaymentManagementController {
     private Button clearPane;
 
     @FXML
-    private ComboBox<?> cmdJobId;
+    private ComboBox<String> cmdJobId;
 
     @FXML
     private TableColumn<?, ?> colAmount;
@@ -65,6 +63,25 @@ public class PaymentManagementController {
         colAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         getAllPayment();
+        getJobIds();
+
+    }
+
+    private void getJobIds() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> idList = Job.getIds();
+
+            for (String jobId : idList) {
+                obList.add(jobId);
+            }
+            cmdJobId.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

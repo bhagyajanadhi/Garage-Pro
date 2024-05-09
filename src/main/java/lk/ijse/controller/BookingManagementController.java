@@ -57,6 +57,7 @@ public class  BookingManagementController {
     private TextField txtBooking;
 
 
+
     private List<BookingDto> bookingList = new ArrayList<>();
 
     public void initialize() throws SQLException, ClassNotFoundException {
@@ -137,14 +138,14 @@ public class  BookingManagementController {
 
 
     }
-
-
     @FXML
     void btnSaveOnAction(ActionEvent event) {
         String bookingId = txtBooking.getText();
         String customerId = (String) cmbCustomerId.getValue();
         String vehicleId = (String) cmbVehicleId.getValue();
         LocalDate date = LocalDate.parse(String.valueOf(dpDate.getValue()));
+
+
 
 
         BookingDto bookingDto = new BookingDto(bookingId,customerId,vehicleId,date);

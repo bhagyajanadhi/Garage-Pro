@@ -53,10 +53,10 @@ public class Supplier {
     public static boolean update(SupplierDto supplierDto) throws SQLException, ClassNotFoundException {
         String sql = "update supplier set name = ?,contactInformation = ?,paymentTerms = ? where supplierId =?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
-        pstm.setObject(1, supplierDto.getSupplierId());
-        pstm.setObject(3, supplierDto.getName());
+        pstm.setObject(4, supplierDto.getSupplierId());
+        pstm.setObject(1, supplierDto.getName());
         pstm.setObject(2, supplierDto.getContactInformaton());
-        pstm.setObject(4, supplierDto.getContactInformaton());
+        pstm.setObject(3, supplierDto.getContactInformaton());
 
         return pstm.executeUpdate() > 0;
 

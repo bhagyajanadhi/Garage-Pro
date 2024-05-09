@@ -85,11 +85,11 @@ public class Customer {
     public static boolean update(CustomerDto dto) throws SQLException, ClassNotFoundException {
         String sql = "update customer set customerName = ?,customerContactInfromation = ?,customerAddress = ?,customerEmail = ? where customerId =?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
-        pstm.setObject(1,dto.getCustomerId());
-        pstm.setObject(2,dto.getCustomerName());
-        pstm.setObject(3,dto.getCustomerContactInformation());
-        pstm.setObject(4,dto.getCustomerAddress());
-        pstm.setObject(5,dto.getCustomerEmail());
+        pstm.setObject(5,dto.getCustomerId());
+        pstm.setObject(1,dto.getCustomerName());
+        pstm.setObject(2,dto.getCustomerContactInformation());
+        pstm.setObject(3,dto.getCustomerAddress());
+        pstm.setObject(4,dto.getCustomerEmail());
         return pstm.executeUpdate() > 0;
     }
 

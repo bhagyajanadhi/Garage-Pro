@@ -64,11 +64,11 @@ public class Loan {
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
 
 
-        pstm.setObject(1,loanDto.getLoanId());
-        pstm.setObject(2,loanDto.getAmount());
-        pstm.setObject(3,loanDto.getSupplierId());
-        pstm.setObject(4,loanDto.getDuedate());
-        pstm.setObject(5,loanDto.getPaymentstatus());
+        pstm.setObject(5,loanDto.getLoanId());
+        pstm.setObject(1,loanDto.getAmount());
+        pstm.setObject(2,loanDto.getSupplierId());
+        pstm.setObject(3,loanDto.getDuedate());
+        pstm.setObject(4,loanDto.getPaymentstatus());
 
         return pstm.executeUpdate() > 0;
     }

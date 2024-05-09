@@ -142,9 +142,9 @@ public class CustomerManagementController {
         String customerAddress = txtaddress.getText();
         String customerEmail = txtEmail.getText();
         CustomerDto customerdto = new CustomerDto(customerId, customerName, customerContactInformation, customerAddress, customerEmail);
-        boolean isUpdated = false;
+
         try {
-            isUpdated = Customer.update(customerdto);
+            boolean isUpdated = Customer.update(customerdto);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Succsessful").show();
                 getAllCustomer();

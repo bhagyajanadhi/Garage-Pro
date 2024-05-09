@@ -23,10 +23,10 @@ public class Employee {
             String employeeId = resultSet.getString(1);
             double salary = resultSet.getDouble(2);
             String name = resultSet.getString(3);
-            String skills = resultSet.getString(4);
-            String contactInformations = resultSet.getString(5);
+            String skill = resultSet.getString(4);
+            String contactInformation = resultSet.getString(5);
 
-            EmployeeDto employee = new EmployeeDto(employeeId, salary, name, skills, contactInformations);
+            EmployeeDto employee = new EmployeeDto(employeeId, salary, name, skill, contactInformation);
             employeeList.add(employee);
         }
     return employeeList;
@@ -38,20 +38,20 @@ public class Employee {
        pstm.setString(1, employeedto.getEmployeeId());
        pstm.setDouble(2, employeedto.getSalary());
        pstm.setString(3, employeedto.getName());
-       pstm.setString(4, employeedto.getSkills());
-       pstm.setObject(5, employeedto.getContactInfromation());
+       pstm.setString(4, employeedto.getSkill());
+       pstm.setObject(5, employeedto.getContactInformation());
         return pstm.executeUpdate() > 0;
 
     }
 
     public static boolean update(EmployeeDto employeedto) throws SQLException, ClassNotFoundException {
-        String sql = "update employee set salary = ?,name = ?,skills = ? ,contactInformation =? where employeeId =?";
+        String sql = "update employee set salary = ?,name = ?,skill = ? ,contactInformation =? where employeeId =?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
-        pstm.setObject(1,employeedto.getEmployeeId());
-        pstm.setObject(2,employeedto.getSalary());
-        pstm.setObject(3,employeedto.getName());
-        pstm.setObject(4,employeedto.getSkills());
-        pstm.setObject(5,employeedto.getContactInfromation());
+        pstm.setObject(5,employeedto.getEmployeeId());
+        pstm.setObject(1,employeedto.getSalary());
+        pstm.setObject(2,employeedto.getName());
+        pstm.setObject(3,employeedto.getSkill());
+        pstm.setObject(4,employeedto.getContactInformation());
         return pstm.executeUpdate() > 0;
 
     }
@@ -82,7 +82,7 @@ public class Employee {
     }
 
     public static EmployeeDto searchById(String contactInformation) throws SQLException, ClassNotFoundException {
-        String sql = "SELECT * FROM employee WHERE  contactInfromation=?";
+        String sql = "SELECT * FROM employee WHERE  name=?";
 
         PreparedStatement pstm = Dbconnection.getInstance().getConnection()
                 .prepareStatement(sql);
@@ -99,11 +99,11 @@ public class Employee {
             String inventoryId = resultSet.getString(1);
             double salary = Double.parseDouble(resultSet.getString(2));
             String name = resultSet.getString(3);
-            String skills = resultSet.getString(4);
+            String skill = resultSet.getString(4);
             String contact = resultSet.getString(5);
 
 
-            employeeDto  = new EmployeeDto( inventoryId, salary,name,skills,contact);
+            employeeDto  = new EmployeeDto( inventoryId, salary,name,skill,contact);
         }
         return employeeDto;
 

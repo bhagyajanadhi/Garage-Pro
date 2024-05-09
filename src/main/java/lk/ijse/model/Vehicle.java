@@ -37,13 +37,13 @@ public class Vehicle {
     }
 
     public static boolean update(VehicleDto vehicleDto) throws SQLException, ClassNotFoundException {
-        String sql = "update vehicle set vehicleModel = ?,vehicleLicense = ?,cus_id = ? where vehicleId =?";
+        String sql = "update vehicle set vehicleModel = ?,vehicleLicensePlate = ?,cus_id = ? where vehicleId =?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
 
-        pstm.setObject(1,vehicleDto.getVehicleId());
-        pstm.setObject(3,vehicleDto.getVehicleModel());
+        pstm.setObject(4,vehicleDto.getVehicleId());
+        pstm.setObject(1,vehicleDto.getVehicleModel());
         pstm.setObject(2,vehicleDto.getVehicleLicensePlate());
-        pstm.setObject(4,vehicleDto.getCus_id());
+        pstm.setObject(3,vehicleDto.getCus_id());
 
         return pstm.executeUpdate() > 0;
     }
@@ -72,8 +72,8 @@ public class Vehicle {
         List<VehicleDto> vehicleList = new ArrayList<>();
         while (resultSet.next()) {
             String vehicleId = resultSet.getString(1);
-            String vehicleModel = resultSet.getString(3);
-            String vehicleLicense = resultSet.getString(2);
+            String vehicleModel = resultSet.getString(2);
+            String vehicleLicense = resultSet.getString(3);
             String cus_id = resultSet.getString(4);
 
             VehicleDto vehicle = new VehicleDto(vehicleId, vehicleModel, vehicleLicense,cus_id);
@@ -88,15 +88,14 @@ public class Vehicle {
         PreparedStatement pstm = Dbconnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
+        System.out.println("1"+vehicleLicensePlate);
         pstm.setObject(1,vehicleLicensePlate);
         ResultSet resultSet = pstm.executeQuery();
 
         VehicleDto vehicleDto = null;
 
-
-
-
         if (resultSet.next()) {
+            System.out.println("2");
             String vehicleId = resultSet.getString(1);
             String vehicleModel = resultSet.getString(2);
             String plate = resultSet.getString(3);
@@ -104,6 +103,7 @@ public class Vehicle {
 
 
             vehicleDto  = new VehicleDto( vehicleId,vehicleModel,plate,cus_Id);
+            System.out.println(vehicleDto);
         }
         return vehicleDto;
     }

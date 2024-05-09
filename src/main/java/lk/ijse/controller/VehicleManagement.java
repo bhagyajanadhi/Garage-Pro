@@ -170,22 +170,21 @@ public class VehicleManagement {
         }
 
     }
-
-    public void txtSearchOnAction(ActionEvent actionEvent) {
-        String  vehicleLicensePlate = txtPlate.getText();
+    @FXML
+    void txtSearchOnAction(ActionEvent event) {
+        String plate = txtModel.getText();
 
         try {
-            VehicleDto vehicleDto = Vehicle.searchById(vehicleLicensePlate);
+            VehicleDto vehicleDto = Vehicle.searchById(plate);
 
-            if (vehicleDto != null) {
+            if(vehicleDto!=null){
                 txtVehicleId.setText(vehicleDto.getVehicleId());
                 txtModel.setText(vehicleDto.getVehicleModel());
                 txtPlate.setText(vehicleDto.getVehicleLicensePlate());
                 cmbCustomerId.setValue(vehicleDto.getCus_id());
-
             }
         } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
