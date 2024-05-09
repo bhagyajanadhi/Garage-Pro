@@ -13,7 +13,7 @@ public class SupplierDto {
     private String supplierId;
     private String name;
     private String paymentTerm;
-    private String contactInformaton;
+    private String contactInformation;
 
 
 }

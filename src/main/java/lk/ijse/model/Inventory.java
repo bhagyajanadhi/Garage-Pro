@@ -91,9 +91,9 @@ public class Inventory {
             String inventoryId = resultSet.getString(1);
             String description = resultSet.getString(2);
             String supplierId = resultSet.getString(3);
-            String partName = resultSet.getString(3);
-            int stockLevel = Integer.parseInt(resultSet.getString(3));
-            double unitPrice = Double.parseDouble(resultSet.getString(3));
+            String partName = resultSet.getString(4);
+            int stockLevel = Integer.parseInt(resultSet.getString(5));
+            double unitPrice = Double.parseDouble(resultSet.getString(6));
 
 
             InventoryDto inventoryDto = new InventoryDto(inventoryId, description, supplierId, partName, stockLevel, unitPrice);

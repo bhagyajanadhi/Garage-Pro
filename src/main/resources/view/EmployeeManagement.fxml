@@ -62,7 +62,7 @@
             </Button>
             <TextField fx:id="txtEmployeeName" layoutX="169.0" layoutY="84.0" prefHeight="35.0" prefWidth="285.0" />
             <TextField fx:id="txtEmployeeSalary" layoutX="574.0" layoutY="85.0" prefHeight="35.0" prefWidth="285.0" />
-            <TextField fx:id="txtEmployeeContactInformation" layoutX="235.0" layoutY="134.0" onAction="#txtSearchOnAction" prefHeight="35.0" prefWidth="285.0" />
+            <TextField fx:id="txtEmployeeContactInformation" layoutX="235.0" layoutY="134.0" onAction="#txtSearchOnAction" onKeyReleased="#txtOnKeyReleased" prefHeight="35.0" prefWidth="285.0" />
             <Button fx:id="dtlpane" layoutX="349.0" layoutY="184.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="116.0" style="-fx-background-color: #ae9f49; -fx-background-radius: 30;" text="Delete">
                <font>
                   <Font name="System Bold Italic" size="19.0" />
@@ -78,7 +78,7 @@
                   <Font size="19.0" />
                </font>
             </Button>
-            <TextField fx:id="txtEmployeeId" layoutX="161.0" layoutY="16.0" prefHeight="35.0" prefWidth="285.0" />
+            <TextField fx:id="txtEmployeeId" layoutX="161.0" layoutY="16.0" onKeyReleased="#txtOnKeyReleased" prefHeight="35.0" prefWidth="285.0" />
             <TextField fx:id="txtEmployeeSkills" layoutX="538.0" layoutY="10.0" prefHeight="35.0" prefWidth="285.0" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="189.0" layoutY="223.0">
                <image>

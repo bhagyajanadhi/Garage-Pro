@@ -5,14 +5,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.EmployeeDto;
 import lk.ijse.model.Customer;
 import lk.ijse.model.Employee;
+import lk.ijse.util.ValidateUtil;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class EmployeeManagementController {
 
@@ -73,6 +77,8 @@ public class EmployeeManagementController {
     @FXML
     private Button updatepane;
 
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
+
 
     private List<EmployeeDto> employeeList = new ArrayList<>();
     public void initialize() throws SQLException, ClassNotFoundException {
@@ -82,6 +88,10 @@ public class EmployeeManagementController {
         colSkills.setCellValueFactory(new PropertyValueFactory<>("skill"));
        colContactInformation.setCellValueFactory(new PropertyValueFactory<>("contactInformation"));
         getAllEmployee();
+        Pattern patternId = Pattern.compile("^(E0)[0-9]{1,5}$");
+        Pattern patterncontact = Pattern.compile("^(070 |071 | 072 | 076) [0-9] {7}$");
+        map.put(txtEmployeeId, patternId);
+        map.put(txtEmployeeContactInformation, patterncontact);
 
 
     }
@@ -183,6 +193,10 @@ public class EmployeeManagementController {
         }
 
 
+    }
+
+    public void txtOnKeyReleased(KeyEvent keyEvent) {
+        ValidateUtil.validation(map);
     }
 }
 

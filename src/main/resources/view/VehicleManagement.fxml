@@ -33,7 +33,7 @@
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtVehicleId" layoutX="39.0" layoutY="60.0" prefHeight="35.0" prefWidth="230.0" />
+            <TextField fx:id="txtVehicleId" layoutX="39.0" layoutY="60.0" onKeyPressed="#txtOnKeyRelease" prefHeight="35.0" prefWidth="230.0" />
             <Text layoutX="26.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Licence Plate:" wrappingWidth="160.39996337890614">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
@@ -67,7 +67,7 @@
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtModel" layoutX="33.0" layoutY="210.0" onAction="#txtSearchOnAction" prefHeight="35.0" prefWidth="230.0" />
+            <TextField fx:id="txtModel" layoutX="33.0" layoutY="210.0" onAction="#txtSearchOnAction" onKeyPressed="#txtOnKeyRelease" prefHeight="35.0" prefWidth="230.0" />
             <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="20.0" layoutY="407.0">
                <image>
                   <Image url="@../asserts/icons/download (4).png" />

@@ -57,6 +57,9 @@ public class DashBoardDetailsFormController implements Initializable {
     public void btnManageLoanOnAction(ActionEvent actionEvent) {
         setUi("LoanManagement");
     }
+    public void btnInventoryOnAction(ActionEvent actionEvent) {
+        setUi("InventoryManagement");
+    }
 
     void setUi(String url){
         try {
@@ -66,6 +69,7 @@ public class DashBoardDetailsFormController implements Initializable {
             throw new RuntimeException(e);
         }
 }
+
 
 
 }

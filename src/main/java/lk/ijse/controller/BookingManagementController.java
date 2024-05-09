@@ -6,16 +6,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.dto.BookingDto;
 import lk.ijse.model.Booking;
 import lk.ijse.model.Customer;
 import lk.ijse.model.Vehicle;
+import lk.ijse.util.ValidateUtil;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class  BookingManagementController {
 
@@ -56,6 +60,7 @@ public class  BookingManagementController {
     @FXML
     private TextField txtBooking;
 
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
 
 
     private List<BookingDto> bookingList = new ArrayList<>();
@@ -68,6 +73,10 @@ public class  BookingManagementController {
         getAllBooking();
         getCustomerIds();
         getVehicleIds();
+
+        Pattern patternId = Pattern.compile("^(B0)[0-9]{1,5}$");
+
+        map.put(txtBooking, patternId);
     }
 
     private void getVehicleIds() {
@@ -183,5 +192,9 @@ public class  BookingManagementController {
     }
 
     public void txtPayIdOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void txtOnKeyRelease(KeyEvent keyEvent) {
+        ValidateUtil.validation(map);
     }
 }

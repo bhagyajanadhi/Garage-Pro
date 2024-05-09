@@ -68,7 +68,7 @@
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtJobId" layoutX="39.0" layoutY="60.0" prefHeight="35.0" prefWidth="230.0" />
+            <TextField fx:id="txtJobId" layoutX="39.0" layoutY="60.0" onKeyReleased="#txtOnKeyRelease" prefHeight="35.0" prefWidth="230.0" />
             <Text layoutX="8.0" layoutY="117.259765625" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="125.99999999999989">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />

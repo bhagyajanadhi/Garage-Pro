@@ -5,9 +5,12 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -15,96 +18,120 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SupplierManagementController">
 
     <children>
-        <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="844.0" layoutX="14.0" layoutY="33.0" stroke="#ccbea6" strokeType="INSIDE" width="1054.0" />
-        <Text layoutX="1144.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welawa tyenne methna" />
-      <TableView fx:id="tblSupplier" layoutX="128.0" layoutY="91.0" prefHeight="316.0" prefWidth="737.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="844.0" stroke="BLACK" strokeType="INSIDE" width="1054.0" />
+      <TableView fx:id="tblSupplier" layoutX="394.0" layoutY="131.0" prefHeight="570.0" prefWidth="620.0">
          <columns>
-            <TableColumn fx:id="colSupplier" prefWidth="164.79998779296875" text="Supplier ID">
+            <TableColumn fx:id="colSupplier" prefWidth="140.0" text="Supplier ID">
                <cellValueFactory>
                   <PropertyValueFactory property="bookingId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="colName" prefWidth="162.4000244140625" text="Supplier Name">
+            <TableColumn fx:id="colName" prefWidth="132.79998779296875" text="Supplier Name">
                <cellValueFactory>
                   <PropertyValueFactory property="date" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="colPaymentTerms" prefWidth="192.0" text="Peyment Terms">
+            <TableColumn fx:id="colPaymentTerms" prefWidth="180.00006103515625" text="Peyment Terms">
                <cellValueFactory>
                   <PropertyValueFactory property="vehicleId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="colContact" prefWidth="217.60003662109375" text="Contact No">
+            <TableColumn fx:id="colContact" prefWidth="208.79998779296875" text="Contact No">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>
             </TableColumn>
          </columns>
       </TableView>
-      <TextField layoutX="161.0" layoutY="40.0" text="Supplier Management">
+      <TextField layoutX="531.0" layoutY="33.0" prefHeight="51.0" prefWidth="371.0" text="Supplier Management">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </TextField>
-      <TextField layoutX="168.0" layoutY="417.0" text="Inventory Management">
-         <font>
-            <Font name="System Bold Italic" size="24.0" />
-         </font>
-      </TextField>
-      <TableView fx:id="tblInventory" layoutX="24.0" layoutY="475.0" prefHeight="277.0" prefWidth="928.0">
-         <columns>
-            <TableColumn prefWidth="164.79998779296875" text="InventoryId">
-               <cellValueFactory>
-                  <PropertyValueFactory property="bookingId" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="162.4000244140625" text="Description">
-               <cellValueFactory>
-                  <PropertyValueFactory property="date" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="192.0" text="SupplierId">
-               <cellValueFactory>
-                  <PropertyValueFactory property="vehicleId" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn minWidth="0.0" prefWidth="114.4000244140625" text="PartName">
-               <cellValueFactory>
-                  <PropertyValueFactory property="customerId" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="84.0" text="Stock Level">
-               <cellValueFactory>
-                  <PropertyValueFactory property="customerId" />
-               </cellValueFactory>
-            </TableColumn>
-            <TableColumn prefWidth="208.0" text="Unite Price">
-               <cellValueFactory>
-                  <PropertyValueFactory property="customerId" />
-               </cellValueFactory>
-            </TableColumn>
-         </columns>
-      </TableView>
-      <Button fx:id="btnAddSupplier" layoutX="540.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnAddSupplierOnAction" prefHeight="41.0" prefWidth="76.0" style="-fx-background-color: #ECF87F;" text="ADD">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnAddInventory" layoutX="540.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnAddInventoryOnAction" prefHeight="41.0" prefWidth="76.0" style="-fx-background-color: #ECF87F;" text="ADD">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="51.0" fitWidth="55.0" layoutX="93.0" layoutY="40.0">
-         <image>
-            <Image url="@../asserts/icons/icons8-supplier-64.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="138.0" fitWidth="148.0" layoutX="423.0" layoutY="739.0">
+      <ImageView fitHeight="138.0" fitWidth="148.0" layoutX="435.0" layoutY="695.0">
          <image>
             <Image url="@../asserts/icons/20240421_164310 (1).png" />
          </image>
       </ImageView>
+      <AnchorPane layoutX="14.0" layoutY="11.0" prefHeight="712.0" prefWidth="338.0">
+         <children>
+            <Pane layoutX="18.0" layoutY="45.0" prefHeight="670.0" prefWidth="319.0" style="-fx-background-color: fdedd0; -fx-background-radius: 20;">
+               <children>
+                  <TextField fx:id="txtSupplierId" layoutX="75.0" layoutY="134.0" onKeyPressed="#txtKeyOnRelease" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtName" layoutX="75.0" layoutY="213.0" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtPaymentTerms" layoutX="75.0" layoutY="312.0" prefHeight="24.0" prefWidth="235.0" />
+                  <Text layoutX="25.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Id:" wrappingWidth="151.0">
+                     <font>
+                        <Font name="Dyuthi Regular" size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="26.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                     <font>
+                        <Font name="Dyuthi Regular" size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="14.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Terms:" wrappingWidth="235.0">
+                     <font>
+                        <Font name="Dyuthi Regular" size="26.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="savpane" layoutX="33.0" layoutY="478.0" mnemonicParsing="false" onAction="#btnSaverOnAction" prefHeight="51.0" prefWidth="100.0" style="-fx-background-color: #ECF87F;" text="Save">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="dtlpane" layoutX="40.0" layoutY="571.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-color: #ECF87F;" text="Delete">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="updatepane" layoutX="178.0" layoutY="478.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-color: #ECF87F;" text="Update">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clearpane" layoutX="190.0" layoutY="571.0" mnemonicParsing="false" onAction="#btnClearOnAction" style="-fx-background-color: #ECF87F;" text="Clear">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="26.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact No:" wrappingWidth="264.0">
+                     <font>
+                        <Font name="Dyuthi Regular" size="26.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtContact" layoutX="75.0" layoutY="404.0" onAction="#txtSearchOnAction" onKeyPressed="#txtKeyOnRelease" prefHeight="24.0" prefWidth="235.0" />
+                  <ImageView fitHeight="24.0" fitWidth="30.0" layoutX="211.0" layoutY="532.0">
+                     <image>
+                        <Image url="@../asserts/icons/update-.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="211.0" layoutY="626.0">
+                     <image>
+                        <Image url="@../asserts/icons/clear-30.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="20.0" layoutX="65.0" layoutY="629.0">
+                     <image>
+                        <Image url="@../asserts/icons/delete-30.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="60.0" layoutY="529.0">
+                     <image>
+                        <Image url="@../asserts/icons/save-64.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.9098039269447327" green="0.8235294222831726" blue="0.7490196228027344" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Pane>
+         </children>
+      </AnchorPane>
     </children>
 
 </AnchorPane>

@@ -5,9 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.dto.LoanDto;
 import lk.ijse.model.Loan;
+import lk.ijse.util.ValidateUtil;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -169,4 +171,7 @@ public class LoanManagementController {
 
     }
 
+    public void txtOnAction(KeyEvent keyEvent) {
+        ValidateUtil.validation(map);
+    }
 }

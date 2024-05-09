@@ -51,7 +51,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <PasswordField fx:id="passwordField1" layoutX="23.0" layoutY="309.0" prefHeight="32.0" prefWidth="346.0" promptText="Enter  new password" />
+      <PasswordField fx:id="passwordField1" layoutX="23.0" layoutY="309.0" onKeyReleased="#txtOnkeyReleased" prefHeight="32.0" prefWidth="346.0" promptText="Enter  new password" />
       <Text fill="#0d0d0d" layoutX="22.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Password">
          <font>
             <Font name="System Bold" size="24.0" />
@@ -68,9 +68,9 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="txtUserName" layoutX="18.0" layoutY="132.0" prefHeight="32.0" prefWidth="346.0" promptText="Enter YOur User Name" />
+      <TextField fx:id="txtUserName" layoutX="18.0" layoutY="132.0" onKeyReleased="#txtOnkeyReleased" prefHeight="32.0" prefWidth="346.0" promptText="Enter YOur User Name" />
       <PasswordField fx:id="passwordField" layoutX="27.0" layoutY="385.0" prefHeight="32.0" prefWidth="346.0" promptText="Re-enter password" />
-      <TextField fx:id="txtEmail" layoutX="18.0" layoutY="215.0" prefHeight="32.0" prefWidth="346.0" promptText="Entrer Your email address" />
+      <TextField fx:id="txtEmail" layoutX="18.0" layoutY="215.0" onKeyReleased="#txtOnkeyReleased" prefHeight="32.0" prefWidth="346.0" promptText="Entrer Your email address" />
       <Text fill="#0d0d0d" layoutX="22.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Re-enter Password">
          <font>
             <Font name="System Bold" size="24.0" />

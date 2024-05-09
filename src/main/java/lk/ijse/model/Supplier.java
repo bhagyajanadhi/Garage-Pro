@@ -1,6 +1,7 @@
 package lk.ijse.model;
 
 import lk.ijse.db.Dbconnection;
+import lk.ijse.dto.BookingDto;
 import lk.ijse.dto.SupplierDto;
 import lk.ijse.dto.VehicleDto;
 
@@ -8,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,9 +45,9 @@ public class Supplier {
 
 
         pstm.setObject(1, supplierDto.getSupplierId());
-        pstm.setObject(3, supplierDto.getName());
-        pstm.setObject(2, supplierDto.getContactInformaton());
-        pstm.setObject(4, supplierDto.getContactInformaton());
+        pstm.setObject(2, supplierDto.getName());
+        pstm.setObject(4, supplierDto.getContactInformation());
+        pstm.setObject(3, supplierDto.getPaymentTerm());
 
         return pstm.executeUpdate() > 0;
     }
@@ -55,8 +57,8 @@ public class Supplier {
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(4, supplierDto.getSupplierId());
         pstm.setObject(1, supplierDto.getName());
-        pstm.setObject(2, supplierDto.getContactInformaton());
-        pstm.setObject(3, supplierDto.getContactInformaton());
+        pstm.setObject(2, supplierDto.getContactInformation());
+        pstm.setObject(3, supplierDto.getContactInformation());
 
         return pstm.executeUpdate() > 0;
 
@@ -79,13 +81,33 @@ public class Supplier {
             String supplierId = resultSet.getString(1);
             String supplierName = resultSet.getString(2);
             String paymentTerm = resultSet.getString(3);
-            String contactInfromation = resultSet.getString(4);
+            String contactInformation = resultSet.getString(4);
 
 
-            supplierDto = new SupplierDto(supplierId, supplierName, paymentTerm, contactInfromation);
+            supplierDto = new SupplierDto(supplierId, supplierName, paymentTerm, contactInformation);
         }
         return supplierDto;
     }
 
+    public static List<SupplierDto> getAll() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM supplier";
+
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        List<SupplierDto> supplierList = new ArrayList<>();
+        while (resultSet.next()) {
+            String supplierId= resultSet.getString(1);
+            String name = resultSet.getString(2);
+            String paymentTerm = resultSet.getString(3);
+            String contactInformation = resultSet.getString(4);
+
+            SupplierDto supplierDto = new SupplierDto(supplierId,name,paymentTerm,contactInformation);
+            supplierList.add(supplierDto);
+        }
+        return supplierList;
+    }
 }
 

@@ -6,14 +6,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.model.Customer;
+import lk.ijse.util.ValidateUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class CustomerManagementController {
 
@@ -62,6 +66,8 @@ public class CustomerManagementController {
     @FXML
     private TextField txtcustomer;
 
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
+
     private List<CustomerDto> customerList = new ArrayList<>();
 
     public void initialize() throws SQLException, ClassNotFoundException {
@@ -71,6 +77,16 @@ public class CustomerManagementController {
         colAddress.setCellValueFactory(new PropertyValueFactory<>("customerAddress"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("customerEmail"));
         getAllCustomer();
+
+        Pattern patternId = Pattern.compile("^(C0)[0-9]{1,5}$");
+        Pattern patternName = Pattern.compile("^[A-z]{3,}$");  //[0-9 a-z]{10}
+        Pattern patternEmail = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+        Pattern patterncontact = Pattern.compile("^(070 |071 | 072 | 076) [0-9] {7}$");
+
+        map.put(txtcustomer, patternId);
+        map.put(txtName, patternName);
+        map.put(txtEmail, patternEmail);
+        map.put(txtContact, patterncontact);
 
     }
 
@@ -184,4 +200,15 @@ public class CustomerManagementController {
 
     }
 
+
+    public void txtKeyOnRelease(KeyEvent keyEvent) {
+        ValidateUtil.validation(map);
+    }
+
+    public void txtOnKeyRelesed(KeyEvent keyEvent) {
+        ValidateUtil.validation(map);
+    }
+
+    public void ttxtOnKeyRelese(KeyEvent keyEvent) {
+    }
 }

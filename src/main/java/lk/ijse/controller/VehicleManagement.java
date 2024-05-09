@@ -6,14 +6,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.VehicleDto;
 import lk.ijse.model.Customer;
 import lk.ijse.model.Vehicle;
+import lk.ijse.util.ValidateUtil;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class VehicleManagement {
 
@@ -57,6 +61,8 @@ public class VehicleManagement {
 
     @FXML
     private Button updatepane;
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
+
     private List<VehicleDto> vehicleList = new ArrayList<>();
 
     public void initialize() throws SQLException, ClassNotFoundException {
@@ -66,6 +72,13 @@ public class VehicleManagement {
         colCustomerId.setCellValueFactory(new PropertyValueFactory<>("cus_id"));
         getAllVehicle();
         getCustomerIds();
+
+        Pattern patternId = Pattern.compile("^(V0)[0-9]{1,5}$");
+        Pattern patternLisence = Pattern.compile("^(V1)[0-9]{1,5}$");
+
+        map.put(txtVehicleId, patternId);
+        map.put(txtPlate, patternLisence);
+
     }
 
     private void getCustomerIds() {
@@ -188,5 +201,9 @@ public class VehicleManagement {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void txtOnKeyRelease(KeyEvent keyEvent) {
+        ValidateUtil.validation(map);
     }
 }

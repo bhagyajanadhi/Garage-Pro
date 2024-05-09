@@ -6,16 +6,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.dto.JobDto;
 import lk.ijse.model.Employee;
 import lk.ijse.model.Job;
 import lk.ijse.model.Vehicle;
+import lk.ijse.util.ValidateUtil;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class JobManagementController {
 
@@ -57,6 +61,9 @@ public class JobManagementController {
     @FXML
     private TextField txtDescriotion;
 
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
+
+
     @FXML
     private TextField txtJobId;
     private List<JobDto> jobList = new ArrayList<JobDto>();
@@ -71,6 +78,9 @@ public class JobManagementController {
         getAllJob();
         getEmployeeIds();
         getVehicleIds();
+        Pattern patternId = Pattern.compile("^(J0)[0-9]{1,5}$");
+
+        map.put(txtJobId, patternId);
     }
 
     private void getVehicleIds() {
@@ -180,5 +190,9 @@ public class JobManagementController {
 
     public void txtPayIdOnAction(MouseEvent mouseEvent) {
 
+    }
+
+    public void txtOnKeyRelease(KeyEvent keyEvent) {
+        ValidateUtil.validation(map);
     }
 }

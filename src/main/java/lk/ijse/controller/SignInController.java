@@ -7,12 +7,18 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lk.ijse.model.Admin;
+import lk.ijse.util.ValidateUtil;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.LinkedHashMap;
+import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 public class SignInController {
     public Pane mainPain;
@@ -22,6 +28,20 @@ public class SignInController {
     public Button btnsign;
     public PasswordField passwordField;
     public PasswordField passwordField1;
+
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
+
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        Pattern patternpassword = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{6,}$");
+        Pattern patternEmail = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
+
+        map.put(passwordField1, patternpassword);
+        map.put(txtEmail, patternEmail);
+
+    }
+
+
 
     public void btnSignUpOnAction(ActionEvent actionEvent) {
         String username = txtUserName.getText();
@@ -76,5 +96,10 @@ public class SignInController {
         txtEmail.clear();
         passwordField1.clear();
         passwordField.clear();
+    }
+
+
+    public void txtOnkeyReleased(KeyEvent keyEvent) {
+        ValidateUtil.validation(map);
     }
 }
