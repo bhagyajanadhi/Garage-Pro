@@ -131,11 +131,16 @@
             </TableColumn>
          </columns>
       </TableView>
-      <TextField layoutX="296.0" layoutY="40.0" prefHeight="78.0" prefWidth="459.0" style="-fx-background-radius: 30;" text="Employee Management">
+      <TextField layoutX="296.0" layoutY="62.0" prefHeight="78.0" prefWidth="459.0" style="-fx-background-radius: 30;" text="Employee Management">
          <font>
             <Font name="System Bold Italic" size="37.0" />
          </font>
       </TextField>
+      <Text fx:id="txtTime" layoutX="20.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="1033.599975347519">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Text>
     </children>
 
 </AnchorPane>

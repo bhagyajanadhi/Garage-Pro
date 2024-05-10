@@ -1,6 +1,7 @@
 package lk.ijse.controller;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -9,6 +10,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.dto.LoanDto;
 import lk.ijse.model.Loan;
+import lk.ijse.model.Supplier;
 import lk.ijse.util.ValidateUtil;
 
 import java.sql.SQLException;
@@ -24,7 +26,7 @@ public class LoanManagementController {
     private Button clearpane;
 
     @FXML
-    private ComboBox<?> cmbSupplierId;
+    private ComboBox<String> cmbSupplierId;
 
     @FXML
     private TableColumn<?, ?> colAmount;
@@ -76,9 +78,29 @@ public class LoanManagementController {
         colDueDates.setCellValueFactory(new PropertyValueFactory<>("duedate"));
         colPaymentStatus.setCellValueFactory(new PropertyValueFactory<>("paymentstatus"));
         getAllLoan();
-        Pattern patternId = Pattern.compile("^(C0)[0-9]{1,5}$");
+        getSupplierIds();
+        Pattern patternId = Pattern.compile("^(L0)[0-9]{1,5}$");
 
         map.put(txtLoanId, patternId);
+
+    }
+
+    private void getSupplierIds() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> idList = Supplier.getIds();
+
+            for (String customerId : idList) {
+                obList.add(customerId);
+            }
+            cmbSupplierId.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 

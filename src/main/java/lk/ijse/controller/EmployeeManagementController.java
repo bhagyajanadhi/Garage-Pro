@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.text.Text;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.EmployeeDto;
 import lk.ijse.model.Customer;
@@ -19,7 +20,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class EmployeeManagementController {
-
+    @FXML
+    private Text txtTime;
     @FXML
     private Button clearpane;
 
@@ -95,6 +97,7 @@ public class EmployeeManagementController {
 
 
     }
+
     private void getAllEmployee() throws SQLException, ClassNotFoundException {
         employeeList =Employee.getAll();
        tblEmployee.setItems(FXCollections.observableList(this.employeeList));

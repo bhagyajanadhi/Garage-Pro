@@ -1,5 +1,8 @@
 package lk.ijse.controller;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,12 +11,18 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
 import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.model.Customer;
+import lk.ijse.util.DateTimeUtil;
 import lk.ijse.util.ValidateUtil;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -27,6 +36,8 @@ public class CustomerManagementController {
     @FXML
     private Button clearPane;
 
+    @FXML
+    private  Text txtTime;
     @FXML
     private TableColumn<?, ?> colAddress;
 
@@ -61,6 +72,10 @@ public class CustomerManagementController {
     private TextField txtName;
 
     @FXML
+    private Text txtDate;
+
+
+    @FXML
     private TextField txtaddress;
 
     @FXML
@@ -71,6 +86,9 @@ public class CustomerManagementController {
     private List<CustomerDto> customerList = new ArrayList<>();
 
     public void initialize() throws SQLException, ClassNotFoundException {
+
+
+        realTime();
         colId.setCellValueFactory(new PropertyValueFactory<>("customerId"));
         colName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
         colContact.setCellValueFactory(new PropertyValueFactory<>("customerContactInformation"));
@@ -87,6 +105,16 @@ public class CustomerManagementController {
         map.put(txtName, patternName);
         map.put(txtEmail, patternEmail);
         map.put(txtContact, patterncontact);
+
+
+
+}
+
+    public void realTime() {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1),event->txtTime.setText(DateTimeUtil.timenow())));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+        txtTime.setText(DateTimeUtil.timenow());
 
     }
 

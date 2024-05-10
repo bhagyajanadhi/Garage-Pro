@@ -22,7 +22,10 @@
       </ImageView>
       <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#997943e3" height="567.0" layoutX="347.0" layoutY="211.0" stroke="#ccbea6" strokeType="INSIDE" width="665.0" />
       <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#997943e3" height="558.0" layoutX="26.0" layoutY="217.0" stroke="#ccbea6" strokeType="INSIDE" width="283.0" />
-      <Text layoutX="852.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welawa tyenne methna" />
+      <Text fx:id="txtTime" layoutX="10.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="1033.599975347519">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font></Text>
       <TableView fx:id="tblCustomer" layoutX="358.0" layoutY="257.0" prefHeight="498.0" prefWidth="648.0">
          <columns>
             <TableColumn fx:id="colId" prefWidth="101.60003662109375" text="CustomerId">

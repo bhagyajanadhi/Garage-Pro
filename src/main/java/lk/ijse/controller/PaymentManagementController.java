@@ -6,14 +6,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.dto.PaymentDto;
 import lk.ijse.model.*;
+import lk.ijse.util.ValidateUtil;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class PaymentManagementController {
 
@@ -56,6 +60,8 @@ public class PaymentManagementController {
     private Button updatePane;
     private List<PaymentDto> paymentList = new ArrayList<>();
 
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
+
     public void initialize() throws SQLException, ClassNotFoundException {
 
         colJobId.setCellValueFactory(new PropertyValueFactory<>("jobId"));
@@ -64,6 +70,10 @@ public class PaymentManagementController {
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         getAllPayment();
         getJobIds();
+        Pattern patternId = Pattern.compile("^(P0)[0-9]{1,5}$");
+
+        map.put(txtPaymentId, patternId);
+
 
     }
 
@@ -164,4 +174,7 @@ public class PaymentManagementController {
 
     }
 
+    public void txtKeyOnRelease(KeyEvent keyEvent) {
+        ValidateUtil.validation(map);
+    }
 }

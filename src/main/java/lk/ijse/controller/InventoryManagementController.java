@@ -6,15 +6,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import lk.ijse.dto.BookingDto;
 import lk.ijse.dto.InventoryDto;
 import lk.ijse.model.Booking;
 import lk.ijse.model.Inventory;
 import lk.ijse.model.Supplier;
+import lk.ijse.util.ValidateUtil;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class InventoryManagementController {
 
@@ -70,15 +74,21 @@ public class InventoryManagementController {
     private Button updatepane;
     private List<InventoryDto> inventoryList = new ArrayList<>();
 
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
+
 
     public void initialize() throws SQLException, ClassNotFoundException {
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
         colInventory.setCellValueFactory(new PropertyValueFactory<>("inventoryId"));
         colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
         colPartName.setCellValueFactory(new PropertyValueFactory<>("partName"));
-        colUnitePrice.setCellValueFactory(new PropertyValueFactory<>("unitePrice"));
+        colUnitePrice.setCellValueFactory(new PropertyValueFactory<>("stockLevel"));
         getAllInventory();
         getAllSupplierIds();
+        Pattern patternId = Pattern.compile("^(I0)[0-9]{1,5}$");
+
+        map.put(txtInventoryId, patternId);
+
     }
 
     private void getAllSupplierIds() {
@@ -214,5 +224,9 @@ public class InventoryManagementController {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public void txtOnKeyActon(KeyEvent keyEvent) {
+        ValidateUtil.validation(map);
     }
 }

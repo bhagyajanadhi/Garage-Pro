@@ -33,11 +33,14 @@ public class SignInController {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        Pattern patternName = Pattern.compile("^[A-z]{3,}$");  //[0-9 a-z]{10}
         Pattern patternpassword = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{6,}$");
         Pattern patternEmail = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
 
         map.put(passwordField1, patternpassword);
         map.put(txtEmail, patternEmail);
+        map.put(txtUserName, patternName);
+
 
     }
 
