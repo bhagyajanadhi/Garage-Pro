@@ -18,7 +18,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.JobManagementController">
 
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="844.0" layoutX="-8.0" layoutY="-31.0" stroke="BLACK" strokeType="INSIDE" width="1050.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1ccaa" height="844.0" layoutX="-8.0" layoutY="-31.0" stroke="BLACK" strokeType="INSIDE" width="1050.0" />
         <ImageView fitHeight="116.0" fitWidth="143.0" layoutX="584.0" layoutY="677.0">
             <image>
                 <Image url="@../asserts/icons/20240421_164310 (1).png" />

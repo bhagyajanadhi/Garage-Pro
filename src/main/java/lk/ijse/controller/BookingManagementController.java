@@ -196,5 +196,12 @@ public class  BookingManagementController {
 
     public void txtOnKeyRelease(KeyEvent keyEvent) {
         ValidateUtil.validation(map);
+        ValidateUtil.validation(map);
+        ValidateUtil.validation(map);
+        ValidateUtil.validation(map);
+        ValidateUtil.validation(map);
+        ValidateUtil.validation(map);
+        ValidateUtil.validation(map);
+        ValidateUtil.validation(map);
     }
 }
