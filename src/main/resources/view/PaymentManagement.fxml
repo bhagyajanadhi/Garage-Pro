@@ -50,7 +50,7 @@
             <Button fx:id="updatePane" layoutX="178.0" layoutY="481.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Update" />
             <Button fx:id="clearPane" layoutX="58.0" layoutY="528.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear" />
             <Button fx:id="dtlPane" layoutX="180.0" layoutY="528.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Delete" />
-            <TextField fx:id="txtPaymentId" layoutX="10.0" layoutY="58.0" onKeyReleased="#txtKeyOnRelease" prefHeight="35.0" prefWidth="230.0" />
+            <TextField fx:id="txtPaymentId" layoutX="10.0" layoutY="58.0" onAction="#txtPaymentSearchOnAction" onKeyReleased="#txtKeyOnRelease" prefHeight="35.0" prefWidth="230.0" />
             <Text layoutX="11.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Id :" wrappingWidth="137.7294921875">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />

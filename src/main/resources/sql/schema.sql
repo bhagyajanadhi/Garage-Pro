@@ -47,6 +47,7 @@ CREATE TABLE payment (
                          amount DECIMAL(10, 2),
                          date DATE,
                          itemAmount DOUBLE,
+                         total DOUBLE,
                          FOREIGN KEY (jobId) REFERENCES job(jobId) ON UPDATE CASCADE ON DELETE CASCADE
 
 

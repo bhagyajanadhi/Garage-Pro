@@ -34,6 +34,7 @@ public class Payment {
             Double amount = Double.valueOf(resultSet.getString(3));
             LocalDate date = LocalDate.parse(resultSet.getString(4));
             Double itemAmount = Double.valueOf(resultSet.getString(5));
+            Double total= Double.valueOf(resultSet.getString(6));
             PaymentDto payment = new PaymentDto( jobId, paymentId, amount, date,itemAmount);
 
             paymentList.add(payment);
@@ -62,5 +63,31 @@ public class Payment {
         pstm.setObject(1,paymentId);
 
         return pstm.executeUpdate() > 0;
+    }
+
+    public static PaymentDto searchById(String paymentId) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM payment WHERE  paymentId=?";
+
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        pstm.setObject(1, paymentId);
+        ResultSet resultSet = pstm.executeQuery();
+
+        PaymentDto paymentDto = null;
+
+
+        if (resultSet.next()) {
+            String jobId = resultSet.getString(1);
+            paymentId = resultSet.getString(2);
+            Double amount = Double.valueOf(resultSet.getString(3));
+            LocalDate date = LocalDate.parse(resultSet.getString(4));
+            double itemAmount = Integer.parseInt(resultSet.getString(5));
+            double total = resultSet.getDouble(6);
+
+
+            paymentDto = new PaymentDto(jobId,paymentId,amount,date,itemAmount);
+        }
+        return paymentDto;
     }
 }

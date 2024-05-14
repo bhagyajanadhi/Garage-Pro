@@ -1,17 +1,13 @@
 package lk.ijse.controller;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import lk.ijse.dto.JobDto;
-import lk.ijse.dto.JobInventoryDto;
-import lk.ijse.dto.PaymentDto;
-import lk.ijse.dto.VehicleDto;
+import lk.ijse.dto.*;
 import lk.ijse.model.*;
 import lk.ijse.util.ValidateUtil;
 
@@ -39,6 +35,8 @@ public class PaymentManagementController {
     @FXML
     private TableColumn<?, ?> colJobId;
 
+    @FXML
+    private TableColumn<?, ?> colTotal;
     @FXML
     private TableColumn<?, ?> colPaymentId;
     @FXML
@@ -81,7 +79,7 @@ public class PaymentManagementController {
         colPaymentId.setCellValueFactory(new PropertyValueFactory<>("paymentId"));
         colAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
-
+        colTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
         getAllPayment();
         Pattern patternId = Pattern.compile("^(P0)[0-9]{1,5}$");
 
@@ -126,6 +124,7 @@ public class PaymentManagementController {
         Double amount = Double.valueOf(txtamount.getText());
         LocalDate date = dpDate.getValue();
         Double itemAmount= Double.valueOf(txtNetTotal.getText());
+      //  Double total = Double.valueOf(txtTotal.getText());
         double fullAmount = (amount + itemAmount);
         txtTotal.setText(String.valueOf(fullAmount));
         PaymentDto paymentDto = new PaymentDto(jobId,paymentId,amount,date,itemAmount);
@@ -160,6 +159,7 @@ public class PaymentManagementController {
         Double amount = Double.valueOf(txtamount.getText());
         LocalDate date = dpDate.getValue();
         Double itemAmount =Double.valueOf(txtNetTotal.getText());
+        Double total =Double.valueOf(txtTotal.getText());
         PaymentDto paymentDto = new PaymentDto(jobId,paymentId,amount,date,itemAmount);
 
         boolean isUpdated = Payment.update(paymentDto);
@@ -172,6 +172,29 @@ public class PaymentManagementController {
     void txtPayIdOnAction(MouseEvent event) {
 
     }
+    @FXML
+    void txtPaymentSearchOnAction(ActionEvent event) {
+
+        String paymentId = txtPaymentId.getText();
+
+
+        try {
+            PaymentDto paymentDto = Payment.searchById(paymentId);
+
+            if (paymentDto != null) {
+                txtPaymentId.setText(paymentDto.getPaymentId());
+                txtJobId.setText(paymentDto.getJobId());
+                txtamount.setText(String.valueOf(paymentDto.getAmount()));
+            }
+        }catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
 
     @FXML
     void txtJobOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
