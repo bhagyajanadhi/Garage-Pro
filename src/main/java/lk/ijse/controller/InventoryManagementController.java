@@ -48,7 +48,7 @@ public class InventoryManagementController {
     @FXML
     private Button savpane;
     @FXML
-    private TableView<String> tblInventory;
+    private TableView<InventoryDto> tblInventory;
 
     @FXML
     private TextField txtDescription;
@@ -70,7 +70,7 @@ public class InventoryManagementController {
 
     @FXML
     private Button updatepane;
-    private List<String> inventoryList = new ArrayList<String>();
+    private ArrayList<InventoryDto> inventoryList = new ArrayList<InventoryDto>();
 
     LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
 
@@ -109,7 +109,7 @@ public class InventoryManagementController {
     }
 
     private void getAllInventory() throws SQLException, ClassNotFoundException {
-        inventoryList = Inventory.getAll();
+        inventoryList = Inventory.getAllInventory();
         tblInventory.setItems(FXCollections.observableList(this.inventoryList));
 
 

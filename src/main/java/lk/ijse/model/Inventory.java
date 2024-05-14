@@ -1,6 +1,7 @@
 package lk.ijse.model;
 
 import lk.ijse.db.Dbconnection;
+import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.InventoryDto;
 
 import java.sql.Connection;
@@ -79,32 +80,6 @@ public class Inventory {
         return inventoryDto;
     }
 
-    public static List<String> getAll() throws SQLException, ClassNotFoundException {
-        ArrayList<InventoryDto> allData = new ArrayList<InventoryDto>();
-
-        try {
-            Connection connection = Dbconnection.getInstance().getConnection();
-            PreparedStatement pstm = connection.prepareStatement("SELECT * FROM inventory");
-            ResultSet resultSet = pstm.executeQuery();
-
-            while (resultSet.next()){
-                allData.add(
-                        new InventoryDto(
-                                resultSet.getString(1),
-                                resultSet.getString(2),
-                                resultSet.getString(3),
-                                resultSet.getString(4),
-                                resultSet.getInt(5),
-                                resultSet.getDouble(6)
-
-                        )
-                );
-            }
-         return null;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public static ArrayList<InventoryDto> getAllInventory() {
         ArrayList<InventoryDto> allData = new ArrayList<InventoryDto>();

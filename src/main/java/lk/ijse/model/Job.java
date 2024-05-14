@@ -66,7 +66,7 @@ public class Job {
         for (JobInventoryDto dto : observableList) {
             Inventory inventory = new Inventory();
             InventoryDto inventoryDto = inventory.searchById(dto.getPartName());
-            boolean b = inventory.update(new InventoryDto(inventoryDto.getInventoryId(),inventoryDto.getDescription(),inventoryDto.getSupplierId(),inventoryDto.getPartName(),inventoryDto.getQty(),inventoryDto.getUnitePrice()));
+            boolean b = inventory.update(new InventoryDto(inventoryDto.getInventoryId(),inventoryDto.getDescription(),inventoryDto.getSupplierId(),inventoryDto.getPartName(),inventoryDto.getQty()-dto.getQty(),inventoryDto.getUnitePrice()));
             if (!b) {
                 return false;
             }
