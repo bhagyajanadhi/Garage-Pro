@@ -8,7 +8,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import lk.ijse.dto.JobDto;
+import lk.ijse.dto.JobInventoryDto;
 import lk.ijse.dto.PaymentDto;
+import lk.ijse.dto.VehicleDto;
 import lk.ijse.model.*;
 import lk.ijse.util.ValidateUtil;
 
@@ -42,6 +45,15 @@ public class PaymentManagementController {
     private DatePicker dpDate;
 
     @FXML
+    private TextField txtJobId;
+
+    @FXML
+    private TextField txtNetTotal;
+    @FXML
+    private TextField txtTotal;
+
+
+    @FXML
     private Button dtlPane;
 
     @FXML
@@ -58,6 +70,7 @@ public class PaymentManagementController {
 
     @FXML
     private Button updatePane;
+    double fullTotal=0;
     private List<PaymentDto> paymentList = new ArrayList<>();
 
     LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
@@ -68,8 +81,8 @@ public class PaymentManagementController {
         colPaymentId.setCellValueFactory(new PropertyValueFactory<>("paymentId"));
         colAmount.setCellValueFactory(new PropertyValueFactory<>("amount"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+
         getAllPayment();
-        getJobIds();
         Pattern patternId = Pattern.compile("^(P0)[0-9]{1,5}$");
 
         map.put(txtPaymentId, patternId);
@@ -77,28 +90,12 @@ public class PaymentManagementController {
 
     }
 
-    private void getJobIds() {
-        ObservableList<String> obList = FXCollections.observableArrayList();
-        try {
-            List<String> idList = Job.getIds();
 
-            for (String jobId : idList) {
-                obList.add(jobId);
-            }
-            cmdJobId.setItems(obList);
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
 
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
-        cmdJobId.getSelectionModel().clearSelection();
+        txtJobId.setText("");
         txtPaymentId.setText("");
         txtamount.setText("");
         dpDate.setValue(null);
@@ -111,7 +108,7 @@ public class PaymentManagementController {
         try {
             boolean isDeleted = Payment.delete(paymentId);
             if (isDeleted) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
+                new Alert(Alert.AlertType.CONFIRMATION, " deleted!").show();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -124,12 +121,14 @@ public class PaymentManagementController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-        String jobId = (String) cmdJobId.getValue();
+        String jobId = txtJobId.getText();
         String paymentId = txtPaymentId.getText();
-        String amount = txtamount.getText();
+        Double amount = Double.valueOf(txtamount.getText());
         LocalDate date = dpDate.getValue();
-        PaymentDto paymentDto = new PaymentDto(jobId,paymentId,amount,date);
-
+        Double itemAmount= Double.valueOf(txtNetTotal.getText());
+        double fullAmount = (amount + itemAmount);
+        txtTotal.setText(String.valueOf(fullAmount));
+        PaymentDto paymentDto = new PaymentDto(jobId,paymentId,amount,date,itemAmount);
         boolean isSaved = false;
         try {
             isSaved = Payment.save(paymentDto);
@@ -146,7 +145,6 @@ public class PaymentManagementController {
             throw new RuntimeException(e);
         }
 
-
     }
 
     private void getAllPayment() throws SQLException, ClassNotFoundException {
@@ -157,11 +155,12 @@ public class PaymentManagementController {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
-        String jobId = (String) cmdJobId.getValue();
+        String jobId = txtJobId.getText();
         String paymentId = txtPaymentId.getText();
-        String amount = txtamount.getText();
+        Double amount = Double.valueOf(txtamount.getText());
         LocalDate date = dpDate.getValue();
-        PaymentDto paymentDto = new PaymentDto(jobId,paymentId,amount,date);
+        Double itemAmount =Double.valueOf(txtNetTotal.getText());
+        PaymentDto paymentDto = new PaymentDto(jobId,paymentId,amount,date,itemAmount);
 
         boolean isUpdated = Payment.update(paymentDto);
         if (isUpdated) {
@@ -171,6 +170,19 @@ public class PaymentManagementController {
 
     @FXML
     void txtPayIdOnAction(MouseEvent event) {
+
+    }
+
+    @FXML
+    void txtJobOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        String jobId = txtJobId.getText();
+        Job job = new Job();
+        JobDto jobDto = job.searchById(jobId);
+        System.out.println(job); // null
+            txtJobId.setText(jobDto.getJobId());
+            txtNetTotal.setText(String.valueOf(jobDto.getTotal()));
+
+
 
     }
 

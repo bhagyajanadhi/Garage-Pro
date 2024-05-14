@@ -1,28 +1,22 @@
 package lk.ijse.controller;
 
-import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.model.Customer;
 import lk.ijse.util.DateTimeUtil;
 import lk.ijse.util.ValidateUtil;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -150,7 +144,7 @@ public class CustomerManagementController {
     }
 
     @FXML
-    void btnSaveOnAction(ActionEvent event) {
+    void btnSaveOnAction() {
 
         String customerId = txtcustomer.getText();
         String name = txtName.getText();
@@ -230,13 +224,30 @@ public class CustomerManagementController {
 
 
     public void txtKeyOnRelease(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            Object respond =  ValidateUtil.validation(map);
+            if (respond instanceof TextField) {
+                TextField textField = (TextField) respond;
+                textField.requestFocus();
+            } else {
+                btnSaveOnAction();
+            }}
         ValidateUtil.validation(map);
     }
 
     public void txtOnKeyRelesed(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            Object respond =  ValidateUtil.validation(map);
+            if (respond instanceof TextField) {
+                TextField textField = (TextField) respond;
+                textField.requestFocus();
+            } else {
+                btnSaveOnAction();
+            }}
         ValidateUtil.validation(map);
     }
 
     public void ttxtOnKeyRelese(KeyEvent keyEvent) {
+
     }
 }

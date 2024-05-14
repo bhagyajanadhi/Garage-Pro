@@ -5,6 +5,7 @@ import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.InventoryDto;
 import lk.ijse.dto.JobDto;
 import lk.ijse.dto.JobInventoryDto;
+import lk.ijse.dto.VehicleDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -84,8 +85,7 @@ public class Job {
             pstm.setObject(2, dto.getInventoryId());
             pstm.setObject(3, dto.getQty());
             pstm.setObject(4, dto.getUnitePrice());
-
-            pstm.setObject(5, dto.getUnitePrice());
+            pstm.setObject(5, dto.getTotalPrice());
             boolean b = pstm.executeUpdate() > 0;
             if (!b) {
                 return false;
@@ -107,6 +107,31 @@ public class Job {
     }
 
 
+    public static JobDto searchById(String jobId) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM job WHERE jobId =?";
+
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection()
+                .prepareStatement(sql);
 
 
+        pstm.setObject(1,jobId);
+        ResultSet resultSet = pstm.executeQuery();
+
+        JobDto jobDto = null;
+
+        if (resultSet.next()) {
+
+            jobId = resultSet.getString(1);
+            String employeeId = resultSet.getString(2);
+            String description = resultSet.getString(3);
+            LocalDate date = LocalDate.parse(resultSet.getString(4));
+            String vehicleId = resultSet.getString(5);
+            Double total = resultSet.getDouble(6);
+
+
+            jobDto  = new JobDto(jobId,employeeId,description,date,vehicleId,total);
+
+        }
+        return jobDto;
+    }
 }

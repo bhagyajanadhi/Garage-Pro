@@ -46,6 +46,7 @@ CREATE TABLE payment (
                          paymentId VARCHAR(50) PRIMARY KEY,
                          amount DECIMAL(10, 2),
                          date DATE,
+                         itemAmount DOUBLE,
                          FOREIGN KEY (jobId) REFERENCES job(jobId) ON UPDATE CASCADE ON DELETE CASCADE
 
 

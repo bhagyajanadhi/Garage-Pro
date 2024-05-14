@@ -14,8 +14,8 @@ import java.time.LocalDate;
 public class PaymentDto {
     private String jobId;
     private String paymentId;
-    private String amount;
+    private double amount;
     private LocalDate date;
-
+    private double itemAmount;
 
 }

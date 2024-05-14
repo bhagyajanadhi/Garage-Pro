@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.dto.BookingDto;
@@ -148,7 +149,7 @@ public class  BookingManagementController {
 
     }
     @FXML
-    void btnSaveOnAction(ActionEvent event) {
+    void btnSaveOnAction() {
         String bookingId = txtBooking.getText();
         String customerId = (String) cmbCustomerId.getValue();
         String vehicleId = (String) cmbVehicleId.getValue();
@@ -195,6 +196,15 @@ public class  BookingManagementController {
     }
 
     public void txtOnKeyRelease(KeyEvent keyEvent) {
+
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            Object respond =  ValidateUtil.validation(map);
+            if (respond instanceof TextField) {
+                TextField textField = (TextField) respond;
+                textField.requestFocus();
+            } else {
+                btnSaveOnAction();
+       }}
         ValidateUtil.validation(map);
         ValidateUtil.validation(map);
         ValidateUtil.validation(map);

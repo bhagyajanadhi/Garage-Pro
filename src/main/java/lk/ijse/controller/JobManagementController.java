@@ -166,7 +166,7 @@ public class JobManagementController implements Initializable {
        if(vehicleDto!=null){
            System.out.println(vehicle); // null
            txtLisenceplate.setText(vehicleDto.getVehicleLicensePlate());
-            cmbVehicleId.setValue(vehicleDto.getVehicleId());
+           cmbVehicleId.setValue(vehicleDto.getVehicleId());
        }
 
 

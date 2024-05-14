@@ -13,12 +13,13 @@ import java.util.List;
 public class Payment {
 
     public static boolean save(PaymentDto paymentDto) throws SQLException, ClassNotFoundException {
-        String sql = "insert into payment values(?,?,?,?)";
+        String sql = "insert into payment values(?,?,?,?,?)";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setString(1, paymentDto.getJobId());
         pstm.setString(2, paymentDto.getPaymentId());
-        pstm.setString(3, paymentDto.getAmount());
+        pstm.setDouble(3, paymentDto.getAmount());
         pstm.setString(4, String.valueOf(paymentDto.getDate()));
+        pstm.setDouble(5,paymentDto.getItemAmount());
         return pstm.executeUpdate() > 0;
     }
 
@@ -30,10 +31,10 @@ public class Payment {
         while (resultSet.next()) {
             String jobId = resultSet.getString(1);
             String paymentId = resultSet.getString(2);
-            String amount = resultSet.getString(3);
+            Double amount = Double.valueOf(resultSet.getString(3));
             LocalDate date = LocalDate.parse(resultSet.getString(4));
-
-            PaymentDto payment = new PaymentDto( jobId, paymentId, amount, date);
+            Double itemAmount = Double.valueOf(resultSet.getString(5));
+            PaymentDto payment = new PaymentDto( jobId, paymentId, amount, date,itemAmount);
 
             paymentList.add(payment);
         }
@@ -45,7 +46,7 @@ public class Payment {
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setString(1, paymentDto.getJobId());
         pstm.setString(4, paymentDto.getPaymentId());
-        pstm.setString(2, paymentDto.getAmount());
+        pstm.setDouble(2, paymentDto.getAmount());
         pstm.setString(3, String.valueOf(paymentDto.getDate()));
         return pstm.executeUpdate() > 0 ;
 

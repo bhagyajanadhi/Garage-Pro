@@ -2,7 +2,6 @@ package lk.ijse.model;
 
 import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.BookingDto;
-import lk.ijse.dto.CustomerDto;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
