@@ -7,9 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
-import lk.ijse.dto.BookingDto;
 import lk.ijse.dto.InventoryDto;
-import lk.ijse.model.Booking;
 import lk.ijse.model.Inventory;
 import lk.ijse.model.Supplier;
 import lk.ijse.util.ValidateUtil;
@@ -50,7 +48,7 @@ public class InventoryManagementController {
     @FXML
     private Button savpane;
     @FXML
-    private TableView<InventoryDto> tblInventory;
+    private TableView<String> tblInventory;
 
     @FXML
     private TextField txtDescription;
@@ -72,7 +70,7 @@ public class InventoryManagementController {
 
     @FXML
     private Button updatepane;
-    private List<InventoryDto> inventoryList = new ArrayList<>();
+    private List<String> inventoryList = new ArrayList<String>();
 
     LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
 
@@ -82,7 +80,8 @@ public class InventoryManagementController {
         colInventory.setCellValueFactory(new PropertyValueFactory<>("inventoryId"));
         colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
         colPartName.setCellValueFactory(new PropertyValueFactory<>("partName"));
-        colUnitePrice.setCellValueFactory(new PropertyValueFactory<>("stockLevel"));
+        colStockLevel.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colUnitePrice.setCellValueFactory(new PropertyValueFactory<>("unitePrice"));
         getAllInventory();
         getAllSupplierIds();
         Pattern patternId = Pattern.compile("^(I0)[0-9]{1,5}$");
@@ -215,7 +214,7 @@ public class InventoryManagementController {
                 txtDescription.setText(inventoryDto.getDescription());
                 cmbSupplierId.setValue(inventoryDto.getSupplierId());
                 txtPartName.setText(inventoryDto.getPartName());
-                txtStockLevel.setText(String.valueOf(inventoryDto.getStockLevel()));
+                txtStockLevel.setText(String.valueOf(inventoryDto.getQty()));
                 txtUnitePrice.setText(String.valueOf(inventoryDto.getUnitePrice()));
             }
         }catch (SQLException e) {

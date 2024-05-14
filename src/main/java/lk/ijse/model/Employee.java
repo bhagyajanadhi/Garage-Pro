@@ -68,6 +68,7 @@ public class Employee {
     }
 
     public static List<String> getIds() throws SQLException, ClassNotFoundException {
+        System.out.println("is working !");
         String sql = "SELECT employeeId FROM employee";
 
         Connection connection = Dbconnection.getInstance().getConnection();

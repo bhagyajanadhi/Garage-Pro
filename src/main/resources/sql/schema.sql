@@ -37,7 +37,8 @@ CREATE TABLE job (
                      description VARCHAR(255),
                      date DATE,
                      vehicleId VARCHAR(50),
-                     FOREIGN KEY (vehicleId) REFERENCES vehicle(vehicleId) ON UPDATE CASCADE ON DELETE CASCADE
+                     total double,
+                     FOREIGN KEY (vehicleId) REFERENCES vehicle(vehicleId)ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE payment (
@@ -72,7 +73,7 @@ CREATE TABLE inventory (
                            description VARCHAR(255),
                            supplierId VARCHAR(50),
                            partName VARCHAR(255),
-                           stockLevel INT,
+                           qty INT,
                            unitPrice DECIMAL(10, 2)
 );
 CREATE TABLE supplier (
@@ -94,10 +95,11 @@ CREATE TABLE price_history (
                                FOREIGN KEY (inventoryId) REFERENCES inventory(inventoryId) ON UPDATE CASCADE ON DELETE CASCADE
 );
 CREATE TABLE job_inventory (
-                               jobInventoryId VARCHAR(50) PRIMARY KEY,
+                               jobId VARCHAR(50) not null,
                                inventoryId VARCHAR(50),
-                               jobId VARCHAR(50),
                                quantityUsed INT,
+                               unitePrice double not null ,
+                               totalPrice double,
                                FOREIGN KEY (inventoryId) REFERENCES inventory(inventoryId) ON UPDATE CASCADE ON DELETE CASCADE,
                                FOREIGN KEY (jobId) REFERENCES job(jobId) ON UPDATE CASCADE ON DELETE CASCADE
 );

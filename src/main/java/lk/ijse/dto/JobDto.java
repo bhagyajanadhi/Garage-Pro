@@ -17,6 +17,6 @@ public class JobDto {
     private String description;
     private LocalDate date;
     private String vehicleId;
-
+    private  double total;
 
 }

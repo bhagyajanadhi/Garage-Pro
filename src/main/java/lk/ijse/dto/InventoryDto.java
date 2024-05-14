@@ -14,7 +14,7 @@ public class InventoryDto {
     private String description;
     private String supplierId;
     private String partName;
-    private int stockLevel;
+    private int qty;
     private double unitePrice;
 
 

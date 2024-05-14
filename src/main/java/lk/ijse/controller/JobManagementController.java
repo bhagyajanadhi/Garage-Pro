@@ -4,100 +4,141 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import lk.ijse.dto.JobDto;
-import lk.ijse.model.Employee;
-import lk.ijse.model.Job;
-import lk.ijse.model.Vehicle;
-import lk.ijse.util.ValidateUtil;
+import lk.ijse.dto.InventoryDto;
+import lk.ijse.dto.JobInventoryDto;
+import lk.ijse.dto.VehicleDto;
+import lk.ijse.model.*;
 
+import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.regex.Pattern;
+import java.util.ResourceBundle;
 
-public class JobManagementController {
+public class JobManagementController implements Initializable {
 
-    @FXML
-    private Button Updatepane;
-
-    @FXML
-    private Button clearpane;
     @FXML
     private ComboBox<String> cmbEmployeeId;
+
+    @FXML
+    private ComboBox<String> cmbInventoryId;
 
     @FXML
     private ComboBox<String> cmbVehicleId;
 
     @FXML
-    private TableColumn<?, ?> colDate;
-
-    @FXML
     private TableColumn<?, ?> colDescription;
 
     @FXML
-    private TableColumn<?, ?> colEmployeeId;
+    private TableColumn<?, ?> colInventory;
 
     @FXML
-    private TableColumn<?, ?> colJobId;
+    private TableColumn<?, ?> colPartName;
 
     @FXML
-    private TableColumn<?, ?> colVehicleId;
+    private TableColumn<?, ?> colStockLevel;
+
+    @FXML
+    private TableColumn<?, ?> colUnitePrice;
+
+    @FXML
+    private TableColumn<?, ?> colqty;
+
+    @FXML
+    private TableColumn<?, ?> colTotal;
+
 
     @FXML
     private DatePicker dpDate;
 
     @FXML
-    private Button dtlpane;
+    private Label lblNetTotal;
 
     @FXML
-    private TableView<JobDto> tblJob;
+    private TableView<JobInventoryDto> tblJob;
 
     @FXML
-    private TextField txtDescriotion;
+    private TextField txtDescription;
 
-    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
-
+    @FXML
+    private TextField txtInventoryId;
 
     @FXML
     private TextField txtJobId;
-    private List<JobDto> jobList = new ArrayList<JobDto>();
+
+    @FXML
+    private TextField txtLisenceplate;
+
+    @FXML
+    private TextField txtNetTotal;
+
+    @FXML
+    private TextField txtPartName;
+
+    @FXML
+    private TextField txtStockLevel;
+
+    @FXML
+    private TextField txtUnitePrice;
 
 
-    public void initialize() throws SQLException, ClassNotFoundException {
-        colJobId.setCellValueFactory(new PropertyValueFactory<>("jobId"));
-        colEmployeeId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
-        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
-        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
-        colVehicleId.setCellValueFactory(new PropertyValueFactory<>("vehicleId"));
-        getAllJob();
-        getEmployeeIds();
-        getVehicleIds();
-        Pattern patternId = Pattern.compile("^(J0)[0-9]{1,5}$");
+    @FXML
+    private TextField txtQty;
 
-        map.put(txtJobId, patternId);
+    private ObservableList<JobInventoryDto> observableList = FXCollections.observableArrayList();
+    private double fullTotal=0;
+    @FXML
+    void btnOnSaveAction(ActionEvent event) {
+        String inventoryId = cmbInventoryId.getSelectionModel().getSelectedItem().toString();
+        String description = txtDescription.getText();
+        String partName = txtPartName.getText();
+        int stockLevel = Integer.parseInt(txtStockLevel.getText());
+        double unitePrice = Double.parseDouble(txtUnitePrice.getText());
+        int qty = Integer.parseInt(txtQty.getText());
+        double totalPrice = unitePrice * qty ;
+        fullTotal =fullTotal+(unitePrice * qty);
+
+        JobInventoryDto jobDto = new JobInventoryDto(inventoryId,description,partName,stockLevel,unitePrice,qty,totalPrice);
+        observableList.add(jobDto);
+        tblJob.setItems(observableList);
+        txtNetTotal.setText(String.valueOf(fullTotal));
+
     }
+    @FXML
+    void btnPlaceOrder(ActionEvent event) throws SQLException {
+        String JobId = txtJobId.getText();
+        LocalDate date = LocalDate.parse(String.valueOf(dpDate.getValue()));
+        String vehicleId = cmbVehicleId.getSelectionModel().getSelectedItem().toString();
+        String description = txtDescription.getText();
+        String employeeId = cmbEmployeeId.getSelectionModel().getSelectedItem().toString();
 
-    private void getVehicleIds() {
-        ObservableList<String> obList = FXCollections.observableArrayList();
-        try {
-            List<String> idList = Vehicle.getIds();
 
-            for (String vehicleId : idList) {
-                obList.add(vehicleId);
-            }
-            cmbVehicleId.setItems(obList);
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        Job job = new Job();
+        //String jobId, String employeeId, String description, LocalDate date, String vehicleId, ObservableList<JobInventoryDto> observableList, double fullTotal
+        boolean b = job.saveJob(JobId, employeeId,description,date,vehicleId,observableList,fullTotal);
+        if (b){
+            new Alert(Alert.AlertType.CONFIRMATION,"save List..!").show();
+        }else {
+            new Alert(Alert.AlertType.ERROR,"Something Wrong..!").show();
         }
+    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+        colInventory.setCellValueFactory(new PropertyValueFactory<>("inventoryId"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colPartName.setCellValueFactory(new PropertyValueFactory<>("partName"));
+        colStockLevel.setCellValueFactory(new PropertyValueFactory<>("stockLevel"));
+        colUnitePrice.setCellValueFactory(new PropertyValueFactory<>("unitePrice"));
+        colqty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
+        getEmployeeIds();
+
     }
 
     private void getEmployeeIds() {
@@ -115,84 +156,44 @@ public class JobManagementController {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private void getAllJob() throws SQLException, ClassNotFoundException {
-        jobList = Job.getAll();
-        tblJob.setItems(FXCollections.observableList(this.jobList));
-    }
-
-    public void btnClearOnAction(ActionEvent actionEvent) {
-        txtJobId.setText("");
-        cmbEmployeeId.setDisable(true);
-        txtDescriotion.setText("");
-        dpDate.setValue(null);
-        cmbVehicleId.setDisable(true);
 
     }
+    @FXML
+    void txtLicenseOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        String Lisenceplate = txtLisenceplate.getText();
+        Vehicle vehicle = new Vehicle();
+        VehicleDto vehicleDto = vehicle.searchById(Lisenceplate);
+       if(vehicleDto!=null){
+           System.out.println(vehicle); // null
+           txtLisenceplate.setText(vehicleDto.getVehicleLicensePlate());
+            cmbVehicleId.setValue(vehicleDto.getVehicleId());
+       }
 
-    public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
-        String jobId = txtJobId.getText();
-        try {
-            boolean isDeleted =Job.delete(jobId);
-            if (isDeleted) {
-                new Alert(Alert.AlertType.CONFIRMATION, "deleted!").show();
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
     }
-    public void btnOnUpdateAction(ActionEvent actionEvent) {
-        String jobId = txtJobId.getText();
-        String employeeId = (String) cmbEmployeeId.getValue();
-        String description = txtDescriotion.getText();
-        LocalDate date = dpDate.getValue();
-        String vehicleId = (String) cmbVehicleId.getValue();
-        JobDto jobDto = new JobDto(jobId, employeeId, description, date, vehicleId);
+    @FXML
+    void txtSearchOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
+        String partName = txtPartName.getText();
+        Inventory inventory = new Inventory();
+        InventoryDto inventoryDto = inventory.searchById(partName);
+        txtStockLevel.setText(String.valueOf(inventoryDto.getQty()));
+       cmbInventoryId.setValue(inventoryDto.getInventoryId());
+       txtUnitePrice.setText(String.valueOf(inventoryDto.getUnitePrice()));
+       txtDescription.setText(inventoryDto.getDescription());
 
-        try {
-           boolean isUpdated = Job.update(jobDto);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Succsessful").show();
-                getAllJob();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Error").show();
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
     }
-        public void btnOnSaveAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
-        String jobId = txtJobId.getText();
-        String employeeId = (String) cmbEmployeeId.getValue();
-        String description = txtDescriotion.getText();
-        LocalDate date = LocalDate.parse(String.valueOf(dpDate.getValue()));
-        String vehicleId = (String) cmbVehicleId.getValue();
-        JobDto jobDto = new JobDto(jobId, employeeId, description, date, vehicleId);
-        boolean isSaved = false;
-        isSaved = Job.save(jobDto);
-        if (isSaved) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Succsessful").show();
-            getAllJob();
-        } else {
-            new Alert(Alert.AlertType.ERROR, "Error").show();
-        }
+    @FXML
+    void txtOnKeyRelease(KeyEvent event) {
+
+    }
+
+    @FXML
+    void txtPayIdOnAction(MouseEvent event) {
+
     }
 
 
 
-    public void txtPayIdOnAction(MouseEvent mouseEvent) {
 
-    }
-
-    public void txtOnKeyRelease(KeyEvent keyEvent) {
-        ValidateUtil.validation(map);
-    }
 }

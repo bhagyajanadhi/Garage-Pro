@@ -189,7 +189,6 @@ public class VehicleManagement {
 
         try {
             VehicleDto vehicleDto = Vehicle.searchById(plate);
-
             if(vehicleDto!=null){
                 txtVehicleId.setText(vehicleDto.getVehicleId());
                 txtModel.setText(vehicleDto.getVehicleModel());
