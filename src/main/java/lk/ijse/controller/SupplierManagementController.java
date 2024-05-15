@@ -73,7 +73,7 @@ public class SupplierManagementController {
         colSupplier.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colPaymentTerms.setCellValueFactory(new PropertyValueFactory<>("paymentTerm"));
-        colContact.setCellValueFactory(new PropertyValueFactory<>("contact no"));
+        colContact.setCellValueFactory(new PropertyValueFactory<>("contactInformation"));
         getAllSuppliers();
 
         Pattern patternId = Pattern.compile("^(S0)[0-9]{1,5}$");
@@ -84,8 +84,9 @@ public class SupplierManagementController {
     }
 
     private void getAllSuppliers() throws SQLException, ClassNotFoundException {
-        tblSupplier.setItems(FXCollections.observableList(this.supplierList));
         supplierList = Supplier.getAll();
+        tblSupplier.setItems(FXCollections.observableList(this.supplierList));
+
 
     }
 
@@ -170,11 +171,14 @@ public class SupplierManagementController {
         }
     }
 
-    public void txtSearchOnAction(ActionEvent actionEvent) {
-        String  name = txtContact.getText();
+    @FXML
+    void txtotactSearchOnAction(ActionEvent event) {
+
+
+        String  contactInformation = txtContact.getText();
 
         try {
-            SupplierDto supplierDto = Supplier.searchById(name);
+            SupplierDto supplierDto = Supplier.searchById(contactInformation);
 
             if (supplierDto != null) {
                 txtSupplierId.setText(supplierDto.getSupplierId());

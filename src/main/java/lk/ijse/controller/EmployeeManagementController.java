@@ -137,10 +137,10 @@ public class EmployeeManagementController {
         String employeeId = txtEmployeeId.getText();
         double salary = Double.parseDouble(txtEmployeeSalary.getText());
         String name = txtEmployeeName.getText();
-        String skills = txtEmployeeSkills.getText();
+        String skill = txtEmployeeSkills.getText();
         String contactInformation = txtEmployeeContactInformation.getText();
 
-        EmployeeDto employeedto = new EmployeeDto(employeeId,salary,name,skills,contactInformation);
+        EmployeeDto employeedto = new EmployeeDto(employeeId,salary,name,skill,contactInformation);
 
         boolean isSaved = false;
         try {
@@ -165,13 +165,13 @@ public class EmployeeManagementController {
         String employeeId = txtEmployeeId.getText();
         double salary = Double.parseDouble(txtEmployeeSalary.getText());
         String name = txtEmployeeName.getText();
-        String skills = txtEmployeeSkills.getText();
+        String skill = txtEmployeeSkills.getText();
         String contactInformation= txtEmployeeContactInformation.getText();
 
-          EmployeeDto employeedto = new EmployeeDto(employeeId,salary,name,skills,contactInformation);
+          EmployeeDto employeedto = new EmployeeDto(employeeId,salary,name,skill,contactInformation);
         boolean isUpdated = Employee.update(employeedto);
         if (isUpdated) {
-            new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
+            new Alert(Alert.AlertType.CONFIRMATION, "updated!").show();
         }
     }
 

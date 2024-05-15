@@ -53,7 +53,7 @@ public class Supplier {
     }
 
     public static boolean update(SupplierDto supplierDto) throws SQLException, ClassNotFoundException {
-        String sql = "update supplier set name = ?,contactInformation = ?,paymentTerms = ? where supplierId =?";
+        String sql = "update supplier set name = ?,contactInformation = ?,paymentTerm = ? where supplierId =?";
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(4, supplierDto.getSupplierId());
         pstm.setObject(1, supplierDto.getName());
@@ -65,30 +65,31 @@ public class Supplier {
 
     }
 
-    public static SupplierDto searchById(String name) throws SQLException, ClassNotFoundException {
-        String sql = "SELECT * FROM supplier WHERE name =?";
+    public static SupplierDto searchById(String contactInformation) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM supplier WHERE contactInformation =?";
 
         PreparedStatement pstm = Dbconnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
-        pstm.setObject(1, name);
+        System.out.println("1" + contactInformation);
+        pstm.setObject(1, contactInformation);
         ResultSet resultSet = pstm.executeQuery();
 
         SupplierDto supplierDto = null;
 
-
         if (resultSet.next()) {
+            System.out.println("2");
             String supplierId = resultSet.getString(1);
-            String supplierName = resultSet.getString(2);
-            String paymentTerm = resultSet.getString(3);
-            String contactInformation = resultSet.getString(4);
+            String name = resultSet.getString(2);
+            String paymentTerms = resultSet.getString(3);
+            String contactIformation = resultSet.getString(4);
 
 
-            supplierDto = new SupplierDto(supplierId, supplierName, paymentTerm, contactInformation);
+            supplierDto = new SupplierDto(supplierId, name, paymentTerms, contactIformation);
+
         }
         return supplierDto;
     }
-
     public static List<SupplierDto> getAll() throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM supplier";
 

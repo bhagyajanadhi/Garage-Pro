@@ -59,7 +59,7 @@ public class Loan {
     }
 
     public static boolean update(LoanDto loanDto) throws SQLException, ClassNotFoundException {
-        String sql = "update loan set amount = ?,supplierId = ?,duedates = ?,paymentstatus = ? where LoanId =?";
+        String sql = "update loan set amount = ?,supplierId = ?,duedate = ?,paymentstatus = ? where LoanId =?";
 
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
 

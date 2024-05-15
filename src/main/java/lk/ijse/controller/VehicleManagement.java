@@ -6,8 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.VehicleDto;
 import lk.ijse.model.Customer;
 import lk.ijse.model.Vehicle;
@@ -50,10 +50,11 @@ public class VehicleManagement {
     private TableView<VehicleDto> tblVehicle;
 
     @FXML
-    private TextField txtModel;
-
-    @FXML
     private TextField txtPlate;
+    @FXML
+    private TextField txtmodel;
+
+
 
     @FXML
     private TextField txtVehicleId;
@@ -103,7 +104,7 @@ public class VehicleManagement {
     @FXML
     void btnClearOnAction(ActionEvent event) {
         txtVehicleId.setText("");
-        txtModel.setText("");
+        txtmodel.setText("");
         txtPlate.setText("");
         cmbCustomerId.setDisable(true);
 
@@ -115,7 +116,7 @@ public class VehicleManagement {
         try {
             boolean isDeleted = Vehicle.delete(vehicleId);
             if (isDeleted) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "deleted!").show();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -129,7 +130,7 @@ public class VehicleManagement {
     @FXML
     void btnSaveOnAction(ActionEvent event) {
         String vehicleId = txtVehicleId.getText();
-        String vehicleModel = txtModel.getText();
+        String vehicleModel = txtmodel.getText();
         String vehicleLicense = txtPlate.getText();
         String cus_id = (String) cmbCustomerId.getValue();
         VehicleDto vehicleDto = new VehicleDto(vehicleId,vehicleModel,vehicleLicense,cus_id);
@@ -161,7 +162,7 @@ public class VehicleManagement {
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
         String vehicleId = txtVehicleId.getText();
-        String vehicleModel = txtModel.getText();
+        String vehicleModel = txtmodel.getText();
         String vehicleLicensePlate = txtPlate.getText();
         String cus_id = (String) cmbCustomerId.getValue();
         VehicleDto vehicleDto = new VehicleDto(vehicleId,vehicleModel,vehicleLicensePlate,cus_id);
@@ -185,13 +186,13 @@ public class VehicleManagement {
     }
     @FXML
     void txtSearchOnAction(ActionEvent event) {
-        String plate = txtModel.getText();
+        String plate = txtPlate.getText();
 
         try {
             VehicleDto vehicleDto = Vehicle.searchById(plate);
             if(vehicleDto!=null){
                 txtVehicleId.setText(vehicleDto.getVehicleId());
-                txtModel.setText(vehicleDto.getVehicleModel());
+                txtmodel.setText(vehicleDto.getVehicleModel());
                 txtPlate.setText(vehicleDto.getVehicleLicensePlate());
                 cmbCustomerId.setValue(vehicleDto.getCus_id());
             }
@@ -203,6 +204,9 @@ public class VehicleManagement {
     }
 
     public void txtOnKeyRelease(KeyEvent keyEvent) {
+
         ValidateUtil.validation(map);
-    }
+            }
+
+
 }
