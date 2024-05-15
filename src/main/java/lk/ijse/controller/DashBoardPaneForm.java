@@ -1,13 +1,13 @@
 package lk.ijse.controller;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.db.Dbconnection;
-import lk.ijse.dto.EmployeeDto;
-import lk.ijse.dto.JobDto;
+import lk.ijse.dto.dashJobDto;
 import lk.ijse.model.Job;
 
 import java.sql.Connection;
@@ -29,7 +29,7 @@ public class DashBoardPaneForm {
     private TableColumn<?, ?> colJobId;
 
     @FXML
-    private TableView<?> tblJobId;
+    private TableView<dashJobDto> tblJobId;
 
 
 
@@ -40,14 +40,12 @@ public class DashBoardPaneForm {
     @FXML
     private Label lblEmployee;
 
-    private List<JobDto> jobList = new ArrayList<>();
+    private List<dashJobDto> jobList = new ArrayList<>();
     public void initialize() throws SQLException, ClassNotFoundException {
         colJobId.setCellValueFactory(new PropertyValueFactory<>("jobId"));
         colEmployeeId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
         ColDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         getAllJob();
-
-        JobDto job = Job.searchById(String.valueOf(colJobId));
 
 
         try {
@@ -62,7 +60,11 @@ public class DashBoardPaneForm {
         }
     }
 
-    private void getAllJob() {
+    private void getAllJob() throws SQLException, ClassNotFoundException {
+        jobList = Job.getAll();
+        tblJobId.setItems(FXCollections.observableList(this.jobList));
+
+
 
     }
 

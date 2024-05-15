@@ -2,10 +2,7 @@ package lk.ijse.model;
 
 import javafx.collections.ObservableList;
 import lk.ijse.db.Dbconnection;
-import lk.ijse.dto.InventoryDto;
-import lk.ijse.dto.JobDto;
-import lk.ijse.dto.JobInventoryDto;
-import lk.ijse.dto.VehicleDto;
+import lk.ijse.dto.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,6 +27,22 @@ public class Job {
             idList.add(resultSet.getString(1));
         }
         return idList;
+    }
+
+    public static List<dashJobDto> getAll() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT jobId, employeeId, date FROM job;";
+        PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+        List<dashJobDto> joblist = new ArrayList<>();
+        while (resultSet.next()){
+            String jobId = resultSet.getString(1);
+            String emloyeeId = resultSet.getString(2);
+            LocalDate date = resultSet.getDate(3).toLocalDate();
+
+            dashJobDto job = new dashJobDto(jobId, emloyeeId, date);
+            joblist.add(job);
+        }
+        return joblist;
     }
 
     public boolean saveJob(String jobId, String employeeId, String description, LocalDate date, String vehicleId, ObservableList<JobInventoryDto> observableList, double fullTotal) throws SQLException {
