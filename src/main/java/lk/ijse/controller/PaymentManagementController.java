@@ -7,21 +7,28 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.*;
 import lk.ijse.model.*;
 import lk.ijse.util.ValidateUtil;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class PaymentManagementController {
 
     @FXML
     private Button clearPane;
+    @FXML
+    private Button btnBill;
 
     @FXML
     private ComboBox<String> cmdJobId;
@@ -89,7 +96,35 @@ public class PaymentManagementController {
     }
 
 
+    @FXML
+    void btnBillOnAction(ActionEvent event) throws JRException, SQLException, ClassNotFoundException {
+        try {
+            InputStream reportStream = getClass().getResourceAsStream("/Report/PaymentReport.jrxml");
+            if (reportStream == null) {
+                throw new FileNotFoundException("Report file not found");
+            }
 
+            JasperDesign jasperDesign = JRXmlLoader.load(reportStream);
+            JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+
+            Map<String, Object> data = new HashMap<>();
+            data.put("paymentId", txtPaymentId.getText());
+            data.put("NetTotal", "3000");
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    data,
+                    Dbconnection.getInstance().getConnection());
+
+            JasperViewer.viewReport(jasperPrint, false);
+        } catch (FileNotFoundException e) {
+            System.err.println("Report file not found: " + e.getMessage());
+            e.printStackTrace();
+        } catch (JRException | SQLException | ClassNotFoundException e) {
+            System.err.println("Error generating report: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
@@ -124,10 +159,11 @@ public class PaymentManagementController {
         Double amount = Double.valueOf(txtamount.getText());
         LocalDate date = dpDate.getValue();
         Double itemAmount= Double.valueOf(txtNetTotal.getText());
-      //  Double total = Double.valueOf(txtTotal.getText());
+     //   Double total = Double.valueOf(txtTotal.getText());
         double fullAmount = (amount + itemAmount);
         txtTotal.setText(String.valueOf(fullAmount));
-        PaymentDto paymentDto = new PaymentDto(jobId,paymentId,amount,date,itemAmount);
+        PaymentDto paymentDto = new PaymentDto(jobId,paymentId,amount,date,itemAmount,fullAmount);
+
         boolean isSaved = false;
         try {
             isSaved = Payment.save(paymentDto);
@@ -160,7 +196,7 @@ public class PaymentManagementController {
         LocalDate date = dpDate.getValue();
         Double itemAmount =Double.valueOf(txtNetTotal.getText());
         Double total =Double.valueOf(txtTotal.getText());
-        PaymentDto paymentDto = new PaymentDto(jobId,paymentId,amount,date,itemAmount);
+        PaymentDto paymentDto = new PaymentDto(jobId,paymentId,amount,date,itemAmount,total);
 
         boolean isUpdated = Payment.update(paymentDto);
         if (isUpdated) {

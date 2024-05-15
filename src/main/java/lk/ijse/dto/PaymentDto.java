@@ -17,6 +17,5 @@ public class PaymentDto {
     private double amount;
     private LocalDate date;
     private double itemAmount;
-
-
+    private double total;
 }

@@ -3,6 +3,7 @@ package lk.ijse.model;
 import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.PaymentDto;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,13 +14,15 @@ import java.util.List;
 public class Payment {
 
     public static boolean save(PaymentDto paymentDto) throws SQLException, ClassNotFoundException {
-        String sql = "insert into payment values(?,?,?,?,?)";
+        String sql = "insert into payment values(?,?,?,?,?,?)";
+        System.out.println(paymentDto);
         PreparedStatement pstm = Dbconnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setString(1, paymentDto.getJobId());
         pstm.setString(2, paymentDto.getPaymentId());
         pstm.setDouble(3, paymentDto.getAmount());
-        pstm.setString(4, String.valueOf(paymentDto.getDate()));
+        pstm.setDate(4, Date.valueOf(paymentDto.getDate()));
         pstm.setDouble(5,paymentDto.getItemAmount());
+        pstm.setDouble(6,paymentDto.getTotal());
         return pstm.executeUpdate() > 0;
     }
 
@@ -35,7 +38,7 @@ public class Payment {
             LocalDate date = LocalDate.parse(resultSet.getString(4));
             Double itemAmount = Double.valueOf(resultSet.getString(5));
             Double total= Double.valueOf(resultSet.getString(6));
-            PaymentDto payment = new PaymentDto( jobId, paymentId, amount, date,itemAmount);
+            PaymentDto payment = new PaymentDto( jobId, paymentId, amount, date,itemAmount,total);
 
             paymentList.add(payment);
         }
@@ -86,7 +89,7 @@ public class Payment {
             double total = resultSet.getDouble(6);
 
 
-            paymentDto = new PaymentDto(jobId,paymentId,amount,date,itemAmount);
+            paymentDto = new PaymentDto(jobId,paymentId,amount,date,itemAmount,total);
         }
         return paymentDto;
     }

@@ -79,6 +79,8 @@ public class Job {
     private boolean JobDetailsSave(String jobId, ObservableList<JobInventoryDto> observableList) throws SQLException, ClassNotFoundException {
 
         for (JobInventoryDto dto : observableList) {
+            System.out.println(dto);
+            System.out.println(jobId);
             Connection connection = Dbconnection.getInstance().getConnection();
             PreparedStatement pstm = connection.prepareStatement("insert into job_inventory values(?,?,?,?,?)");
             pstm.setObject(1, jobId);

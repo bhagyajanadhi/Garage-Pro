@@ -97,7 +97,7 @@ CREATE TABLE price_history (
                                FOREIGN KEY (inventoryId) REFERENCES inventory(inventoryId) ON UPDATE CASCADE ON DELETE CASCADE
 );
 CREATE TABLE job_inventory (
-                               jobId VARCHAR(50) not null,
+                               jobId VARCHAR(50) ,
                                inventoryId VARCHAR(50),
                                quantityUsed INT,
                                unitePrice double not null ,

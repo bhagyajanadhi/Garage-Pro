@@ -105,5 +105,6 @@
             </TableColumn>
          </columns>
       </TableView>
+      <Button fx:id="btnBill" layoutX="136.0" layoutY="735.0" mnemonicParsing="false" onAction="#btnBillOnAction" text="BILL" />
     </children>
 </AnchorPane>
