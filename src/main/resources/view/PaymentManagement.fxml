@@ -10,6 +10,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -17,66 +20,122 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.PaymentManagementController">
 
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="844.0" layoutX="-5.0" stroke="BLACK" strokeType="INSIDE" width="1054.0" />
-        <ImageView fitHeight="116.0" fitWidth="143.0" layoutX="597.0" layoutY="708.0">
-            <image>
-                <Image url="@../asserts/icons/20240421_164310 (1).png" />
-            </image>
-        </ImageView>
-        <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="567.0" layoutX="336.0" layoutY="141.0" stroke="#ccbea6" strokeType="INSIDE" width="665.0" />
-        <Text layoutX="33.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="methan welcome user enne" />
-        <Text layoutX="1144.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welawa tyenne methna" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1ccaa" height="844.0" layoutX="-5.0" stroke="WHITE" strokeType="INSIDE" width="1054.0" />
+        <Rectangle fill="#ffffffe3" height="614.0" layoutX="42.0" layoutY="94.0" stroke="WHITE" strokeType="INSIDE" width="959.0" />
       <Group layoutX="26.0" layoutY="157.0">
          <children>
-            <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="581.0" layoutX="-6.0" layoutY="-11.0" stroke="#ccbea6" strokeType="INSIDE" width="283.0" />
-            <Text layoutX="11.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Job Id :" wrappingWidth="137.7294921875">
+            <Rectangle arcHeight="30.0" arcWidth="50.0" height="260.0" layoutX="52.0" layoutY="-37.0" stroke="#a1ccaa" strokeType="INSIDE" width="898.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.6320000290870667" green="0.800000011920929" blue="0.6656000018119812" opacity="0.905393660068512" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill></Rectangle>
+            <Text layoutX="629.0" layoutY="9.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Job Id :" wrappingWidth="137.7294921875">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <Text layoutX="8.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="125.99999999999989">
+            <Text layoutX="66.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :" wrappingWidth="125.99999999999989">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <Text layoutX="-5.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount:" wrappingWidth="125.99999999999989">
+            <Text layoutX="66.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service Fee:" wrappingWidth="125.99999999999989">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtamount" layoutX="34.0" layoutY="272.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
-            <DatePicker fx:id="dpDate" layoutX="34.0" layoutY="422.0" prefHeight="37.0" prefWidth="230.0" />
-            <Button fx:id="savePane" layoutX="50.0" layoutY="481.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Confirm" />
-            <Button fx:id="updatePane" layoutX="178.0" layoutY="481.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Update" />
-            <Button fx:id="clearPane" layoutX="58.0" layoutY="528.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear" />
-            <Button fx:id="dtlPane" layoutX="180.0" layoutY="528.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Delete" />
-            <TextField fx:id="txtPaymentId" layoutX="10.0" layoutY="58.0" onAction="#txtPaymentSearchOnAction" onKeyReleased="#txtKeyOnRelease" prefHeight="35.0" prefWidth="230.0" />
-            <Text layoutX="11.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Id :" wrappingWidth="137.7294921875">
+            <TextField fx:id="txtamount" layoutX="192.0" layoutY="28.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="221.0" />
+            <DatePicker fx:id="dpDate" layoutX="192.0" layoutY="75.0" prefHeight="37.0" prefWidth="220.0" />
+            <Button fx:id="savePane" layoutX="177.0" layoutY="169.0" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Confirm">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="updatePane" layoutX="350.0" layoutY="169.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Update">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="clearPane" layoutX="522.0" layoutY="169.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="40.0" prefWidth="81.0" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Clear">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="dtlPane" layoutX="681.0" layoutY="169.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Delete">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <TextField fx:id="txtPaymentId" layoutX="192.0" layoutY="-18.0" onAction="#txtPaymentSearchOnAction" onKeyReleased="#txtKeyOnRelease" prefHeight="35.0" prefWidth="221.0" />
+            <Text layoutX="66.0" layoutY="9.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Id :" wrappingWidth="137.7294921875">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtNetTotal" layoutX="19.0" layoutY="207.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
-            <Text layoutX="11.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total for items:" wrappingWidth="238.52947998046875">
+            <TextField fx:id="txtNetTotal" layoutX="727.0" layoutY="29.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="215.0" />
+            <Text layoutX="629.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expences:" wrappingWidth="238.52947998046875">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtJobId" layoutX="10.0" layoutY="135.0" onAction="#txtJobOnAction" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
-            <TextField fx:id="txtTotal" layoutX="34.0" layoutY="343.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="230.0" />
-            <Text layoutX="8.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total:" wrappingWidth="125.99999999999989">
+            <TextField fx:id="txtJobId" layoutX="727.0" layoutY="-18.0" onAction="#txtJobOnAction" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="214.0" />
+            <TextField fx:id="txtTotal" layoutX="729.0" layoutY="74.0" onMouseClicked="#txtPayIdOnAction" prefHeight="35.0" prefWidth="211.0" />
+            <Text layoutX="642.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total:" wrappingWidth="125.99999999999989">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
+            <Button fx:id="btnBill" layoutX="839.0" layoutY="169.0" mnemonicParsing="false" onAction="#btnBillOnAction" prefHeight="40.0" prefWidth="66.0" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="BILL">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <ImageView layoutX="651.0" layoutY="174.0">
+               <image>
+                  <Image url="@../asserts/icons/delete-30.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="486.0" layoutY="174.0">
+               <image>
+                  <Image url="@../asserts/icons/clear-30.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="302.0" layoutY="171.0">
+               <image>
+                  <Image url="@../asserts/icons/update-.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="810.0" layoutY="177.0">
+               <image>
+                  <Image url="@../asserts/icons/repo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="143.0" layoutY="170.0">
+               <image>
+                  <Image url="@../asserts/icons/save-64.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="422.0" layoutY="-37.0">
+               <image>
+                  <Image url="@../asserts/images/20240516_205534.png" />
+               </image>
+            </ImageView>
          </children>
       </Group>
-      <TextField layoutX="370.0" layoutY="25.0" prefHeight="78.0" prefWidth="428.0" text="Payment Management">
+      <TextField layoutX="162.0" layoutY="14.0" prefHeight="78.0" prefWidth="428.0" style="-fx-background-color: #a1ccaa;" text="Payment Management">
          <font>
-            <Font name="System Bold Italic" size="37.0" />
+            <Font name="System Bold Italic" size="25.0" />
          </font>
       </TextField>
-      <TableView fx:id="tblPayment" layoutX="351.0" layoutY="173.0" prefHeight="498.0" prefWidth="642.0">
+      <TableView fx:id="tblPayment" layoutX="200.0" layoutY="412.0" prefHeight="260.0" prefWidth="642.0">
          <columns>
             <TableColumn fx:id="colJobId" prefWidth="121.60003662109375" text="JobId">
                <cellValueFactory>
@@ -105,6 +164,5 @@
             </TableColumn>
          </columns>
       </TableView>
-      <Button fx:id="btnBill" layoutX="136.0" layoutY="735.0" mnemonicParsing="false" onAction="#btnBillOnAction" text="BILL" />
     </children>
 </AnchorPane>

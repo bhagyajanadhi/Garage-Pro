@@ -83,7 +83,7 @@ public class Employee {
     }
 
     public static EmployeeDto searchById(String contactInformation) throws SQLException, ClassNotFoundException {
-        String sql = "SELECT * FROM employee WHERE  name=?";
+        String sql = "SELECT * FROM employee WHERE  contactInformation=?";
 
         PreparedStatement pstm = Dbconnection.getInstance().getConnection()
                 .prepareStatement(sql);

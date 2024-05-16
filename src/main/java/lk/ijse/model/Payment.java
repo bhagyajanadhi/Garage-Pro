@@ -85,7 +85,7 @@ public class Payment {
             paymentId = resultSet.getString(2);
             Double amount = Double.valueOf(resultSet.getString(3));
             LocalDate date = LocalDate.parse(resultSet.getString(4));
-            double itemAmount = Integer.parseInt(resultSet.getString(5));
+            double itemAmount = Double.valueOf(resultSet.getString(5));
             double total = resultSet.getDouble(6);
 
 

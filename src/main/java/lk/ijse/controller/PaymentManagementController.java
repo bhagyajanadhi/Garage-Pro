@@ -218,10 +218,12 @@ public class PaymentManagementController {
             PaymentDto paymentDto = Payment.searchById(paymentId);
 
             if (paymentDto != null) {
-                txtPaymentId.setText(paymentDto.getPaymentId());
                 txtJobId.setText(paymentDto.getJobId());
+                txtPaymentId.setText(paymentDto.getPaymentId());
                 txtamount.setText(String.valueOf(paymentDto.getAmount()));
-            }
+                dpDate.setValue(paymentDto.getDate());
+                txtNetTotal.setText(String.valueOf(paymentDto.getItemAmount()));
+                txtTotal.setText(paymentDto.getPaymentId());}
         }catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         } catch (ClassNotFoundException e) {

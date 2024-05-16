@@ -17,106 +17,104 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.VehicleManagement">
 
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="844.0" layoutX="-11.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" width="1054.0" />
-        <ImageView fitHeight="116.0" fitWidth="143.0" layoutX="373.0" layoutY="660.0">
-            <image>
-                <Image url="@../asserts/icons/20240421_164310 (1).png" />
-            </image>
-        </ImageView>
-        <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="567.0" layoutX="331.0" layoutY="93.0" stroke="#ccbea6" strokeType="INSIDE" width="665.0" />
-        <Text layoutX="1144.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="welawa tyenne methna" />
-      <Group layoutX="21.0" layoutY="109.0">
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1ccaa" height="844.0" layoutX="-11.0" layoutY="-8.0" stroke="#a1ccaa" strokeType="INSIDE" width="1054.0" />
+        <Rectangle fill="#ffffffe3" height="712.0" layoutX="37.0" layoutY="67.0" stroke="WHITE" strokeType="INSIDE" width="959.0" />
+      <Group layoutX="34.0" layoutY="114.0">
          <children>
-            <Rectangle arcHeight="30.0" arcWidth="50.0" fill="#faf5ebe3" height="579.0" layoutX="9.0" layoutY="-11.0" stroke="#ccbea6" strokeType="INSIDE" width="283.0" />
-            <Text layoutX="11.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Id :" wrappingWidth="137.7294921875">
+            <ImageView fitHeight="330.0" fitWidth="834.0" layoutX="60.0" layoutY="-30.0">
+               <image>
+                  <Image url="@../asserts/gif/lv_0_20240516211732.gif" />
+               </image>
+            </ImageView>
+            <Text layoutX="77.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Id :" wrappingWidth="137.7294921875">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtVehicleId" layoutX="39.0" layoutY="60.0" onKeyPressed="#txtOnKeyRelease" prefHeight="35.0" prefWidth="230.0" />
-            <Text layoutX="26.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Licence Plate:" wrappingWidth="160.39996337890614">
+            <TextField fx:id="txtVehicleId" layoutX="207.0" layoutY="-16.0" onKeyPressed="#txtOnKeyRelease" prefHeight="35.0" prefWidth="230.0" />
+            <Text layoutX="66.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Licence Plate:" wrappingWidth="160.39996337890614">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <Text layoutX="17.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Id" wrappingWidth="125.99999999999989">
+            <Text layoutX="72.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Id" wrappingWidth="125.99999999999989">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <ComboBox fx:id="cmbCustomerId" layoutX="39.0" layoutY="288.0" prefHeight="26.0" prefWidth="230.0" />
-            <Button fx:id="dtlpane" layoutX="54.0" layoutY="477.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-color: #ECF87F;" text="Delete">
+            <ComboBox fx:id="cmbCustomerId" layoutX="215.0" layoutY="109.0" prefHeight="26.0" prefWidth="230.0" />
+            <Button fx:id="dtlpane" layoutX="504.0" layoutY="244.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Delete">
                <font>
                   <Font size="20.0" />
                </font></Button>
-            <Button fx:id="savepane" layoutX="52.0" layoutY="400.0" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-color: #ECF87F;" text="Confirm">
+            <Button fx:id="savepane" layoutX="146.0" layoutY="246.0" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Confirm">
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button fx:id="clearpane" layoutX="201.0" layoutY="473.0" mnemonicParsing="false" onAction="#btnClearOnAction" style="-fx-background-color: #ECF87F;" text="Clear">
+            <Button fx:id="clearpane" layoutX="728.0" layoutY="245.0" mnemonicParsing="false" onAction="#btnClearOnAction" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Clear">
                <font>
                   <Font size="20.0" />
                </font></Button>
-            <Button fx:id="updatepane" layoutX="196.0" layoutY="400.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-color: #ECF87F;" text="Update">
+            <Button fx:id="updatepane" layoutX="322.0" layoutY="246.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Update">
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <TextField fx:id="txtmodel" layoutX="35.0" layoutY="125.0" prefHeight="35.0" prefWidth="230.0" />
-            <Text layoutX="23.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model:" wrappingWidth="160.39996337890614">
+            <TextField fx:id="txtmodel" layoutX="557.0" layoutY="-16.0" prefHeight="35.0" prefWidth="230.0" />
+            <Text layoutX="454.0" layoutY="8.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model:" wrappingWidth="160.39996337890614">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtPlate" layoutX="33.0" layoutY="210.0" onAction="#txtSearchOnAction" onKeyPressed="#txtOnKeyRelease" prefHeight="35.0" prefWidth="230.0" />
-            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="20.0" layoutY="407.0">
+            <TextField fx:id="txtPlate" layoutX="215.0" layoutY="43.0" onAction="#txtSearchOnAction" onKeyPressed="#txtOnKeyRelease" prefHeight="35.0" prefWidth="230.0" />
+            <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="105.0" layoutY="253.0">
                <image>
                   <Image url="@../asserts/icons/download (4).png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="161.0" layoutY="408.0">
+            <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="290.0" layoutY="254.0">
                <image>
                   <Image url="@../asserts/icons/update-.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="160.0" layoutY="479.0">
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="689.0" layoutY="250.0">
                <image>
                   <Image url="@../asserts/icons/clear-30.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="20.0" layoutX="25.0" layoutY="486.0">
+            <ImageView fitHeight="24.0" fitWidth="20.0" layoutX="477.0" layoutY="253.0">
                <image>
                   <Image url="@../asserts/icons/delete-30.png" />
                </image>
             </ImageView>
          </children>
       </Group>
-      <TableView fx:id="tblVehicle" layoutX="404.0" layoutY="139.0" prefHeight="498.0" prefWidth="540.0">
+      <TableView fx:id="tblVehicle" layoutX="116.0" layoutY="482.0" prefHeight="214.0" prefWidth="795.0">
          <columns>
-            <TableColumn fx:id="colVehicleId" prefWidth="119.2000732421875" text="Vehicle ID">
+            <TableColumn fx:id="colVehicleId" prefWidth="163.20001983642578" text="Vehicle ID">
                <cellValueFactory>
                   <PropertyValueFactory property="bookingId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="colModel" prefWidth="130.4000244140625" text="Model">
+            <TableColumn fx:id="colModel" prefWidth="219.199951171875" text="Model">
                <cellValueFactory>
                   <PropertyValueFactory property="date" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="colLicencePlate" prefWidth="137.60009765625" text="LicencePlate">
+            <TableColumn fx:id="colLicencePlate" prefWidth="210.39993286132812" text="LicencePlate">
                <cellValueFactory>
                   <PropertyValueFactory property="vehicleId" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="colCustomerId" prefWidth="149.5999755859375" text="Customer ID">
+            <TableColumn fx:id="colCustomerId" prefWidth="203.20001220703125" text="Customer ID">
                <cellValueFactory>
                   <PropertyValueFactory property="customerId" />
                </cellValueFactory>
             </TableColumn>
          </columns>
       </TableView>
-      <TextField layoutX="404.0" layoutY="5.0" prefHeight="78.0" prefWidth="428.0" text="Vehicle Management">
+      <TextField layoutX="205.0" layoutY="2.0" prefHeight="62.0" prefWidth="428.0" style="-fx-background-color: #a1ccaa;" text="Vehicle Management">
          <font>
-            <Font name="System Bold Italic" size="37.0" />
+            <Font name="System Bold Italic" size="25.0" />
          </font>
       </TextField>
     </children>

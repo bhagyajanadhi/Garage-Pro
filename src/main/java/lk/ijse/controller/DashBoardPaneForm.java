@@ -1,14 +1,18 @@
 package lk.ijse.controller;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Duration;
 import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.dashJobDto;
 import lk.ijse.model.Job;
+import lk.ijse.util.DateTimeUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -59,6 +63,8 @@ public class DashBoardPaneForm {
             throw e; // Rethrow the exception to handle it at a higher level if necessary
         }
     }
+
+
 
     private void getAllJob() throws SQLException, ClassNotFoundException {
         jobList = Job.getAll();
