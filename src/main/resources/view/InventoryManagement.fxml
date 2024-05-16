@@ -12,6 +12,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -19,72 +22,109 @@
    <children>
       <AnchorPane layoutY="-5.0" prefHeight="810.0" prefWidth="1280.0">
          <children>
-            <Pane layoutX="36.0" layoutY="73.0" prefHeight="731.0" prefWidth="551.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1ccaa" height="810.0" stroke="#a1ccaa" strokeType="INSIDE" width="1280.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="661.0" layoutX="80.0" layoutY="98.0" stroke="WHITE" strokeType="INSIDE" width="1127.0" />
+            <Pane layoutX="183.0" layoutY="116.0" prefHeight="286.0" prefWidth="888.0" style="-fx-background-radius: 30;">
                <children>
-                  <TextField fx:id="txtInventoryId" layoutX="83.0" layoutY="73.0" onKeyReleased="#txtOnKeyActon" prefHeight="24.0" prefWidth="235.0" />
-                  <TextField fx:id="txtPartName" layoutX="83.0" layoutY="252.0" onAction="#txtSearchOnAction" prefHeight="24.0" prefWidth="235.0" />
-                  <TextField fx:id="txtStockLevel" layoutX="83.0" layoutY="341.0" prefHeight="24.0" prefWidth="235.0" />
-                  <TextField fx:id="txtDescription" layoutX="83.0" layoutY="479.0" prefHeight="24.0" prefWidth="235.0" />
+                  <Rectangle arcHeight="50.0" arcWidth="90.0" height="286.0" layoutX="-4.0" layoutY="-3.0" stroke="#a1ccaa" strokeType="INSIDE" width="894.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.6320000290870667" green="0.800000011920929" blue="0.6656000018119812" opacity="0.9908815026283264" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="436.0" layoutY="84.0">
+                     <image>
+                        <Image url="@../asserts/gif/d97ef337f137474fdeaae3840140b351.gif" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="txtInventoryId" layoutX="147.0" layoutY="32.0" onKeyReleased="#txtOnKeyActon" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtPartName" layoutX="537.0" layoutY="32.0" onAction="#txtSearchOnAction" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtStockLevel" layoutX="537.0" layoutY="89.0" prefHeight="24.0" prefWidth="235.0" />
+                  <TextField fx:id="txtDescription" layoutX="544.0" layoutY="147.0" prefHeight="24.0" prefWidth="235.0" />
                   <Text layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory Id:" wrappingWidth="151.0">
                      <font>
-                        <Font name="Dyuthi Regular" size="26.0" />
+                        <Font size="24.0" />
                      </font>
                   </Text>
-                  <Text layoutX="19.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Part Name:">
+                  <Text layoutX="419.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Part Name:">
                      <font>
-                        <Font name="Dyuthi Regular" size="26.0" />
+                        <Font size="24.0" />
                      </font>
                   </Text>
-                  <Text layoutX="14.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" wrappingWidth="235.0">
+                  <Text layoutX="434.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" wrappingWidth="235.0">
                      <font>
-                        <Font name="Dyuthi Regular" size="26.0" />
+                        <Font size="24.0" />
                      </font>
                   </Text>
-                  <Text layoutX="14.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:" wrappingWidth="264.0">
+                  <Text layoutX="405.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:" wrappingWidth="264.0">
                      <font>
-                        <Font name="Dyuthi Regular" size="26.0" />
+                        <Font size="24.0" />
                      </font>
                   </Text>
-                  <Button fx:id="clearpane" layoutX="157.0" layoutY="642.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: #ECF87F;" text="Clear" />
-                  <Button fx:id="updatepane" layoutX="157.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: #ECF87F;" text="Update" />
-                  <Button fx:id="savpane" layoutX="15.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: #ECF87F;" text="Save" />
-                  <Text layoutX="14.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price:" wrappingWidth="264.0">
+                  <Button fx:id="clearpane" layoutX="608.0" layoutY="223.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Clear">
                      <font>
-                        <Font name="Dyuthi Regular" size="26.0" />
+                        <Font size="18.0" />
                      </font>
-                  </Text>
-                  <TextField fx:id="txtUnitePrice" layoutX="83.0" layoutY="401.0" prefHeight="24.0" prefWidth="235.0" />
-                  <Text layoutX="7.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Id:" wrappingWidth="151.0">
+                  </Button>
+                  <Button fx:id="updatepane" layoutX="277.0" layoutY="223.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Update">
                      <font>
-                        <Font name="Dyuthi Regular" size="26.0" />
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="savpane" layoutX="112.0" layoutY="220.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Save">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="14.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price:" wrappingWidth="264.0">
+                     <font>
+                        <Font size="24.0" />
                      </font>
                   </Text>
-                  <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="158.0" layoutY="559.0">
+                  <TextField fx:id="txtUnitePrice" layoutX="147.0" layoutY="148.0" prefHeight="24.0" prefWidth="235.0" />
+                  <Text layoutX="14.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Id:" wrappingWidth="151.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="249.0" layoutY="231.0">
                      <image>
                         <Image url="@../asserts/icons/update-.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="157.0" layoutY="644.0">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="576.0" layoutY="228.0">
                      <image>
                         <Image url="@../asserts/icons/clear-30.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="19.0" layoutY="556.0">
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="75.0" layoutY="225.0">
                      <image>
                         <Image url="@../asserts/icons/save-64.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="dltpane1" layoutX="29.0" layoutY="642.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: #ECF87F;" text="Delete">
+                  <Button fx:id="dltpane1" layoutX="443.0" layoutY="220.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="107.0" style="-fx-background-color: #6a994e; -fx-background-radius: 30;" text="Delete">
                      <font>
-                        <Font name="System Bold Italic" size="12.0" />
+                        <Font size="18.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="24.0" fitWidth="20.0" layoutX="39.0" layoutY="648.0">
+                  <ImageView fitHeight="24.0" fitWidth="20.0" layoutX="419.0" layoutY="228.0">
                      <image>
                         <Image url="@../asserts/icons/delete-30.png" />
                      </image>
                   </ImageView>
-                  <ComboBox fx:id="cmbSupplierId" layoutX="83.0" layoutY="160.0" prefHeight="25.0" prefWidth="235.0" />
+                  <ComboBox fx:id="cmbSupplierId" layoutX="147.0" layoutY="90.0" prefHeight="25.0" prefWidth="235.0" />
                </children>
                <effect>
                   <DropShadow>
@@ -94,12 +134,12 @@
                   </DropShadow>
                </effect>
             </Pane>
-            <Label layoutX="118.0" layoutY="28.0" text="Manage Inventory Details">
+            <Label layoutX="118.0" layoutY="50.0" text="Manage Inventory Details">
                <font>
-                  <Font name="Dyuthi Regular" size="28.0" />
+                  <Font name="System Bold Italic" size="28.0" />
                </font>
             </Label>
-            <TableView fx:id="tblInventory" layoutX="409.0" layoutY="110.0" prefHeight="582.0" prefWidth="823.0">
+            <TableView fx:id="tblInventory" layoutX="237.0" layoutY="444.0" prefHeight="286.0" prefWidth="806.0">
               <columns>
                 <TableColumn fx:id="colInventory" prefWidth="128.0" text="Inventory" />
                 <TableColumn fx:id="colDescription" prefWidth="116.800048828125" text="Description" />
