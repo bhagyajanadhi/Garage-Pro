@@ -104,5 +104,7 @@ public class SignInController {
 
     public void txtOnkeyReleased(KeyEvent keyEvent) {
         ValidateUtil.validation(map);
+        ValidateUtil.validation(map);
+        ValidateUtil.validation(map);
     }
 }

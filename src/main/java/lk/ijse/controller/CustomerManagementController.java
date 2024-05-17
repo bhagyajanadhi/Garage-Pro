@@ -232,14 +232,7 @@ public class CustomerManagementController {
     }
 
     public void txtOnKeyRelesed(KeyEvent keyEvent) {
-        if (keyEvent.getCode() == KeyCode.ENTER) {
-            Object respond =  ValidateUtil.validation(map);
-            if (respond instanceof TextField) {
-                TextField textField = (TextField) respond;
-                textField.requestFocus();
-            } else {
-                btnSaveOnAction();
-            }}
+
         ValidateUtil.validation(map);
     }
 

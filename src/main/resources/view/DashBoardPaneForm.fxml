@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="844.0" prefWidth="1054.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashBoardPaneForm">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1ccaa" height="856.0" layoutX="-2.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" width="1096.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1ccaa" height="856.0" layoutX="-1.0" stroke="WHITE" strokeType="INSIDE" width="1096.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="728.0" layoutX="64.0" layoutY="62.0" stroke="WHITE" strokeType="INSIDE" width="948.0" />
       <ImageView fitHeight="728.0" fitWidth="948.0" layoutX="64.0" layoutY="62.0">
          <image>
@@ -34,7 +34,6 @@
             <Font size="22.0" />
          </font>
       </Text>
-      <NumberAxis layoutX="-3.0" layoutY="63.0" prefHeight="2.0" prefWidth="3.0" side="LEFT" />
       <CategoryAxis layoutX="17.0" layoutY="-2.0" prefHeight="2.0" prefWidth="3.0" side="BOTTOM" tickLabelFill="WHITE" />
       <Label fx:id="lblEmployee" layoutX="193.0" layoutY="153.0" prefHeight="46.0" prefWidth="86.0" style="-fx-background-color: #a1ccaa;">
          <font>
@@ -59,5 +58,6 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
+      <NumberAxis layoutX="-3.0" layoutY="45.0" prefHeight="20.0" prefWidth="3.0" side="LEFT" />
    </children>
 </AnchorPane>

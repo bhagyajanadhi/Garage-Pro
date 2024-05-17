@@ -121,12 +121,12 @@
             <Image url="@../asserts/icons/booking.png" />
          </image>
       </ImageView>
-      <Text fx:id="lblTime" layoutX="37.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                             " wrappingWidth="137.72949218750006">
+      <Text fx:id="lblTime" layoutX="37.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                             " wrappingWidth="137.72949218750006">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Text fx:id="lblDate" layoutX="37.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                             " wrappingWidth="137.72949218750006">
+      <Text fx:id="lblDate" layoutX="38.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="                             " wrappingWidth="137.72949218750006">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
