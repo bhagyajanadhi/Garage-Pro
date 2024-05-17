@@ -82,7 +82,7 @@ public class CustomerManagementController {
     public void initialize() throws SQLException, ClassNotFoundException {
 
 
-        realTime();
+
         colId.setCellValueFactory(new PropertyValueFactory<>("customerId"));
         colName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
         colContact.setCellValueFactory(new PropertyValueFactory<>("customerContactInformation"));
@@ -104,13 +104,9 @@ public class CustomerManagementController {
 
 }
 
-    public void realTime() {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1),event->txtTime.setText(DateTimeUtil.timenow())));
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
-        txtTime.setText(DateTimeUtil.timenow());
 
-    }
+
+
 
     private void getAllCustomer() throws SQLException, ClassNotFoundException {
         customerList = Customer.getAll();

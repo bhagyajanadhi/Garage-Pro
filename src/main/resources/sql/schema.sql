@@ -75,7 +75,7 @@ CREATE TABLE inventory (
                            description VARCHAR(255),
                            supplierId VARCHAR(50),
                            partName VARCHAR(255),
-                           qty INT,
+                           stockLevel INT,
                            unitPrice DECIMAL(10, 2)
 );
 CREATE TABLE supplier (

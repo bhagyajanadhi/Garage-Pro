@@ -1,5 +1,8 @@
 package lk.ijse.model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.chart.XYChart;
 import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.CustomerDto;
 import lk.ijse.dto.InventoryDto;
@@ -111,4 +114,23 @@ public class Inventory {
     }
 
 
+    public static ObservableList<XYChart.Series<String, Integer>> getDataToBarChart() throws SQLException, ClassNotFoundException {
+        Connection connection = Dbconnection.getInstance().getConnection();
+        String sql = "select partName , stockLevel from inventory";
+
+        ObservableList<XYChart.Series<String, Integer>> datalist = FXCollections.observableArrayList();
+
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+
+        while (resultSet.next()) {
+            String partName = resultSet.getString("partName");
+            Integer qty = resultSet.getInt("stockLevel");
+            series.getData().add(new XYChart.Data<>(partName, qty));
+        }
+        datalist.add(series);
+        return datalist;
+    }
 }

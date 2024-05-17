@@ -47,6 +47,11 @@
                   </LinearGradient>
                </fill>
             </Rectangle>
+            <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="380.0" layoutY="3.0" opacity="0.36">
+               <image>
+                  <Image url="@../asserts/images/20240516_205334.png" />
+               </image>
+            </ImageView>
             <Label layoutX="20.0" layoutY="18.0" prefHeight="24.0" prefWidth="141.0" text="Employee Id:">
                <font>
                   <Font name="Dyuthi Regular" size="22.0" />

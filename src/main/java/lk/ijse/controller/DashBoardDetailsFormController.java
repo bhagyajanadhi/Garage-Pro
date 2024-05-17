@@ -2,6 +2,7 @@ package lk.ijse.controller;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,18 +17,47 @@ import lk.ijse.util.DateTimeUtil;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class DashBoardDetailsFormController implements Initializable {
 
     @FXML
-    private Text txtTime;
+    private Text lblDate;
 
+    @FXML
+    private Text lblTime;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        assert txtTime != null : "fx:id=\"txtTime\".";
+       
+        TimeNow();
 
         setUi("DashBoardPaneForm");
+    }
+
+    private void TimeNow() {
+        Thread thread = new Thread(() -> {
+            SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
+            SimpleDateFormat sdf1 = new SimpleDateFormat("MMMM, dd, yyyy");
+            while (true) {
+                try {
+                    Thread.sleep(1000);
+
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+                final String timeNow = sdf.format(new Date());
+                String timeNow1 = sdf1.format(new Date());
+
+                Platform.runLater(() -> {
+                    lblTime.setText(timeNow);
+                    lblDate.setText(timeNow1);
+                });
+            }
+        });
+        thread.start();
+
     }
 
 

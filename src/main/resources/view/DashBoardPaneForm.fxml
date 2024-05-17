@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
@@ -16,37 +17,47 @@
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1ccaa" height="856.0" layoutX="-2.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" width="1096.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="728.0" layoutX="64.0" layoutY="62.0" stroke="WHITE" strokeType="INSIDE" width="948.0" />
-      <ImageView fitHeight="735.0" fitWidth="954.0" layoutX="60.0" layoutY="56.0">
+      <ImageView fitHeight="728.0" fitWidth="948.0" layoutX="64.0" layoutY="62.0">
          <image>
-            <Image url="@../asserts/images/WhatsApp%20Image%202024-04-21%20at%2016.15.26.jpeg" />
+            <Image url="@../asserts/gif/lv_0_20240517005612.gif" />
          </image>
       </ImageView>
-      <Text layoutX="276.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees">
+      <Rectangle arcHeight="180.0" arcWidth="180.0" fill="#a1ccaa" height="106.0" layoutX="136.0" layoutY="108.0" stroke="#a1ccaa" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="180.0" arcWidth="180.0" fill="#a1ccaa" height="116.0" layoutX="140.0" layoutY="312.0" stroke="#a1ccaa" strokeType="INSIDE" width="192.0" />
+      <Text layoutX="173.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto maintenance" textAlignment="CENTER" wrappingWidth="126.6000366210937">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <Text layoutX="558.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto maintenance" textAlignment="CENTER" wrappingWidth="126.6000366210937">
+      <Text layoutX="184.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employees">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
       <NumberAxis layoutX="-3.0" layoutY="63.0" prefHeight="2.0" prefWidth="3.0" side="LEFT" />
       <CategoryAxis layoutX="17.0" layoutY="-2.0" prefHeight="2.0" prefWidth="3.0" side="BOTTOM" tickLabelFill="WHITE" />
-      <Label fx:id="lblEmployee" layoutX="239.0" layoutY="168.0" prefHeight="94.0" prefWidth="162.0" style="-fx-background-color: #a1ccaa; -fx-background-radius: 90;">
+      <Label fx:id="lblEmployee" layoutX="193.0" layoutY="153.0" prefHeight="46.0" prefWidth="86.0" style="-fx-background-color: #a1ccaa;">
          <font>
-            <Font size="56.0" />
+            <Font size="36.0" />
          </font></Label>
-      <Label fx:id="lblAuto" layoutX="540.0" layoutY="163.0" prefHeight="100.0" prefWidth="162.0" style="-fx-background-color: #a1ccaa; -fx-background-radius: 360;">
+      <Label fx:id="lblAuto" layoutX="184.0" layoutY="366.0" prefHeight="29.0" prefWidth="104.0" style="-fx-background-color: #a1ccaa;">
          <font>
-            <Font size="57.0" />
+            <Font size="36.0" />
          </font></Label>
-      <TableView fx:id="tblJobId" layoutX="239.0" layoutY="338.0" prefHeight="372.0" prefWidth="470.0">
+      <TableView fx:id="tblJobId" layoutX="107.0" layoutY="475.0" prefHeight="276.0" prefWidth="470.0">
         <columns>
           <TableColumn fx:id="colJobId" prefWidth="169.59996032714844" text="JobId" />
           <TableColumn fx:id="colEmployeeId" prefWidth="192.800048828125" text="EmployeeID" />
             <TableColumn fx:id="ColDate" prefWidth="104.7999267578125" text="Date" />
         </columns>
       </TableView>
+      <BarChart fx:id="barChart" layoutX="563.0" layoutY="65.0" prefHeight="382.0" prefWidth="442.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
    </children>
 </AnchorPane>

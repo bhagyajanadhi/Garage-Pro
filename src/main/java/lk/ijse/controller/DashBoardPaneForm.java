@@ -3,7 +3,10 @@ package lk.ijse.controller;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -11,6 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Duration;
 import lk.ijse.db.Dbconnection;
 import lk.ijse.dto.dashJobDto;
+import lk.ijse.model.Inventory;
 import lk.ijse.model.Job;
 import lk.ijse.util.DateTimeUtil;
 
@@ -23,6 +27,8 @@ import java.util.List;
 
 public class DashBoardPaneForm {
 
+    @FXML
+    private BarChart<String, Integer> barChart;
     @FXML
     private TableColumn<?, ?> ColDate;
 
@@ -50,6 +56,7 @@ public class DashBoardPaneForm {
         colEmployeeId.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
         ColDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         getAllJob();
+        setDataToBarChart();
 
 
         try {
@@ -64,6 +71,11 @@ public class DashBoardPaneForm {
         }
     }
 
+    private void setDataToBarChart() throws SQLException, ClassNotFoundException {
+        ObservableList<XYChart.Series<String, Integer>> barChartData = Inventory.getDataToBarChart();
+
+        barChart.setData(barChartData);
+    }
 
 
     private void getAllJob() throws SQLException, ClassNotFoundException {
